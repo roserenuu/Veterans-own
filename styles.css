@@ -1038,6 +1038,8 @@ p { font-weight: 300; }
   .form-row            { grid-template-columns: 1fr; }
   .hero-actions        { flex-direction: column; }
   .steps               { grid-template-columns: 1fr; }
+  .step                { text-align: center; }
+  .step-num            { margin: 0 auto 14px; }
   .footer-inner        { grid-template-columns: 1fr; }
   .trust-divider       { display: none; }
   .sticky-cta p        { display: none; }
