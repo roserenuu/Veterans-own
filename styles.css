@@ -153,24 +153,24 @@ p { font-weight: 300; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 88px;
+  height: 100px;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 40px;
 }
 
 .logo {
-  font-size: 1.35rem;
+  font-size: 1.55rem;
   font-weight: 700;
   color: var(--white);
   letter-spacing: -0.3px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   flex-shrink: 0;
 }
 .logo-img {
-  height: 64px;
+  height: 76px;
   width: auto;
   display: block;
 }
@@ -182,7 +182,7 @@ p { font-weight: 300; }
 }
 .nav-links a {
   color: rgba(255,255,255,0.85);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 400;
   transition: color 0.15s;
 }
@@ -195,7 +195,7 @@ p { font-weight: 300; }
 }
 .nav-phone {
   color: rgba(255,255,255,0.90);
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.2px;
   transition: color 0.15s;
@@ -267,7 +267,7 @@ p { font-weight: 300; }
 /* === HERO === */
 .hero {
   background: radial-gradient(ellipse at 50% 40%, #1e3a6e 0%, #0d1e3a 65%);
-  padding: 160px 0 100px;
+  padding: 180px 0 120px;
   position: relative;
   z-index: 2;
   text-align: center;
