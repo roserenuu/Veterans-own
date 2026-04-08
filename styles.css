@@ -1025,13 +1025,20 @@ p { font-weight: 300; }
   .benefits-grid       { grid-template-columns: 1fr; }
   .testimonials-grid   { grid-template-columns: 1fr; }
   .form-row            { grid-template-columns: 1fr; }
-  .hero-actions        { flex-direction: column; }
+  .hero                { padding: 100px 0 64px; text-align: center; }
+  .hero-content        { margin: 0 auto; }
+  .hero-badge          { display: inline-block; }
+  .hero-sub            { margin-left: auto; margin-right: auto; }
+  .hero-actions        { flex-direction: column; align-items: center; }
+  .hero-actions .btn   { width: 100%; text-align: center; }
+  .hero-stats          { justify-content: center; gap: 20px; }
+  .stat                { text-align: center; }
+  .stat-divider        { display: none; }
+  .stat-num            { font-size: 1.4rem; }
   .steps               { grid-template-columns: 1fr; gap: 0; }
   .step                { border-left: none; border-top: 2px solid var(--border); text-align: center; padding: 28px 16px; }
   .footer-inner        { grid-template-columns: 1fr; }
   .trust-divider       { display: none; }
-  .sticky-cta p        { display: none; }
-  .hero                { padding: 110px 0 96px; }
   .about, .how-it-works, .contact,
   .calculator, .faq   { padding: 56px 0; }
   .benefits, .testimonials { padding: 88px 0 88px; }
