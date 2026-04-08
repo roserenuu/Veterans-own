@@ -267,7 +267,7 @@ p { font-weight: 300; }
 /* === HERO === */
 .hero {
   background: radial-gradient(ellipse at 50% 40%, #1e3a6e 0%, #0d1e3a 65%);
-  padding: 180px 0 120px;
+  padding: 210px 0 140px;
   position: relative;
   z-index: 2;
   text-align: center;
