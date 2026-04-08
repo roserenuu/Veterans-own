@@ -246,13 +246,15 @@ p { font-weight: 300; }
 
 /* === HERO === */
 .hero {
-  background: var(--navy);
+  background: radial-gradient(ellipse at 50% 40%, #1e3a6e 0%, #0d1e3a 65%);
   padding: 140px 0 88px;
   position: relative;
   z-index: 2;
+  text-align: center;
 }
 .hero-content {
-  max-width: 680px;
+  max-width: 780px;
+  margin: 0 auto;
 }
 .hero-badge {
   display: inline-block;
@@ -267,20 +269,56 @@ p { font-weight: 300; }
   border: 1px solid rgba(255,255,255,0.20);
   margin-bottom: 22px;
 }
-.hero h1 { margin-bottom: 20px; }
+.hero-h1-top {
+  display: block;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 6px;
+}
+.hero h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
 .hero-sub {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 300;
   color: rgba(255,255,255,0.70);
-  max-width: 560px;
-  margin-bottom: 36px;
+  max-width: 580px;
+  margin: 0 auto 32px;
   line-height: 1.65;
 }
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 56px;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+.btn-hero-cta {
+  background: #c9a227;
+  color: var(--white);
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  border: none;
+  box-shadow: 0 4px 20px rgba(201,162,39,0.35);
+}
+.btn-hero-cta:hover {
+  background: #b8911f;
+  transform: scale(1.03);
+}
+.hero-note {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 48px;
 }
 .hero-stats {
   display: flex;
@@ -289,12 +327,13 @@ p { font-weight: 300; }
   flex-wrap: wrap;
   padding-top: 32px;
   border-top: 1px solid rgba(255,255,255,0.12);
+  justify-content: center;
 }
-.stat { text-align: left; }
+.stat { text-align: center; }
 .stat-num {
   display: block;
   font-size: 1.6rem;
-  font-weight: 300;
+  font-weight: 700;
   letter-spacing: -0.64px;
   color: var(--white);
   line-height: 1.1;
@@ -1064,13 +1103,11 @@ p { font-weight: 300; }
   .benefits-grid       { grid-template-columns: 1fr; }
   .testimonials-grid   { grid-template-columns: 1fr; }
   .form-row            { grid-template-columns: 1fr; }
-  .hero                { padding: 100px 0 64px; text-align: center; }
-  .hero-content        { margin: 0 auto; }
-  .hero-badge          { display: inline-block; }
-  .hero-sub            { margin-left: auto; margin-right: auto; }
+  .hero                { padding: 100px 0 64px; }
+  .hero-h1-top         { font-size: 1.2rem; }
   .hero-actions        { flex-direction: column; align-items: center; }
   .hero-actions .btn   { width: 100%; text-align: center; }
-  .hero-stats          { justify-content: center; gap: 20px; }
+  .hero-stats          { gap: 20px; }
   .stat                { text-align: center; }
   .stat-divider        { display: none; }
   .stat-num            { font-size: 1.4rem; }
