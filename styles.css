@@ -645,7 +645,7 @@ p { font-weight: 300; }
 }
 .input-prefix-wrap input {
   width: 100%;
-  padding-left: 24px;
+  padding-left: 28px;
 }
 .input-prefix-wrap input:last-child {
   padding-left: 12px;
