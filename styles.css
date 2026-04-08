@@ -412,10 +412,16 @@ p { font-weight: 300; }
 }
 .about-text .btn { margin-top: 12px; }
 
-.about-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+.about-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-elevated);
+}
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .card-item {
   display: flex;
