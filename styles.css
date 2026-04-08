@@ -823,22 +823,22 @@ p { font-weight: 300; }
 .contact { padding: 88px 0; }
 .contact-inner {
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
+  grid-template-columns: 1fr 1.5fr;
   gap: 56px;
-  align-items: stretch;
+  align-items: start;
 }
 .contact-advisor-img {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-elevated);
+  aspect-ratio: 4 / 3;
 }
 .contact-advisor-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 15%;
   display: block;
-  min-height: 500px;
 }
 .contact-right {
   display: flex;
