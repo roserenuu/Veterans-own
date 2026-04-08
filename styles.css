@@ -516,7 +516,7 @@ p { font-weight: 300; }
 /* === FLAG BANNER === */
 .flag-banner {
   position: relative;
-  background: var(--navy-dark) url('E10CCACA-D1BA-4F9C-A79B-0B8EA6FB81C2.jpeg') center center / contain no-repeat;
+  background: url('E10CCACA-D1BA-4F9C-A79B-0B8EA6FB81C2.jpeg') 65% center / cover no-repeat;
   min-height: 500px;
   padding: 120px 0;
   text-align: center;
