@@ -321,18 +321,18 @@ p { font-weight: 300; }
   justify-content: center;
 }
 .btn-hero-cta {
-  background: #c9a227;
-  color: var(--white);
+  background: #f5c518;
+  color: #1a1a1a;
   padding: 16px 36px;
   border-radius: 50px;
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.1px;
   border: none;
-  box-shadow: 0 4px 20px rgba(201,162,39,0.35);
+  box-shadow: 0 4px 24px rgba(245,197,24,0.40);
 }
 .btn-hero-cta:hover {
-  background: #b8911f;
+  background: #e6b800;
   transform: scale(1.03);
 }
 .hero-note {
