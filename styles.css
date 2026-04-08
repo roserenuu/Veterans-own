@@ -159,6 +159,14 @@ p { font-weight: 300; }
   font-weight: 700;
   color: var(--white);
   letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .nav-links {
