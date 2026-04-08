@@ -831,7 +831,7 @@ p { font-weight: 300; }
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-elevated);
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
 }
 .contact-advisor-img img {
   width: 100%;
