@@ -295,6 +295,43 @@ p { font-weight: 300; }
   background: rgba(255,255,255,0.15);
 }
 
+/* === TRUST BAR === */
+.trust-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 24px 0;
+}
+.trust-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.trust-item { text-align: center; }
+.trust-num {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.3px;
+  line-height: 1.1;
+}
+.trust-label {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--body-text);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-top: 2px;
+}
+.trust-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
 /* === ABOUT === */
 .about { padding: 88px 0; }
 .about-inner {
@@ -421,6 +458,243 @@ p { font-weight: 300; }
   font-weight: 300;
   color: var(--body-text);
   line-height: 1.6;
+}
+
+/* === TESTIMONIALS === */
+.testimonials { padding: 88px 0; }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.testimonial-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.stars {
+  color: #f5c518;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+.testimonial-text {
+  font-size: 0.925rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.80);
+  line-height: 1.7;
+  flex: 1;
+}
+.testimonial-author {
+  border-top: 1px solid rgba(255,255,255,0.10);
+  padding-top: 14px;
+}
+.author-info strong {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--white);
+}
+.author-info span {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.52);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* === LOAN CALCULATOR === */
+.calculator { padding: 88px 0; }
+.calculator-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.calc-text .section-tag { margin-bottom: 14px; }
+.calc-text h2 { margin-bottom: 16px; }
+.calc-text > p {
+  color: var(--body-text);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.calc-notes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.calc-notes li {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--body-text);
+  padding-left: 14px;
+  position: relative;
+}
+.calc-notes li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  background: var(--navy);
+  border-radius: 50%;
+}
+.calc-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-elevated);
+}
+.calc-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--navy-heading);
+  letter-spacing: -0.22px;
+  margin-bottom: 22px;
+}
+.input-prefix-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input-prefix {
+  position: absolute;
+  left: 12px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--body-text);
+  pointer-events: none;
+}
+.input-suffix {
+  position: absolute;
+  right: 12px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--body-text);
+  pointer-events: none;
+}
+.input-prefix-wrap input {
+  width: 100%;
+  padding-left: 24px;
+}
+.input-prefix-wrap input:last-child {
+  padding-left: 12px;
+  padding-right: 30px;
+}
+.calc-result {
+  display: none;
+  margin-top: 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+.calc-result.show { display: block; }
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.result-row:last-of-type { border-bottom: none; }
+.result-row span { color: var(--body-text); font-weight: 300; }
+.result-row strong {
+  font-weight: 700;
+  color: var(--navy-heading);
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+.result-highlight { color: #108c3d !important; }
+
+/* === FAQ === */
+.faq { padding: 88px 0; background: var(--white); }
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-standard);
+}
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:last-child { border-bottom: none; }
+.faq-question {
+  width: 100%;
+  background: var(--white);
+  border: none;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--navy-heading);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+  gap: 16px;
+}
+.faq-question:hover { background: var(--off-white); }
+.faq-icon {
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--navy);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+  line-height: 1;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 24px;
+  background: var(--off-white);
+}
+.faq-item.open .faq-answer {
+  max-height: 200px;
+  padding: 16px 24px 20px;
+}
+.faq-answer p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--body-text);
+  line-height: 1.7;
+}
+
+/* === STICKY CTA BAR === */
+.sticky-cta {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--navy-dark);
+  border-top: 1px solid rgba(255,255,255,0.10);
+  padding: 14px 0;
+  z-index: 99;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  box-shadow: rgba(3,3,39,0.30) 0px -8px 24px;
+}
+.sticky-cta.visible { transform: translateY(0); }
+.sticky-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.sticky-cta p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.80);
+  margin: 0;
 }
 
 /* === CONTACT / APPLY === */
@@ -585,23 +859,30 @@ p { font-weight: 300; }
 
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
-  .about-inner    { grid-template-columns: 1fr; }
-  .benefits-grid  { grid-template-columns: 1fr 1fr; }
-  .contact-inner  { grid-template-columns: 1fr; }
-  .footer-inner   { grid-template-columns: 1fr 1fr; }
-  .footer-brand   { grid-column: 1 / -1; }
-  .steps          { grid-template-columns: 1fr 1fr; }
+  .about-inner         { grid-template-columns: 1fr; }
+  .benefits-grid       { grid-template-columns: 1fr 1fr; }
+  .testimonials-grid   { grid-template-columns: 1fr 1fr; }
+  .calculator-inner    { grid-template-columns: 1fr; }
+  .contact-inner       { grid-template-columns: 1fr; }
+  .footer-inner        { grid-template-columns: 1fr 1fr; }
+  .footer-brand        { grid-column: 1 / -1; }
+  .steps               { grid-template-columns: 1fr 1fr; }
+  .trust-inner         { gap: 16px; }
 }
 @media (max-width: 640px) {
-  .nav-links  { display: none; }
-  .hamburger  { display: block; }
-  h1 { letter-spacing: -0.96px; }
-  h2 { font-size: 1.75rem; letter-spacing: -0.5px; }
-  .benefits-grid  { grid-template-columns: 1fr; }
-  .form-row       { grid-template-columns: 1fr; }
-  .hero-actions   { flex-direction: column; }
-  .steps          { grid-template-columns: 1fr; }
-  .footer-inner   { grid-template-columns: 1fr; }
-  .hero { padding: 110px 0 64px; }
-  .about, .benefits, .how-it-works, .contact { padding: 56px 0; }
+  .nav-links           { display: none; }
+  .hamburger           { display: block; }
+  h1                   { letter-spacing: -0.96px; }
+  h2                   { font-size: 1.75rem; letter-spacing: -0.5px; }
+  .benefits-grid       { grid-template-columns: 1fr; }
+  .testimonials-grid   { grid-template-columns: 1fr; }
+  .form-row            { grid-template-columns: 1fr; }
+  .hero-actions        { flex-direction: column; }
+  .steps               { grid-template-columns: 1fr; }
+  .footer-inner        { grid-template-columns: 1fr; }
+  .trust-divider       { display: none; }
+  .sticky-cta p        { display: none; }
+  .hero                { padding: 110px 0 64px; }
+  .about, .benefits, .how-it-works, .contact,
+  .testimonials, .calculator, .faq { padding: 56px 0; }
 }

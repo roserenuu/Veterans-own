@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Veterans Own | VA Home Loans</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -16,6 +16,8 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#benefits">VA Loan Benefits</a></li>
+        <li><a href="#calculator">Calculator</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#apply" class="btn btn-nav">Apply Now</a></li>
       </ul>
@@ -24,6 +26,8 @@
     <div class="mobile-menu" id="mobileMenu">
       <a href="#about">About</a>
       <a href="#benefits">VA Loan Benefits</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
       <a href="#apply" class="btn btn-gold">Apply Now</a>
     </div>
@@ -54,6 +58,36 @@
           <span class="stat-num">100%</span>
           <span class="stat-label">Veteran Focused</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div class="container trust-inner">
+      <div class="trust-item">
+        <span class="trust-num">2,500+</span>
+        <span class="trust-label">Veterans Helped</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-num">4.9 / 5</span>
+        <span class="trust-label">Average Rating</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-num">VA Approved</span>
+        <span class="trust-label">Lender</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-num">10+ Years</span>
+        <span class="trust-label">Serving Veterans</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-num">All 50</span>
+        <span class="trust-label">States Licensed</span>
       </div>
     </div>
   </section>
@@ -167,6 +201,173 @@
     </div>
   </section>
 
+  <!-- TESTIMONIALS -->
+  <section class="testimonials section-navy" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag tag-gold">Veteran Stories</span>
+        <h2>Hear From Those We Have Served</h2>
+        <p>Real veterans. Real results. Here is what they have to say about working with Veterans Own.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"I had no idea how easy the VA loan process could be. Veterans Own walked me through every step and I closed in under 30 days. As a veteran I felt like they truly understood what I needed."</p>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <strong>Marcus T.</strong>
+              <span>U.S. Army, Retired</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"After being turned away by two other lenders I found Veterans Own. They knew exactly how to work with my situation and got me into my home with zero down. I cannot recommend them enough."</p>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <strong>Danielle R.</strong>
+              <span>U.S. Navy, Veteran</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"This is the only lender I will ever use. They saved me hundreds a month by eliminating PMI and got me a rate lower than anything I found elsewhere. Veterans Own is the real deal."</p>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <strong>James K.</strong>
+              <span>U.S. Marines, Veteran</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOAN CALCULATOR -->
+  <section class="calculator section-light" id="calculator">
+    <div class="container calculator-inner">
+      <div class="calc-text">
+        <span class="section-tag">Estimate Your Payment</span>
+        <h2>See What You Could Afford</h2>
+        <p>Use our VA loan calculator to get an estimate of your monthly payment. VA loans require $0 down, so your full purchase price is your loan amount.</p>
+        <ul class="calc-notes">
+          <li>No down payment required</li>
+          <li>No PMI added to your payment</li>
+          <li>Rates shown are estimates. Your actual rate depends on credit, term, and market conditions.</li>
+        </ul>
+      </div>
+      <div class="calc-card">
+        <h3>VA Loan Payment Estimator</h3>
+        <div class="form-group">
+          <label for="homePrice">Home Price</label>
+          <div class="input-prefix-wrap">
+            <span class="input-prefix">$</span>
+            <input type="number" id="homePrice" placeholder="300,000" min="50000" max="2000000" step="1000" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="loanTerm">Loan Term</label>
+          <select id="loanTerm">
+            <option value="30">30 Years</option>
+            <option value="20">20 Years</option>
+            <option value="15">15 Years</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="interestRate">Interest Rate (estimated)</label>
+          <div class="input-prefix-wrap">
+            <input type="number" id="interestRate" value="6.5" min="1" max="15" step="0.1" />
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+        <button class="btn btn-navy btn-full" onclick="calculateLoan()">Calculate Payment</button>
+        <div class="calc-result" id="calcResult">
+          <div class="result-row">
+            <span>Estimated Monthly Payment</span>
+            <strong id="monthlyPayment">--</strong>
+          </div>
+          <div class="result-row">
+            <span>Total Loan Amount</span>
+            <strong id="totalLoan">--</strong>
+          </div>
+          <div class="result-row">
+            <span>Down Payment Required</span>
+            <strong class="result-highlight">$0</strong>
+          </div>
+          <a href="#apply" class="btn btn-navy btn-full" style="margin-top:16px;">Apply for This Loan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq section-white" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Common Questions</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about VA home loans and working with Veterans Own.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Do I qualify for a VA loan?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You may qualify if you are an active duty service member, veteran, National Guard or Reserve member, or surviving spouse of a veteran. Eligibility is based on your length and type of service. Contact us and we will verify your eligibility at no cost.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I use my VA loan benefit more than once?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Your VA loan benefit is reusable for life. As long as you have remaining entitlement or have paid off a previous VA loan, you can use it again to purchase another home or refinance.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is the minimum credit score for a VA loan?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The VA does not set a minimum credit score, but most lenders look for a score of 580 or higher. Veterans Own works with veterans across a range of credit profiles and can help you understand your options even if your credit is less than perfect.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How long does the VA loan process take?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Most VA loans close in 30 to 45 days. With Veterans Own, we work to keep the process as efficient as possible. Once you submit your application, we will give you a clear timeline based on your specific situation.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I use a VA loan to refinance my current home?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. The VA offers two refinance options: the Interest Rate Reduction Refinance Loan (IRRRL) for lowering your rate on an existing VA loan, and the VA Cash Out refinance for accessing your home equity. Both can save you significant money.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Is there a VA loan limit?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>As of 2020, there are no loan limits for veterans with full VA entitlement. If you have full entitlement you can borrow as much as a lender is willing to lend with no down payment required, regardless of the home price.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT / APPLY -->
   <section class="contact section-light" id="apply">
     <div class="container contact-inner" id="contact">
@@ -217,7 +418,7 @@
           <label for="message">How can we help?</label>
           <textarea id="message" name="message" rows="3" placeholder="Tell us about your homebuying goals..."></textarea>
         </div>
-        <button type="submit" class="btn btn-gold btn-full">Submit Application</button>
+        <button type="submit" class="btn btn-navy btn-full">Submit Application</button>
         <p class="form-note">By submitting, you agree to be contacted by a Veterans Own loan specialist.</p>
         <div class="form-success" id="formSuccess">
           Thank you! A specialist will contact you within one business day.
@@ -238,17 +439,18 @@
         <ul>
           <li><a href="#about">About Us</a></li>
           <li><a href="#benefits">VA Loan Benefits</a></li>
+          <li><a href="#calculator">Loan Calculator</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#apply">Apply Now</a></li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-links">
         <h4>Resources</h4>
         <ul>
           <li><a href="#">VA Loan Eligibility</a></li>
-          <li><a href="#">Loan Calculator</a></li>
-          <li><a href="#">FAQ</a></li>
           <li><a href="#">VA Loan Limits</a></li>
+          <li><a href="#">Refinance Options</a></li>
+          <li><a href="#contact">Contact Us</a></li>
         </ul>
       </div>
     </div>
@@ -259,22 +461,68 @@
     </div>
   </footer>
 
+  <!-- STICKY CTA BAR -->
+  <div class="sticky-cta" id="stickyCta">
+    <div class="container sticky-cta-inner">
+      <p>Ready to use your VA benefit? Get started with $0 down.</p>
+      <a href="#apply" class="btn btn-gold">Apply Now</a>
+    </div>
+  </div>
+
   <script>
+    // Mobile menu
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-    });
-
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => mobileMenu.classList.remove('open'));
     });
 
+    // Navbar scroll effect
     window.addEventListener('scroll', () => {
-      const navbar = document.querySelector('.navbar');
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
     });
 
+    // Sticky CTA — show after scrolling past hero
+    const stickyCta = document.getElementById('stickyCta');
+    const hero = document.querySelector('.hero');
+    window.addEventListener('scroll', () => {
+      const heroBottom = hero.offsetTop + hero.offsetHeight;
+      stickyCta.classList.toggle('visible', window.scrollY > heroBottom);
+    });
+
+    // FAQ accordion
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // Loan calculator
+    function calculateLoan() {
+      const price = parseFloat(document.getElementById('homePrice').value);
+      const term  = parseInt(document.getElementById('loanTerm').value);
+      const rate  = parseFloat(document.getElementById('interestRate').value);
+
+      if (!price || price <= 0) {
+        alert('Please enter a valid home price.');
+        return;
+      }
+
+      const monthlyRate = rate / 100 / 12;
+      const payments    = term * 12;
+      const monthly     = price * (monthlyRate * Math.pow(1 + monthlyRate, payments))
+                                / (Math.pow(1 + monthlyRate, payments) - 1);
+
+      document.getElementById('monthlyPayment').textContent =
+        '$' + monthly.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      document.getElementById('totalLoan').textContent =
+        '$' + price.toLocaleString('en-US');
+      document.getElementById('calcResult').classList.add('show');
+    }
+
+    // Form submit
     function handleSubmit(e) {
       e.preventDefault();
       document.getElementById('formSuccess').style.display = 'block';
