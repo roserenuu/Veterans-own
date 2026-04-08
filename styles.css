@@ -246,9 +246,7 @@ p { font-weight: 300; }
 
 /* === HERO === */
 .hero {
-  background:
-    linear-gradient(rgba(10, 20, 50, 0.72), rgba(10, 20, 50, 0.80)),
-    url('3C76243E-EE7E-428F-985C-C8CD8718083C.jpeg') center center / cover no-repeat;
+  background: var(--navy);
   padding: 140px 0 88px;
   position: relative;
   z-index: 2;
