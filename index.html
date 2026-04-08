@@ -491,6 +491,11 @@
 
 
   <script>
+    // Clear hash on load so refresh always starts at top
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname);
+      window.scrollTo(0, 0);
+    }
     // Mobile menu
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
