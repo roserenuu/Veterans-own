@@ -154,19 +154,23 @@ p { font-weight: 300; }
   align-items: center;
   justify-content: space-between;
   height: 88px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 .logo {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--white);
   letter-spacing: -0.3px;
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 .logo-img {
-  height: 68px;
+  height: 64px;
   width: auto;
   display: block;
 }
@@ -174,7 +178,7 @@ p { font-weight: 300; }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 36px;
 }
 .nav-links a {
   color: rgba(255,255,255,0.85);
@@ -418,9 +422,7 @@ p { font-weight: 300; }
 
 /* === TRUST BAR === */
 .trust-bar {
-  background: var(--off-white);
-  border-bottom: 1px solid var(--border);
-  padding: 28px 0;
+  display: none;
 }
 .trust-inner {
   display: flex;
