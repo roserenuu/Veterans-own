@@ -516,9 +516,12 @@ p { font-weight: 300; }
 /* === FLAG BANNER === */
 .flag-banner {
   position: relative;
-  background: url('E10CCACA-D1BA-4F9C-A79B-0B8EA6FB81C2.jpeg') center 40% / cover no-repeat;
-  padding: 100px 0;
+  background: url('E10CCACA-D1BA-4F9C-A79B-0B8EA6FB81C2.jpeg') center center / cover no-repeat;
+  min-height: 500px;
+  padding: 120px 0;
   text-align: center;
+  display: flex;
+  align-items: center;
 }
 .flag-overlay {
   position: absolute;
@@ -532,6 +535,7 @@ p { font-weight: 300; }
   flex-direction: column;
   align-items: center;
   gap: 28px;
+  width: 100%;
 }
 .flag-quote {
   font-size: clamp(1.4rem, 3vw, 2.2rem);
