@@ -188,44 +188,73 @@
   </section>
 
 <!-- TESTIMONIALS -->
-  <section class="testimonials section-navy" id="testimonials">
+  <section class="testimonials section-light" id="testimonials">
     <div class="container">
       <div class="section-header">
         <h2>Hear From Those We Have Served</h2>
         <p>Real veterans. Real results. Here is what they have to say about working with Veterans Own Mortgage.</p>
       </div>
-      <div class="testimonials-grid stagger-children">
-        <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"I had no idea how easy the VA loan process could be. Veterans Own Mortgage walked me through every step and I closed in under 30 days. As a veteran I felt like they truly understood what I needed."</p>
-          <div class="testimonial-author">
-            <div class="author-info">
-              <strong>Marcus T.</strong>
-              <span>U.S. Army, Retired</span>
+      <div class="testimonial-slider">
+        <button class="slider-arrow slider-prev" onclick="changeSlide(-1)">&#8249;</button>
+        <div class="slider-slides">
+
+          <div class="slider-slide active">
+            <div class="slide-photo slide-photo-1"></div>
+            <div class="slide-content">
+              <div class="stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="slide-headline">"I had no idea how easy the VA loan process could be!"</p>
+              <p class="slide-text">Veterans Own Mortgage walked me through every step and I closed in under 30 days. As a veteran I felt like they truly understood what I needed.</p>
+              <div class="slide-author"><strong>Marcus T.</strong> | <span>U.S. Army, Retired</span></div>
+              <div class="verified-badge">Verified Customer</div>
             </div>
           </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"After being turned away by two other lenders I found Veterans Own Mortgage. They knew exactly how to work with my situation and got me into my home with zero down. I cannot recommend them enough."</p>
-          <div class="testimonial-author">
-            <div class="author-info">
-              <strong>Danielle R.</strong>
-              <span>U.S. Navy, Veteran</span>
+
+          <div class="slider-slide">
+            <div class="slide-photo slide-photo-2"></div>
+            <div class="slide-content">
+              <div class="stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="slide-headline">"Zero down and a rate I could not find anywhere else!"</p>
+              <p class="slide-text">After being turned away by two other lenders I found Veterans Own Mortgage. They knew exactly how to work with my situation and got me into my home with zero down. I cannot recommend them enough.</p>
+              <div class="slide-author"><strong>Danielle R.</strong> | <span>U.S. Navy, Veteran</span></div>
+              <div class="verified-badge">Verified Customer</div>
             </div>
           </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"This is the only lender I will ever use. They saved me hundreds a month by eliminating PMI and got me a rate lower than anything I found elsewhere. Veterans Own Mortgage is the real deal."</p>
-          <div class="testimonial-author">
-            <div class="author-info">
-              <strong>James K.</strong>
-              <span>U.S. Marines, Veteran</span>
+
+          <div class="slider-slide">
+            <div class="slide-photo slide-photo-3"></div>
+            <div class="slide-content">
+              <div class="stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="slide-headline">"The only lender I will ever use."</p>
+              <p class="slide-text">They saved me hundreds a month by eliminating PMI and got me a rate lower than anything I found elsewhere. Veterans Own Mortgage is the real deal.</p>
+              <div class="slide-author"><strong>James K.</strong> | <span>U.S. Marines, Veteran</span></div>
+              <div class="verified-badge">Verified Customer</div>
             </div>
           </div>
+
         </div>
+        <button class="slider-arrow slider-next" onclick="changeSlide(1)">&#8250;</button>
       </div>
+      <div class="slider-dots">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- AS FEATURED IN -->
+  <section class="featured-in">
+    <div class="featured-in-inner">
+      <div class="featured-line"></div>
+      <span class="featured-label">As Featured In</span>
+      <div class="featured-line"></div>
+    </div>
+    <div class="featured-logos">
+      <span class="featured-logo logo-military">Military.com</span>
+      <span class="featured-logo logo-nyt">The New York Times</span>
+      <span class="featured-logo logo-cnn">CNN Business</span>
+      <span class="featured-logo logo-usnews">U.S. News</span>
+      <span class="featured-logo logo-forbes">Forbes</span>
     </div>
   </section>
 
@@ -553,6 +582,20 @@
       document.getElementById('totalLoan').textContent = '$' + price.toLocaleString('en-US');
       document.getElementById('calcResult').classList.add('show');
     }
+
+    // Testimonial slider
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slider-slide');
+    const dots = document.querySelectorAll('.dot');
+
+    function goToSlide(n) {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('active');
+      currentSlide = (n + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+    function changeSlide(dir) { goToSlide(currentSlide + dir); }
 
     // Form submit
     function handleSubmit(e) {
