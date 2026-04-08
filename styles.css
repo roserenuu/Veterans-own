@@ -825,7 +825,7 @@ p { font-weight: 300; }
   display: grid;
   grid-template-columns: 1fr 1fr 1.3fr;
   gap: 48px;
-  align-items: start;
+  align-items: stretch;
 }
 .contact-advisor-img {
   border-radius: var(--radius-lg);
@@ -834,9 +834,10 @@ p { font-weight: 300; }
 }
 .contact-advisor-img img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
   object-position: center top;
+  display: block;
 }
 .contact-text .section-tag { margin-bottom: 14px; }
 .contact-text h2 { margin-bottom: 16px; }
