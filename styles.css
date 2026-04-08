@@ -239,8 +239,7 @@ p { font-weight: 300; }
 /* === HERO === */
 .hero {
   background: var(--navy);
-  padding: 140px 0 128px;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 48px), 0 100%);
+  padding: 140px 0 88px;
   position: relative;
   z-index: 2;
 }
@@ -449,13 +448,7 @@ p { font-weight: 300; }
 }
 
 /* === BENEFITS === */
-.benefits {
-  padding: 128px 0;
-  margin-top: -48px;
-  clip-path: polygon(0 48px, 100% 0, 100% calc(100% - 48px), 0 100%);
-  position: relative;
-  z-index: 1;
-}
+.benefits { padding: 88px 0; }
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -524,13 +517,7 @@ p { font-weight: 300; }
 }
 
 /* === TESTIMONIALS === */
-.testimonials {
-  padding: 128px 0;
-  margin-top: -48px;
-  clip-path: polygon(0 48px, 100% 0, 100% calc(100% - 48px), 0 100%);
-  position: relative;
-  z-index: 1;
-}
+.testimonials { padding: 88px 0; }
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
