@@ -825,7 +825,7 @@ p { font-weight: 300; }
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 56px;
-  align-items: start;
+  align-items: center;
 }
 .contact-advisor-img {
   border-radius: var(--radius-lg);
@@ -843,7 +843,7 @@ p { font-weight: 300; }
 .contact-right {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 20px;
 }
 .contact-text .section-tag { margin-bottom: 14px; }
 .contact-text h2 { margin-bottom: 16px; }
