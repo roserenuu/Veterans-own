@@ -517,8 +517,8 @@ p { font-weight: 300; }
 .flag-banner {
   position: relative;
   background: url('E10CCACA-D1BA-4F9C-A79B-0B8EA6FB81C2.jpeg') 65% 25% / cover no-repeat;
-  min-height: 620px;
-  padding: 160px 0;
+  min-height: 740px;
+  padding: 200px 0;
   text-align: center;
   display: flex;
   align-items: center;
