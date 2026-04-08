@@ -64,14 +64,14 @@
 
   <!-- TRUST BAR -->
   <section class="trust-bar">
-    <div class="container trust-inner">
+    <div class="container trust-inner stagger-children">
       <div class="trust-item">
-        <span class="trust-num">2,500+</span>
+        <span class="trust-num count-up" data-target="2500" data-suffix="+">0</span>
         <span class="trust-label">Veterans Helped</span>
       </div>
       <div class="trust-divider"></div>
       <div class="trust-item">
-        <span class="trust-num">4.9 / 5</span>
+        <span class="trust-num count-up" data-target="4.9" data-suffix=" / 5" data-decimals="1">0</span>
         <span class="trust-label">Average Rating</span>
       </div>
       <div class="trust-divider"></div>
@@ -81,19 +81,19 @@
       </div>
       <div class="trust-divider"></div>
       <div class="trust-item">
-        <span class="trust-num">10+ Years</span>
+        <span class="trust-num count-up" data-target="10" data-suffix="+ Years">0</span>
         <span class="trust-label">Serving Veterans</span>
       </div>
       <div class="trust-divider"></div>
       <div class="trust-item">
-        <span class="trust-num">All 50</span>
+        <span class="trust-num count-up" data-target="50" data-prefix="All ">0</span>
         <span class="trust-label">States Licensed</span>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section class="about section-light" id="about">
+  <section class="about section-light fade-up" id="about">
     <div class="container about-inner">
       <div class="about-text">
         <span class="section-tag">Who We Are</span>
@@ -139,7 +139,7 @@
         <h2>Why a VA Loan Is Your Best Option</h2>
         <p>The VA home loan benefit is one of the most powerful tools available to veterans. Here is why.</p>
       </div>
-      <div class="benefits-grid">
+      <div class="benefits-grid stagger-children">
         <div class="benefit-card">
           <h3>$0 Down Payment</h3>
           <p>Purchase a home without putting any money down, a benefit unavailable with most conventional loans.</p>
@@ -176,7 +176,7 @@
         <h2>How It Works</h2>
         <p>Getting your VA home loan is easier than you think.</p>
       </div>
-      <div class="steps">
+      <div class="steps stagger-children">
         <div class="step">
           <div class="step-num">1</div>
           <h3>Apply Online</h3>
@@ -209,7 +209,7 @@
         <h2>Hear From Those We Have Served</h2>
         <p>Real veterans. Real results. Here is what they have to say about working with Veterans Own.</p>
       </div>
-      <div class="testimonials-grid">
+      <div class="testimonials-grid stagger-children">
         <div class="testimonial-card">
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="testimonial-text">"I had no idea how easy the VA loan process could be. Veterans Own walked me through every step and I closed in under 30 days. As a veteran I felt like they truly understood what I needed."</p>
@@ -245,7 +245,7 @@
   </section>
 
   <!-- LOAN CALCULATOR -->
-  <section class="calculator section-light" id="calculator">
+  <section class="calculator section-light fade-up" id="calculator">
     <div class="container calculator-inner">
       <div class="calc-text">
         <span class="section-tag">Estimate Your Payment</span>
@@ -302,7 +302,7 @@
   </section>
 
   <!-- FAQ -->
-  <section class="faq section-white" id="faq">
+  <section class="faq section-white fade-up" id="faq">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Common Questions</span>
@@ -496,22 +496,59 @@
       link.addEventListener('click', () => mobileMenu.classList.remove('open'));
     });
 
-    // Navbar scroll effect
+    // Navbar scroll + sticky CTA
+    const stickyCta = document.getElementById('stickyCta');
+    const heroEl    = document.querySelector('.hero');
     window.addEventListener('scroll', () => {
       document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
-    });
+      stickyCta.classList.toggle('visible', window.scrollY > heroEl.offsetTop + heroEl.offsetHeight);
+    }, { passive: true });
 
-    // Sticky CTA — show after scrolling past hero
-    const stickyCta = document.getElementById('stickyCta');
-    const hero = document.querySelector('.hero');
-    window.addEventListener('scroll', () => {
-      const heroBottom = hero.offsetTop + hero.offsetHeight;
-      stickyCta.classList.toggle('visible', window.scrollY > heroBottom);
-    });
+    // Scroll fade-in (fade-up and stagger-children)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up, .stagger-children').forEach(el => observer.observe(el));
+
+    // Count-up animation
+    function animateCount(el) {
+      const target   = parseFloat(el.dataset.target);
+      const decimals = parseInt(el.dataset.decimals || 0);
+      const suffix   = el.dataset.suffix || '';
+      const prefix   = el.dataset.prefix || '';
+      const duration = 1400;
+      const start    = performance.now();
+
+      function step(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const ease     = 1 - Math.pow(1 - progress, 3);
+        const value    = (target * ease).toFixed(decimals);
+        el.textContent = prefix + (decimals === 0 ? parseInt(value).toLocaleString('en-US') : value) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.count-up').forEach(animateCount);
+          countObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.trust-inner').forEach(el => countObserver.observe(el));
 
     // FAQ accordion
     function toggleFaq(btn) {
-      const item = btn.parentElement;
+      const item   = btn.parentElement;
       const isOpen = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
@@ -523,20 +560,15 @@
       const term  = parseInt(document.getElementById('loanTerm').value);
       const rate  = parseFloat(document.getElementById('interestRate').value);
 
-      if (!price || price <= 0) {
-        alert('Please enter a valid home price.');
-        return;
-      }
+      if (!price || price <= 0) { alert('Please enter a valid home price.'); return; }
 
-      const monthlyRate = rate / 100 / 12;
-      const payments    = term * 12;
-      const monthly     = price * (monthlyRate * Math.pow(1 + monthlyRate, payments))
-                                / (Math.pow(1 + monthlyRate, payments) - 1);
+      const r  = rate / 100 / 12;
+      const n  = term * 12;
+      const monthly = price * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
 
       document.getElementById('monthlyPayment').textContent =
         '$' + monthly.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-      document.getElementById('totalLoan').textContent =
-        '$' + price.toLocaleString('en-US');
+      document.getElementById('totalLoan').textContent = '$' + price.toLocaleString('en-US');
       document.getElementById('calcResult').classList.add('show');
     }
 

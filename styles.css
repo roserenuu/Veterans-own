@@ -35,9 +35,13 @@
   --radius-lg:   8px;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 body {
+  overflow-x: hidden;
   font-family: 'Inter', sans-serif;
   font-weight: 300;
   color: var(--text);
@@ -293,6 +297,54 @@ p { font-weight: 300; }
   width: 1px;
   height: 36px;
   background: rgba(255,255,255,0.15);
+}
+
+/* === ANIMATIONS === */
+
+/* Hero entrance — staggered fade up on load */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-badge    { animation: fadeUp 0.55s ease both; animation-delay: 0.1s; }
+.hero h1       { animation: fadeUp 0.55s ease both; animation-delay: 0.22s; }
+.hero-sub      { animation: fadeUp 0.55s ease both; animation-delay: 0.34s; }
+.hero-actions  { animation: fadeUp 0.55s ease both; animation-delay: 0.44s; }
+.hero-stats    { animation: fadeUp 0.55s ease both; animation-delay: 0.54s; }
+
+/* Scroll fade-in — applied via JS Intersection Observer */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children inside a grid when parent becomes visible */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: none; }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 0.12s; opacity: 1; transform: none; }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 0.19s; opacity: 1; transform: none; }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 0.26s; opacity: 1; transform: none; }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 0.33s; opacity: 1; transform: none; }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 0.40s; opacity: 1; transform: none; }
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up, .stagger-children > *, .hero-badge, .hero h1,
+  .hero-sub, .hero-actions, .hero-stats {
+    animation: none;
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* === TRUST BAR === */
