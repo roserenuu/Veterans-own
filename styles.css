@@ -138,11 +138,13 @@ p { font-weight: 300; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: var(--navy);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  transition: box-shadow 0.3s;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 .navbar.scrolled {
+  background: var(--navy-dark);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   backdrop-filter: blur(12px);
   box-shadow: rgba(0,55,112,0.08) 0px 2px 8px;
 }
@@ -151,20 +153,20 @@ p { font-weight: 300; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  height: 76px;
 }
 
 .logo {
-  font-size: 1.2rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--white);
   letter-spacing: -0.3px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 .logo-img {
-  height: 58px;
+  height: 68px;
   width: auto;
   display: block;
 }
@@ -175,8 +177,8 @@ p { font-weight: 300; }
   gap: 28px;
 }
 .nav-links a {
-  color: rgba(255,255,255,0.78);
-  font-size: 0.875rem;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.95rem;
   font-weight: 400;
   transition: color 0.15s;
 }
