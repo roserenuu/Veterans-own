@@ -834,11 +834,9 @@ p { font-weight: 300; }
 }
 .contact-advisor-img img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
   display: block;
-  min-height: 400px;
+  object-position: center top;
 }
 .contact-text .section-tag { margin-bottom: 14px; }
 .contact-text h2 { margin-bottom: 16px; }
