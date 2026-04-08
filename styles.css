@@ -125,7 +125,7 @@ p { font-weight: 300; }
 }
 .btn-nav {
   background: var(--white);
-  color: var(--navy);
+  color: var(--navy) !important;
   padding: 8px 18px;
   font-size: 0.875rem;
   border-radius: var(--radius-sm);
