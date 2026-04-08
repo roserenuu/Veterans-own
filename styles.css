@@ -455,9 +455,11 @@ p { font-weight: 300; }
 .about { padding: 88px 0; }
 .about-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 64px;
   align-items: center;
+  max-width: 720px;
+  margin: 0 auto;
 }
 .about-text .section-tag { margin-bottom: 14px; }
 .about-text h2 { margin-bottom: 18px; }
@@ -934,7 +936,7 @@ p { font-weight: 300; }
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 56px;
-  align-items: center;
+  align-items: start;
 }
 .contact-advisor-img {
   border-radius: var(--radius-lg);
