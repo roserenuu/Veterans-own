@@ -823,19 +823,21 @@ p { font-weight: 300; }
 .contact { padding: 88px 0; }
 .contact-inner {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 64px;
-  align-items: start;
+  grid-template-columns: 0.9fr 1.1fr 1.4fr;
+  gap: 40px;
+  align-items: stretch;
 }
 .contact-advisor-img {
-  margin-top: 28px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-elevated);
+  min-height: 420px;
 }
 .contact-advisor-img img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
   display: block;
 }
 .contact-text .section-tag { margin-bottom: 14px; }
