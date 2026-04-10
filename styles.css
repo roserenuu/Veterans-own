@@ -254,6 +254,17 @@ p { font-weight: 300; }
   font-weight: 300;
 }
 .section-navy .section-header p { color: rgba(255,255,255,0.68); }
+.section-phone {
+  display: block;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 14px;
+  transition: opacity 0.15s;
+}
+.section-phone:hover { opacity: 0.75; }
 
 .section-tag {
   display: inline-block;
