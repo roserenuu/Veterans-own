@@ -784,16 +784,9 @@ p { font-weight: 300; }
   margin-left: 5px;
 }
 .review-verified {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: var(--white);
-  background: var(--navy);
-  padding: 4px 10px;
-  border-radius: 50px;
-  width: fit-content;
+  color: var(--navy);
   margin-top: 4px;
 }
 .review-dots {
