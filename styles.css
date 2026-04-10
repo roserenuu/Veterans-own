@@ -1440,11 +1440,13 @@ p { font-weight: 300; }
   .contact-form        { padding: 22px 18px; }
 
   /* Footer */
+  .footer              { text-align: center; }
   .footer-inner        { grid-template-columns: 1fr; gap: 20px; padding-bottom: 28px; }
   .footer-brand        { grid-column: auto; }
-  .footer-bottom       { text-align: center; font-size: 0.72rem; padding: 14px 0; }
-  .footer-links ul     { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  .footer-social       { justify-content: center; }
+  .footer-links ul     { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 20px; }
   .footer-links h4     { margin-bottom: 10px; }
+  .footer-bottom       { text-align: center; font-size: 0.72rem; padding: 14px 0; }
 
   /* Photo strip */
   .photo-strip-inner   { grid-template-columns: 1fr; height: auto; }
