@@ -35,13 +35,13 @@
   --radius-lg:   8px;
 }
 
-html, body {
+html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  max-width: 100%;
 }
 
 body {
+  overflow-x: hidden;
   font-family: 'Inter', sans-serif;
   font-weight: 300;
   color: var(--text);
@@ -50,10 +50,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-* {
-  max-width: 100%;
-  box-sizing: border-box;
-}
 
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
@@ -317,6 +313,7 @@ p { font-weight: 300; }
   max-width: 680px;
   text-align: center;
   margin: 0 auto;
+  overflow: hidden;
 }
 .hero-h1-top {
   display: block;
@@ -524,6 +521,7 @@ p { font-weight: 300; }
   border-top: 1px solid rgba(255,255,255,0.08);
   border-bottom: 1px solid rgba(255,255,255,0.08);
   padding: 72px 0;
+  overflow-x: hidden;
 }
 .ratings-inner {
   display: flex;
@@ -738,6 +736,7 @@ p { font-weight: 300; }
   background: url('E10CCACA-D1BA-4F9C-A79B-0B8EA6FB81C2.jpeg') center 40% / cover no-repeat;
   padding: 100px 0;
   text-align: center;
+  overflow-x: hidden;
 }
 .flag-overlay {
   position: absolute;
@@ -762,7 +761,7 @@ p { font-weight: 300; }
 }
 
 /* === TESTIMONIALS (review cards) === */
-.testimonials { padding: 40px 0 20px; background: var(--off-white); }
+.testimonials { padding: 40px 0 20px; background: var(--off-white); overflow-x: hidden; }
 .testimonials .section-header { margin-bottom: 40px; }
 .review-track-wrap {
   overflow-x: scroll;
@@ -883,6 +882,7 @@ p { font-weight: 300; }
   background: var(--white);
   padding: 88px 0;
   border-top: 1px solid var(--border);
+  overflow-x: hidden;
 }
 .calc-header {
   text-align: center;
