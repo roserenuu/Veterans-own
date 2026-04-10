@@ -261,10 +261,25 @@ p { font-weight: 300; }
   color: var(--navy);
   letter-spacing: -1px;
   line-height: 1.1;
-  margin-bottom: 14px;
+  margin-bottom: 20px;
   transition: opacity 0.15s;
 }
 .section-phone:hover { opacity: 0.75; }
+.btn-call {
+  display: block;
+  margin: 32px auto 0;
+  max-width: 320px;
+  text-align: center;
+  background: #f5c518;
+  color: #1a1a1a;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 4px 24px rgba(245,197,24,0.35);
+}
+.btn-call:hover { background: #e6b800; transform: scale(1.03); }
 
 .section-tag {
   display: inline-block;
