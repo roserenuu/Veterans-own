@@ -353,8 +353,16 @@ p { font-weight: 300; }
   font-weight: 300;
   color: rgba(255,255,255,0.70);
   max-width: 560px;
-  margin: 0 auto 32px;
+  margin: 0 auto 20px;
   line-height: 1.65;
+}
+.hero-challenge {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f5c518;
+  max-width: 520px;
+  margin: 0 auto 32px;
+  line-height: 1.5;
 }
 .hero-actions {
   display: flex;
@@ -474,67 +482,6 @@ p { font-weight: 300; }
   margin-top: 2px;
 }
 .trust-divider { display: none; }
-
-/* === BATTLE CRY === */
-.battle-cry {
-  background: var(--white);
-  border-bottom: 3px solid var(--navy);
-  padding: 72px 0;
-}
-.battle-cry-inner {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto;
-}
-.battle-tag {
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  color: #f5c518;
-  background: var(--navy-dark);
-  display: inline-block;
-  padding: 6px 18px;
-  border-radius: 50px;
-  margin-bottom: 24px;
-  text-transform: uppercase;
-}
-.battle-headline {
-  font-size: clamp(2.2rem, 6vw, 4rem);
-  font-weight: 900;
-  color: var(--navy-heading);
-  letter-spacing: -1.5px;
-  line-height: 1.05;
-  margin-bottom: 16px;
-}
-.battle-sub {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
-  color: var(--body-text);
-  margin-bottom: 36px;
-  line-height: 1.6;
-}
-.battle-challenge {
-  background: var(--off-white);
-  border-left: 4px solid var(--navy);
-  border-radius: 0 12px 12px 0;
-  padding: 20px 24px;
-  text-align: left;
-  margin-bottom: 36px;
-}
-.battle-challenge-text {
-  font-size: 0.9rem;
-  color: var(--body-text);
-  margin-bottom: 6px;
-}
-.battle-challenge-bold {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--navy-heading);
-}
-.battle-btn {
-  font-size: 1.1rem;
-  padding: 18px 44px;
-  letter-spacing: 0.01em;
-}
 
 /* === RATINGS BAR === */
 .ratings-bar {
