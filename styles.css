@@ -321,7 +321,6 @@ p { font-weight: 300; }
   max-width: 680px;
   text-align: center;
   margin: 0 auto;
-  overflow: hidden;
 }
 .hero-h1-top {
   display: block;
@@ -389,7 +388,7 @@ p { font-weight: 300; }
   text-shadow: 0 1px 10px rgba(255,60,60,0.3);
 }
 .hero-line-fit {
-  font-size: clamp(0.6rem, 2.75vw, 1.2rem);
+  font-size: clamp(0.5rem, 3vw, 1.15rem);
   font-weight: 700;
 }
 .btn-hero-call {
@@ -691,7 +690,7 @@ p { font-weight: 300; }
 }
 
 /* === HOW IT WORKS === */
-.how-it-works { padding: 88px 0; background: var(--white); }
+.how-it-works { padding: 88px 0; background: var(--white); overflow-x: hidden; }
 .checklist-row {
   display: flex;
   flex-direction: column;
@@ -1317,6 +1316,7 @@ p { font-weight: 300; }
   background: var(--navy-dark);
   color: rgba(255,255,255,0.65);
   border-top: 1px solid rgba(255,255,255,0.06);
+  overflow-x: hidden;
 }
 .footer-cta-bar {
   text-align: center;
