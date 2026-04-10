@@ -357,59 +357,57 @@ p { font-weight: 300; }
   letter-spacing: 0.01em;
 }
 .hero-letter {
-  max-width: 520px;
+  max-width: 580px;
   margin: 0 auto 36px;
   background: #ffffff;
-  border-radius: 16px;
-  padding: 32px 36px;
+  border-radius: 18px;
+  padding: 36px 40px;
   text-align: left;
-  box-shadow: 0 24px 64px rgba(0,0,0,0.40);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.45);
 }
 .letter-salutation {
-  font-size: 1.05rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.25rem;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--navy);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 .letter-body p {
-  font-size: clamp(0.92rem, 2.2vw, 1rem);
-  font-weight: 400;
-  color: #2d3a4e;
-  line-height: 1.8;
-  margin-bottom: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111827;
+  line-height: 1.65;
+  margin-bottom: 10px;
 }
 .letter-body p:last-child { margin-bottom: 0; }
 .letter-red {
-  color: #c0181a;
+  color: #b91c1c;
   font-weight: 700;
 }
 .letter-callout {
   font-weight: 700 !important;
-  color: #c0181a !important;
-  background: rgba(192,24,26,0.06);
-  border-left: 3px solid #c0181a;
-  padding: 6px 10px 6px 12px;
-  border-radius: 4px;
-  margin-top: 4px !important;
+  color: #b91c1c !important;
 }
 .letter-divider {
   border: none;
   border-top: 1px solid #e8ecf0;
-  margin: 22px 0 18px;
+  margin: 24px 0 20px;
 }
 .letter-signature {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
 }
 .letter-sig-pre {
+  font-family: Georgia, 'Times New Roman', serif;
   font-style: italic;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   color: #9ca3af;
 }
 .letter-sig-name {
-  font-size: 1.05rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--navy);
   letter-spacing: 0.01em;
@@ -1484,6 +1482,8 @@ p { font-weight: 300; }
   .hero-actions        { flex-direction: column; align-items: center; gap: 12px; }
   .btn-hero-cta        { width: 100%; text-align: center; padding: 14px 24px; }
   .hero-actions .btn   { width: 100%; text-align: center; }
+  .hero-letter         { padding: 28px 24px; }
+  .letter-body p       { font-size: 0.95rem; }
   .hero-stats          { justify-content: center; gap: 20px; flex-wrap: wrap; }
   .stat                { text-align: center; }
   .stat-divider        { display: none; }
