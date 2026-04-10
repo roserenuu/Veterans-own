@@ -415,6 +415,10 @@
     }
   </script>
   <script>
+    // Prevent iOS from restoring horizontal scroll on refresh
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+
     // Lock horizontal scroll on iOS Safari
     var _tx = 0, _ty = 0;
     document.addEventListener('touchstart', function(e) {
