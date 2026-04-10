@@ -35,19 +35,24 @@
   --radius-lg:   8px;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
-  overflow-x: hidden;
   font-family: 'Inter', sans-serif;
   font-weight: 300;
   color: var(--text);
   background: var(--white);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+* {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -377,12 +382,6 @@ p { font-weight: 300; }
   font-weight: 700;
   color: #ff4444;
   text-shadow: 0 1px 10px rgba(255,60,60,0.3);
-}
-.hero-line-single {
-  white-space: nowrap;
-  font-size: clamp(0.55rem, 3.15vw, 1.25rem);
-  font-weight: 700;
-  overflow: hidden;
 }
 .btn-hero-call {
   display: inline-block;
