@@ -360,33 +360,17 @@ p { font-weight: 300; }
   margin: 0 auto 36px;
   display: flex;
   flex-direction: column;
-  gap: 0;
-  border-left: 2px solid rgba(255,255,255,0.15);
-  text-align: left;
+  gap: 12px;
 }
 .manifesto-line {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: clamp(0.9rem, 2.2vw, 1.05rem);
+  font-size: clamp(0.95rem, 2.4vw, 1.1rem);
   font-weight: 500;
   color: rgba(255,255,255,0.82);
-  padding: 10px 0 10px 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  line-height: 1.45;
+  line-height: 1.5;
 }
-.manifesto-line:last-child { border-bottom: none; }
 .manifesto-highlight {
   color: var(--white);
   font-weight: 700;
-}
-.manifesto-dot {
-  width: 6px;
-  height: 6px;
-  min-width: 6px;
-  background: #f5c518;
-  border-radius: 50%;
-  margin-top: 7px;
 }
 .btn-hero-call {
   display: inline-block;
