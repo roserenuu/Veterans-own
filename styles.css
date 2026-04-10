@@ -42,6 +42,8 @@ html {
 
 body {
   overflow-x: hidden;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
   font-family: 'Inter', sans-serif;
   font-weight: 300;
   color: var(--text);
@@ -379,6 +381,9 @@ p { font-weight: 300; }
   font-weight: 700;
   color: #ff4444;
   text-shadow: 0 1px 10px rgba(255,60,60,0.3);
+}
+.hero-line-fit {
+  font-size: clamp(0.65rem, 2.85vw, 1.2rem);
 }
 .btn-hero-call {
   display: inline-block;
