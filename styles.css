@@ -612,6 +612,34 @@ p { font-weight: 300; }
 
 /* === HOW IT WORKS === */
 .how-it-works { padding: 88px 0; background: var(--white); }
+.checklist-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 420px;
+  margin: 0 auto 40px;
+  text-align: left;
+}
+.checklist-row li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--body-text);
+}
+.checklist-row li::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  background: var(--navy);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10' fill='none'%3E%3Cpath d='M1 5l3.5 3.5L11 1' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+}
 .steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
