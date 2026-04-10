@@ -376,6 +376,11 @@ p { font-weight: 300; }
   color: #ff4444;
   text-shadow: 0 1px 10px rgba(255,60,60,0.3);
 }
+.hero-line-nowrap {
+  white-space: nowrap;
+  font-size: clamp(0.75rem, 4.8vw, 1.35rem);
+  font-weight: 700;
+}
 .btn-hero-call {
   display: inline-block;
   background: #f5c518;
