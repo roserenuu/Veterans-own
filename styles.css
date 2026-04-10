@@ -276,7 +276,7 @@ p { font-weight: 300; }
 /* === HERO === */
 .hero {
   background: var(--navy);
-  padding: 140px 0 88px;
+  padding: 160px 0 100px;
   position: relative;
   z-index: 2;
 }
@@ -447,6 +447,71 @@ p { font-weight: 300; }
   margin-top: 2px;
 }
 .trust-divider { display: none; }
+
+/* === RATINGS BAR === */
+.ratings-bar {
+  background: var(--navy-dark);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 56px 0;
+}
+.ratings-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+.ratings-stars {
+  color: #f5c518;
+  font-size: 2rem;
+  letter-spacing: 4px;
+  line-height: 1;
+}
+.ratings-score {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-top: 4px;
+}
+.ratings-max {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.50);
+}
+.ratings-label {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.2px;
+  margin-bottom: 6px;
+}
+.ratings-count {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+}
+.ratings-count-num {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f5c518;
+}
+.btn-ratings {
+  margin-top: 16px;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.btn-ratings:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.65);
+}
 
 /* === ABOUT === */
 .about { padding: 88px 0; }
@@ -1087,7 +1152,7 @@ p { font-weight: 300; }
   h2                   { font-size: 1.65rem; letter-spacing: -0.5px; }
 
   /* Hero */
-  .hero                { padding: 100px 0 56px; text-align: center; }
+  .hero                { padding: 110px 0 64px; text-align: center; }
   .hero-content        { margin: 0 auto; }
   .hero-badge          { display: inline-block; }
   .hero-h1-top         { font-size: 1rem; }
@@ -1103,6 +1168,12 @@ p { font-weight: 300; }
   /* Trust bar */
   .trust-inner         { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 12px; justify-items: center; }
   .trust-divider       { display: none; }
+
+  /* Ratings bar */
+  .ratings-bar         { padding: 40px 0; }
+  .ratings-score       { font-size: 2.2rem; }
+  .ratings-stars       { font-size: 1.6rem; }
+  .btn-ratings         { width: 100%; }
 
   /* Section headers */
   .section-header      { margin-bottom: 32px; }
