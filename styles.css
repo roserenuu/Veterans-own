@@ -766,7 +766,7 @@ p { font-weight: 300; }
 }
 
 /* === TESTIMONIALS (review cards) === */
-.testimonials { padding: 40px 0 20px; background: var(--off-white); overflow-x: hidden; }
+.testimonials { padding: 40px 0 20px; background: var(--off-white); overflow: visible; }
 .testimonials .section-header { margin-bottom: 40px; }
 .review-track-wrap {
   overflow-x: scroll;
@@ -791,7 +791,7 @@ p { font-weight: 300; }
   overflow: hidden;
   scroll-snap-align: center;
   /* fills most of the viewport with peek on each side */
-  width: 82vw;
+  width: 300px;
   max-width: 400px;
   min-width: 260px;
   flex-shrink: 0;

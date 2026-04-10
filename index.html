@@ -19,6 +19,9 @@
       var dy = Math.abs(e.touches[0].clientY - _ty);
       if (dx > dy) e.preventDefault();
     }, { passive: false });
+    window.addEventListener('scroll', function() {
+      if (window.scrollX !== 0) window.scrollTo(0, window.scrollY);
+    }, { passive: true });
   </script>
 </head>
 <body>
