@@ -363,39 +363,41 @@ p { font-weight: 300; }
   gap: 10px;
 }
 .manifesto-line {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.11);
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.20);
   border-radius: 50px;
   padding: 13px 24px;
-  font-size: clamp(0.88rem, 2.2vw, 1rem);
-  font-weight: 500;
-  color: rgba(255,255,255,0.88);
+  font-size: clamp(0.92rem, 2.2vw, 1.05rem);
+  font-weight: 600;
+  color: #ffffff;
   line-height: 1.4;
   text-align: center;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.45);
   transition: background 0.2s;
 }
 .manifesto-highlight {
-  background: rgba(245,197,24,0.12);
-  border-color: rgba(245,197,24,0.35);
-  color: var(--white);
+  background: rgba(245,197,24,0.18);
+  border-color: rgba(245,197,24,0.55);
+  color: #f5c518;
   font-weight: 700;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
 }
 .btn-hero-call {
   display: inline-block;
-  background: transparent;
-  color: var(--white);
-  border: 1.5px solid rgba(255,255,255,0.45);
+  background: #f5c518;
+  color: var(--navy-dark);
+  border: none;
   border-radius: 50px;
-  padding: 14px 28px;
+  padding: 14px 32px;
   font-size: 0.95rem;
   font-weight: 700;
   text-decoration: none;
   transition: all 0.2s;
 }
 .btn-hero-call:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(255,255,255,0.8);
+  background: #e6b800;
+  transform: scale(1.03);
 }
 .hero-actions {
   display: flex;
