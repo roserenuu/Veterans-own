@@ -64,6 +64,85 @@
     </div>
   </section>
 
+  <!-- FLAG BANNER -->
+  <section class="flag-banner">
+    <div class="flag-overlay"></div>
+    <div class="container flag-content">
+      <p class="flag-quote">The strength of a nation lies in the homes of its people.</p>
+      <a href="#apply" class="btn btn-gold">Claim Your VA Benefit</a>
+    </div>
+  </section>
+
+  <!-- CONTACT / APPLY -->
+  <section class="contact section-light" id="apply">
+    <div class="container contact-inner" id="contact">
+      <div class="contact-right">
+      <div class="contact-text">
+        <h2>Ready to Use Your VA Benefit?</h2>
+        <p>No fluff. No confusion. No wasted time. Just clear communication, elite execution, and real savings you can feel immediately.</p>
+        <ul class="contact-list">
+          <li><a href="tel:+13108630593">310-863-0593</a></li>
+          <li><a href="mailto:info@veteransown.com">info@veteransown.com</a></li>
+          <li>Serving veterans nationwide</li>
+        </ul>
+        <div class="social-links">
+          <a href="https://www.instagram.com/veteransownmortgage" target="_blank" rel="noopener" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            @veteransownmortgage
+          </a>
+          <a href="https://www.tiktok.com/@veteransownmortgage" target="_blank" rel="noopener" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+            @veteransownmortgage
+          </a>
+        </div>
+      </div>
+      <form class="contact-form" id="applyForm" onsubmit="handleSubmit(event)">
+        <h3>Apply Now. It Is Free.</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="John" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="john@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" />
+        </div>
+        <div class="form-group">
+          <label for="branch">Branch of Service</label>
+          <select id="branch" name="branch" required>
+            <option value="" disabled selected>Select your branch</option>
+            <option value="army">Army</option>
+            <option value="navy">Navy</option>
+            <option value="marines">Marines</option>
+            <option value="air_force">Air Force</option>
+            <option value="coast_guard">Coast Guard</option>
+            <option value="space_force">Space Force</option>
+            <option value="national_guard">National Guard and Reserves</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">How can we help?</label>
+          <textarea id="message" name="message" rows="3" placeholder="Tell us about your homebuying goals..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-navy btn-full">Submit Application</button>
+        <p class="form-note">By submitting, you agree to be contacted by a Veterans Own Mortgage loan specialist.</p>
+        <div class="form-success" id="formSuccess">
+          Thank you! A specialist will contact you within one business day.
+        </div>
+      </form>
+      </div>
+    </div>
+  </section>
+
   <!-- ABOUT -->
   <section class="about section-light fade-up" id="about">
     <div class="container about-inner">
@@ -105,15 +184,6 @@
           <p>We handle the details.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- FLAG BANNER -->
-  <section class="flag-banner">
-    <div class="flag-overlay"></div>
-    <div class="container flag-content">
-      <p class="flag-quote">The strength of a nation lies in the homes of its people.</p>
-      <a href="#apply" class="btn btn-gold">Claim Your VA Benefit</a>
     </div>
   </section>
 
@@ -306,76 +376,6 @@
             <p>As of 2020, there are no loan limits for veterans with full VA entitlement. If you have full entitlement you can borrow as much as a lender is willing to lend with no down payment required, regardless of the home price.</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT / APPLY -->
-  <section class="contact section-light" id="apply">
-    <div class="container contact-inner" id="contact">
-      <div class="contact-right">
-      <div class="contact-text">
-        <h2>Ready to Use Your VA Benefit?</h2>
-        <p>No fluff. No confusion. No wasted time. Just clear communication, elite execution, and real savings you can feel immediately.</p>
-        <ul class="contact-list">
-          <li><a href="tel:+13108630593">310-863-0593</a></li>
-          <li><a href="mailto:info@veteransown.com">info@veteransown.com</a></li>
-          <li>Serving veterans nationwide</li>
-        </ul>
-        <div class="social-links">
-          <a href="https://www.instagram.com/veteransownmortgage" target="_blank" rel="noopener" class="social-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-            @veteransownmortgage
-          </a>
-          <a href="https://www.tiktok.com/@veteransownmortgage" target="_blank" rel="noopener" class="social-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
-            @veteransownmortgage
-          </a>
-        </div>
-      </div>
-      <form class="contact-form" id="applyForm" onsubmit="handleSubmit(event)">
-        <h3>Apply Now. It Is Free.</h3>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" placeholder="John" required />
-          </div>
-          <div class="form-group">
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="john@example.com" required />
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" />
-        </div>
-        <div class="form-group">
-          <label for="branch">Branch of Service</label>
-          <select id="branch" name="branch" required>
-            <option value="" disabled selected>Select your branch</option>
-            <option value="army">Army</option>
-            <option value="navy">Navy</option>
-            <option value="marines">Marines</option>
-            <option value="air_force">Air Force</option>
-            <option value="coast_guard">Coast Guard</option>
-            <option value="space_force">Space Force</option>
-            <option value="national_guard">National Guard and Reserves</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">How can we help?</label>
-          <textarea id="message" name="message" rows="3" placeholder="Tell us about your homebuying goals..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-navy btn-full">Submit Application</button>
-        <p class="form-note">By submitting, you agree to be contacted by a Veterans Own Mortgage loan specialist.</p>
-        <div class="form-success" id="formSuccess">
-          Thank you! A specialist will contact you within one business day.
-        </div>
-      </form>
       </div>
     </div>
   </section>
