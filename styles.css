@@ -1007,41 +1007,89 @@ p { font-weight: 300; }
 
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
-  .about-inner         { grid-template-columns: 1fr; }
+  .about-inner         { grid-template-columns: 1fr; gap: 32px; }
   .benefits-grid       { grid-template-columns: 1fr 1fr; }
   .testimonials-grid   { grid-template-columns: 1fr 1fr; }
-  .calculator-inner    { grid-template-columns: 1fr; }
-  .contact-inner       { grid-template-columns: 1fr; }
+  .calculator-inner    { grid-template-columns: 1fr; gap: 32px; }
+  .contact-inner       { grid-template-columns: 1fr; gap: 32px; }
   .footer-inner        { grid-template-columns: 1fr 1fr; }
   .footer-brand        { grid-column: 1 / -1; }
   .steps               { grid-template-columns: 1fr 1fr; }
   .trust-inner         { gap: 16px; }
 }
 @media (max-width: 640px) {
+  /* Nav */
   .nav-links           { display: none; }
   .hamburger           { display: block; }
-  h1                   { letter-spacing: -0.96px; }
-  h2                   { font-size: 1.75rem; letter-spacing: -0.5px; }
-  .benefits-grid       { grid-template-columns: 1fr; }
-  .testimonials-grid   { grid-template-columns: 1fr; }
-  .form-row            { grid-template-columns: 1fr; }
-  .hero                { padding: 100px 0 64px; text-align: center; }
+  .logo                { font-size: 0.95rem; gap: 8px; }
+  .logo-img            { height: 42px; }
+  .logo-name           { display: none; }
+
+  /* Typography */
+  h1                   { font-size: clamp(2rem, 8vw, 2.8rem); letter-spacing: -0.96px; }
+  h2                   { font-size: 1.65rem; letter-spacing: -0.5px; }
+
+  /* Hero */
+  .hero                { padding: 100px 0 56px; text-align: center; }
   .hero-content        { margin: 0 auto; }
   .hero-badge          { display: inline-block; }
-  .hero-sub            { margin-left: auto; margin-right: auto; }
-  .hero-actions        { flex-direction: column; align-items: center; }
+  .hero-sub            { margin-left: auto; margin-right: auto; font-size: 0.95rem; }
+  .hero-actions        { flex-direction: column; align-items: center; gap: 12px; }
   .hero-actions .btn   { width: 100%; text-align: center; }
-  .hero-stats          { justify-content: center; gap: 20px; }
+  .hero-stats          { justify-content: center; gap: 20px; flex-wrap: wrap; }
   .stat                { text-align: center; }
   .stat-divider        { display: none; }
   .stat-num            { font-size: 1.4rem; }
-  .steps               { grid-template-columns: 1fr; gap: 0; }
-  .step                { border-left: none; border-top: 2px solid var(--border); text-align: center; padding: 28px 16px; }
-  .footer-inner        { grid-template-columns: 1fr; }
+
+  /* Trust bar */
+  .trust-inner         { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 12px; justify-items: center; }
   .trust-divider       { display: none; }
+
+  /* Section headers */
+  .section-header      { margin-bottom: 32px; }
+
+  /* About */
+  .about               { padding: 56px 0; }
+  .about-inner         { gap: 28px; }
+  .about-image         { height: 260px; }
+  .about-image img     { height: 100%; object-fit: cover; }
+
+  /* Benefits */
+  .benefits            { padding: 64px 0; }
+  .benefits-grid       { grid-template-columns: 1fr; }
+
+  /* How it works */
+  .how-it-works        { padding: 56px 0; }
+  .steps               { grid-template-columns: 1fr; gap: 0; }
+  .step                { border-left: none; border-top: 2px solid var(--border); text-align: center; padding: 24px 16px; }
+
+  /* Flag banner */
+  .flag-banner         { padding: 64px 0; }
+  .flag-quote          { font-size: 1.3rem; }
+
+  /* Testimonials */
+  .testimonials        { padding: 64px 0; }
+  .testimonials-grid   { grid-template-columns: 1fr; gap: 14px; }
+
+  /* Calculator */
+  .calculator          { padding: 56px 0; }
+  .calc-card           { padding: 22px 18px; }
+
+  /* FAQ */
+  .faq                 { padding: 56px 0; }
+  .faq-question        { font-size: 0.9rem; padding: 16px 0; }
+
+  /* Contact / Apply */
+  .contact             { padding: 56px 0; }
+  .form-row            { grid-template-columns: 1fr; }
+  .contact-form        { padding: 22px 18px; }
+
+  /* Footer */
+  .footer-inner        { grid-template-columns: 1fr; gap: 32px; }
+  .footer-brand        { grid-column: auto; }
+  .footer-bottom       { flex-direction: column; text-align: center; gap: 8px; font-size: 0.75rem; }
+
+  /* Photo strip */
   .photo-strip-inner   { grid-template-columns: 1fr; height: auto; }
   .photo-item          { height: 220px; }
-  .about, .how-it-works, .contact,
-  .calculator, .faq   { padding: 56px 0; }
-  .benefits, .testimonials { padding: 88px 0 88px; }
 }
