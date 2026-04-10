@@ -48,7 +48,7 @@ html {
 
 body {
   overflow-x: hidden;
-  overscroll-behavior-x: none;
+  overscroll-behavior: none;
   touch-action: pan-y;
   font-family: 'Inter', sans-serif;
   font-weight: 300;
@@ -377,12 +377,13 @@ p { font-weight: 300; }
   width: 100%;
 }
 .hero-line {
-  font-size: clamp(1rem, 2.8vw, 1.22rem);
-  font-weight: 600;
+  font-size: clamp(1.15rem, 3.2vw, 1.45rem);
+  font-weight: 700;
   color: #ffffff;
-  line-height: 1.65;
+  line-height: 1.6;
   text-align: center;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  letter-spacing: -0.01em;
 }
 .btn-hero-call {
   display: inline-block;

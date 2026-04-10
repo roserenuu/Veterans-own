@@ -7,6 +7,19 @@
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    var _tx = 0, _ty = 0;
+    document.addEventListener('touchstart', function(e) {
+      _tx = e.touches[0].clientX; _ty = e.touches[0].clientY;
+    }, { passive: true });
+    document.addEventListener('touchmove', function(e) {
+      if (e.target.closest && e.target.closest('.review-track-wrap')) return;
+      var dx = Math.abs(e.touches[0].clientX - _tx);
+      var dy = Math.abs(e.touches[0].clientY - _ty);
+      if (dx > dy) e.preventDefault();
+    }, { passive: false });
+  </script>
 </head>
 <body>
 <div class="page-wrap">
@@ -412,24 +425,6 @@
       document.getElementById('formSuccess').style.display = 'block';
       e.target.reset();
     }
-  </script>
-  <script>
-    // Prevent iOS from restoring horizontal scroll on refresh
-    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    window.scrollTo(0, 0);
-
-    // Lock horizontal scroll on iOS Safari
-    var _tx = 0, _ty = 0;
-    document.addEventListener('touchstart', function(e) {
-      _tx = e.touches[0].clientX;
-      _ty = e.touches[0].clientY;
-    }, { passive: true });
-    document.addEventListener('touchmove', function(e) {
-      if (e.target.closest('.review-track-wrap')) return;
-      var dx = Math.abs(e.touches[0].clientX - _tx);
-      var dy = Math.abs(e.touches[0].clientY - _ty);
-      if (dx > dy) e.preventDefault();
-    }, { passive: false });
   </script>
 </div>
 </body>
