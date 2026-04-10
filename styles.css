@@ -768,9 +768,10 @@ p { font-weight: 300; }
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  /* padding creates the peek effect on both sides */
-  padding: 8px 40px 28px;
-  scroll-padding: 0 40px;
+  padding: 8px 20px 28px;
+  scroll-padding: 0 20px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 .review-track-wrap::-webkit-scrollbar { display: none; }
 .review-track {
@@ -784,7 +785,7 @@ p { font-weight: 300; }
   overflow: hidden;
   scroll-snap-align: center;
   /* fills most of the viewport with peek on each side */
-  width: calc(100vw - 96px);
+  width: calc(100vw - 40px);
   max-width: 420px;
   min-width: 260px;
   flex-shrink: 0;
