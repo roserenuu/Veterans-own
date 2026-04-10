@@ -453,66 +453,67 @@ p { font-weight: 300; }
   background: var(--navy-dark);
   border-top: 1px solid rgba(255,255,255,0.08);
   border-bottom: 1px solid rgba(255,255,255,0.08);
-  padding: 56px 0;
+  padding: 72px 0;
 }
 .ratings-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 10px;
+  gap: 12px;
+}
+.ratings-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 8px;
 }
 .ratings-stars {
   color: #f5c518;
-  font-size: 2rem;
-  letter-spacing: 4px;
+  font-size: 2.2rem;
+  letter-spacing: 5px;
   line-height: 1;
 }
 .ratings-score {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 800;
   color: var(--white);
-  letter-spacing: -1px;
+  letter-spacing: -1.5px;
   line-height: 1;
-  margin-top: 4px;
 }
 .ratings-max {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 400;
   color: rgba(255,255,255,0.50);
+  letter-spacing: -0.5px;
 }
 .ratings-label {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 300;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.50);
   letter-spacing: 0.2px;
-  margin-bottom: 6px;
+  margin-top: -4px;
 }
 .ratings-count {
   font-size: 1rem;
   font-weight: 300;
   color: rgba(255,255,255,0.65);
+  margin-top: 8px;
 }
 .ratings-count-num {
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 800;
   color: #f5c518;
+  letter-spacing: -0.5px;
 }
-.btn-ratings {
-  margin-top: 16px;
-  background: transparent;
-  color: var(--white);
-  border: 1px solid rgba(255,255,255,0.35);
-  padding: 12px 32px;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 500;
+.ratings-count-text {
+  display: block;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.50);
+  margin-top: 2px;
 }
-.btn-ratings:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.65);
-}
-
 /* === ABOUT === */
 .about { padding: 88px 0; }
 .about-inner {
@@ -1170,10 +1171,11 @@ p { font-weight: 300; }
   .trust-divider       { display: none; }
 
   /* Ratings bar */
-  .ratings-bar         { padding: 40px 0; }
-  .ratings-score       { font-size: 2.2rem; }
-  .ratings-stars       { font-size: 1.6rem; }
-  .btn-ratings         { width: 100%; }
+  .ratings-bar         { padding: 48px 0; }
+  .ratings-title       { font-size: 1.9rem; }
+  .ratings-score       { font-size: 2.4rem; }
+  .ratings-stars       { font-size: 1.8rem; }
+  .ratings-count-num   { font-size: 1.6rem; }
 
   /* Section headers */
   .section-header      { margin-bottom: 32px; }
