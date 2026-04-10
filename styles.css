@@ -1440,9 +1440,11 @@ p { font-weight: 300; }
   .contact-form        { padding: 22px 18px; }
 
   /* Footer */
-  .footer-inner        { grid-template-columns: 1fr; gap: 32px; }
+  .footer-inner        { grid-template-columns: 1fr; gap: 20px; padding-bottom: 28px; }
   .footer-brand        { grid-column: auto; }
-  .footer-bottom       { flex-direction: column; text-align: center; gap: 8px; font-size: 0.75rem; }
+  .footer-bottom       { text-align: center; font-size: 0.72rem; padding: 14px 0; }
+  .footer-links ul     { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  .footer-links h4     { margin-bottom: 10px; }
 
   /* Photo strip */
   .photo-strip-inner   { grid-template-columns: 1fr; height: auto; }
