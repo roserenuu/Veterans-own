@@ -356,33 +356,56 @@ p { font-weight: 300; }
   margin-bottom: 24px;
   letter-spacing: 0.01em;
 }
-.hero-manifesto {
-  max-width: 560px;
+.hero-letter {
+  max-width: 520px;
   margin: 0 auto 36px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-left: 4px solid #f5c518;
+  border-radius: 14px;
+  padding: 30px 36px;
+  text-align: left;
+  backdrop-filter: blur(6px);
+}
+.letter-salutation {
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 600;
+  color: #f5c518;
+  margin-bottom: 18px;
+}
+.letter-body p {
+  font-size: clamp(0.93rem, 2.2vw, 1.02rem);
+  font-weight: 400;
+  color: rgba(255,255,255,0.90);
+  line-height: 1.75;
+  margin-bottom: 6px;
+}
+.letter-body p:last-child { margin-bottom: 0; }
+.letter-callout {
+  font-weight: 700 !important;
+  color: #f5c518 !important;
+}
+.letter-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  margin: 22px 0 18px;
+}
+.letter-signature {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 3px;
 }
-.manifesto-line {
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.20);
-  border-radius: 50px;
-  padding: 13px 24px;
-  font-size: clamp(0.92rem, 2.2vw, 1.05rem);
-  font-weight: 600;
-  color: #ffffff;
-  line-height: 1.4;
-  text-align: center;
-  backdrop-filter: blur(6px);
-  text-shadow: 0 1px 6px rgba(0,0,0,0.45);
-  transition: background 0.2s;
+.letter-sig-pre {
+  font-style: italic;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.55);
 }
-.manifesto-highlight {
-  background: rgba(245,197,24,0.18);
-  border-color: rgba(245,197,24,0.55);
-  color: #f5c518;
+.letter-sig-name {
+  font-size: 1.05rem;
   font-weight: 700;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  color: var(--white);
+  letter-spacing: 0.01em;
 }
 .btn-hero-call {
   display: inline-block;
