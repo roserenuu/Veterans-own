@@ -40,6 +40,12 @@ html {
   overflow-x: hidden;
 }
 
+.page-wrap {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
 body {
   overflow-x: hidden;
   overscroll-behavior-x: none;
@@ -383,7 +389,8 @@ p { font-weight: 300; }
   text-shadow: 0 1px 10px rgba(255,60,60,0.3);
 }
 .hero-line-fit {
-  font-size: clamp(0.65rem, 2.85vw, 1.2rem);
+  font-size: clamp(0.6rem, 2.75vw, 1.2rem);
+  font-weight: 700;
 }
 .btn-hero-call {
   display: inline-block;
@@ -775,8 +782,9 @@ p { font-weight: 300; }
   scrollbar-width: none;
   padding: 8px 20px 28px;
   scroll-padding: 0 20px;
-  max-width: 100%;
+  width: 100%;
   box-sizing: border-box;
+  touch-action: pan-x;
 }
 .review-track-wrap::-webkit-scrollbar { display: none; }
 .review-track {
@@ -790,8 +798,8 @@ p { font-weight: 300; }
   overflow: hidden;
   scroll-snap-align: center;
   /* fills most of the viewport with peek on each side */
-  width: calc(100vw - 40px);
-  max-width: 420px;
+  width: 82vw;
+  max-width: 400px;
   min-width: 260px;
   flex-shrink: 0;
   display: flex;
