@@ -156,6 +156,51 @@
     </div>
   </section>
 
+  <!-- LOAN CALCULATOR -->
+  <section class="calculator" id="calculator">
+    <div class="container">
+      <div class="calc-header">
+        <h2>See Your VA Loan Payment</h2>
+        <p>Adjust the sliders below. Updates instantly.</p>
+      </div>
+      <div class="calc-body">
+        <div class="calc-fields">
+          <div class="calc-field">
+            <div class="calc-field-label">Home Price <span class="calc-val" id="homePriceDisplay">$300,000</span></div>
+            <input type="range" id="homePrice" class="calc-range" min="100000" max="1500000" step="5000" value="300000" />
+            <div class="calc-range-ends"><span>$100K</span><span>$1.5M</span></div>
+          </div>
+          <div class="calc-field">
+            <div class="calc-field-label">Interest Rate <span class="calc-val" id="rateDisplay">6.5%</span></div>
+            <input type="range" id="interestRate" class="calc-range" min="3" max="12" step="0.125" value="6.5" />
+            <div class="calc-range-ends"><span>3%</span><span>12%</span></div>
+          </div>
+          <div class="calc-field">
+            <div class="calc-field-label">Loan Term</div>
+            <div class="term-pills">
+              <button class="term-pill active" data-years="30">30 yr</button>
+              <button class="term-pill" data-years="20">20 yr</button>
+              <button class="term-pill" data-years="15">15 yr</button>
+            </div>
+          </div>
+        </div>
+        <div class="calc-result-box">
+          <div class="calc-result-top">
+            <div class="calc-result-label">Estimated Monthly Payment</div>
+            <div class="calc-result-num" id="monthlyPayment">$1,896</div>
+          </div>
+          <div class="calc-result-details">
+            <div class="calc-detail-row"><span>Loan Amount</span><strong id="totalLoan">$300,000</strong></div>
+            <div class="calc-detail-row"><span>Down Payment</span><strong class="detail-highlight">$0</strong></div>
+            <div class="calc-detail-row"><span>PMI</span><strong class="detail-highlight">None</strong></div>
+          </div>
+          <a href="#apply" class="btn btn-navy btn-full" style="margin-top:28px;border-radius:50px;padding:16px 36px;font-size:1rem;font-weight:700;">Apply for This Loan</a>
+          <p class="calc-disclaimer">Rates are estimates. Actual rate depends on credit, term, and market conditions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT / APPLY -->
   <section class="contact section-light" id="apply">
     <div class="container contact-inner" id="contact">
@@ -207,134 +252,23 @@
     </div>
   </section>
 
-  <!-- LOAN CALCULATOR -->
-  <section class="calculator" id="calculator">
-    <div class="container">
-      <div class="calc-header">
-        <h2>See Your VA Loan Payment</h2>
-        <p>Adjust the sliders below. Updates instantly.</p>
-      </div>
-      <div class="calc-body">
-        <div class="calc-fields">
-          <div class="calc-field">
-            <div class="calc-field-label">Home Price <span class="calc-val" id="homePriceDisplay">$300,000</span></div>
-            <input type="range" id="homePrice" class="calc-range" min="100000" max="1500000" step="5000" value="300000" />
-            <div class="calc-range-ends"><span>$100K</span><span>$1.5M</span></div>
-          </div>
-          <div class="calc-field">
-            <div class="calc-field-label">Interest Rate <span class="calc-val" id="rateDisplay">6.5%</span></div>
-            <input type="range" id="interestRate" class="calc-range" min="3" max="12" step="0.125" value="6.5" />
-            <div class="calc-range-ends"><span>3%</span><span>12%</span></div>
-          </div>
-          <div class="calc-field">
-            <div class="calc-field-label">Loan Term</div>
-            <div class="term-pills">
-              <button class="term-pill active" data-years="30">30 yr</button>
-              <button class="term-pill" data-years="20">20 yr</button>
-              <button class="term-pill" data-years="15">15 yr</button>
-            </div>
-          </div>
-        </div>
-        <div class="calc-result-box">
-          <div class="calc-result-top">
-            <div class="calc-result-label">Estimated Monthly Payment</div>
-            <div class="calc-result-num" id="monthlyPayment">$1,896</div>
-          </div>
-          <div class="calc-result-details">
-            <div class="calc-detail-row"><span>Loan Amount</span><strong id="totalLoan">$300,000</strong></div>
-            <div class="calc-detail-row"><span>Down Payment</span><strong class="detail-highlight">$0</strong></div>
-            <div class="calc-detail-row"><span>PMI</span><strong class="detail-highlight">None</strong></div>
-          </div>
-          <a href="#apply" class="btn btn-navy btn-full" style="margin-top:28px;border-radius:50px;padding:16px 36px;font-size:1rem;font-weight:700;">Apply for This Loan</a>
-          <p class="calc-disclaimer">Rates are estimates. Actual rate depends on credit, term, and market conditions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq section-white fade-up" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <h2>Frequently Asked Questions</h2>
-        <p>Everything you need to know about VA home loans and working with Veterans Own Mortgage.</p>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Do I qualify for a VA loan?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>You may qualify if you are an active duty service member, veteran, National Guard or Reserve member, or surviving spouse of a veteran. Eligibility is based on your length and type of service. Contact us and we will verify your eligibility at no cost.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can I use my VA loan benefit more than once?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Yes. Your VA loan benefit is reusable for life. As long as you have remaining entitlement or have paid off a previous VA loan, you can use it again to purchase another home or refinance.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What is the minimum credit score for a VA loan?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>The VA does not set a minimum credit score, but most lenders look for a score of 580 or higher. Veterans Own Mortgage works with veterans across a range of credit profiles and can help you understand your options even if your credit is less than perfect.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            How long does the VA loan process take?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Most VA loans close in 30 to 45 days. With Veterans Own Mortgage, we work to keep the process as efficient as possible. Once you submit your application, we will give you a clear timeline based on your specific situation.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can I use a VA loan to refinance my current home?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Yes. The VA offers two refinance options: the Interest Rate Reduction Refinance Loan (IRRRL) for lowering your rate on an existing VA loan, and the VA Cash Out refinance for accessing your home equity. Both can save you significant money.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Is there a VA loan limit?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>As of 2020, there are no loan limits for veterans with full VA entitlement. If you have full entitlement you can borrow as much as a lender is willing to lend with no down payment required, regardless of the home price.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="#" class="logo logo-light">
-          <img src="logo.png" alt="Veterans Own Mortgage" class="logo-img" />
-          <span class="logo-name">Veterans Own Mortgage</span>
+    <div class="footer-cta-bar">
+      <p class="footer-cta-label">Still have questions?</p>
+      <p class="footer-cta-number">310-863-0593</p>
+      <a href="tel:+13108630593" class="btn btn-call footer-cta-btn">Call Now</a>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/veteransownmortgage" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
         </a>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/veteransownmortgage" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@veteransownmortgage" target="_blank" rel="noopener" aria-label="TikTok">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
-          </a>
-        </div>
+        <a href="https://www.tiktok.com/@veteransownmortgage" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+        </a>
       </div>
+    </div>
+    <div class="container footer-inner">
+      <div class="footer-brand"></div>
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
