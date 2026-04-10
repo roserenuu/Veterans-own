@@ -104,8 +104,6 @@ p { font-weight: 300; }
   color: var(--navy);
   border-color: var(--white);
   border-radius: 50px;
-  font-weight: 700;
-  padding: 16px 36px;
 }
 .btn-gold:hover {
   background: var(--accent-hover);
