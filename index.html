@@ -9,19 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <script>
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    var _tx = 0, _ty = 0;
-    document.addEventListener('touchstart', function(e) {
-      _tx = e.touches[0].clientX; _ty = e.touches[0].clientY;
-    }, { passive: true });
-    document.addEventListener('touchmove', function(e) {
-      if (e.target.closest && e.target.closest('.review-track-wrap')) return;
-      var dx = Math.abs(e.touches[0].clientX - _tx);
-      var dy = Math.abs(e.touches[0].clientY - _ty);
-      if (dx > dy) e.preventDefault();
-    }, { passive: false });
-    window.addEventListener('scroll', function() {
-      if (window.scrollX !== 0) window.scrollTo(0, window.scrollY);
-    }, { passive: true });
   </script>
 </head>
 <body>
@@ -300,8 +287,9 @@
     });
 
     // Navbar scroll
-    window.addEventListener('scroll', () => {
-      document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+    const pageWrap = document.querySelector('.page-wrap');
+    pageWrap.addEventListener('scroll', () => {
+      document.querySelector('.navbar').classList.toggle('scrolled', pageWrap.scrollTop > 50);
     }, { passive: true });
 
     // Scroll fade-in (fade-up and stagger-children)
