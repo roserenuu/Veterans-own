@@ -382,12 +382,12 @@ p { font-weight: 300; }
   width: 100%;
 }
 .hero-line {
-  font-size: clamp(1.15rem, 3.2vw, 1.45rem);
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
   font-weight: 700;
   color: #ffffff;
   line-height: 1.6;
   text-align: center;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 14px rgba(0,0,0,0.5);
   letter-spacing: -0.01em;
 }
 .btn-hero-call {
