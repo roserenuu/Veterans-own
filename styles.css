@@ -1527,7 +1527,7 @@ p { font-weight: 300; }
   .logo                { font-size: 0.95rem; gap: 8px; }
   .logo-img            { height: 36px; }
   .logo-line1          { font-size: 0.8rem; }
-  .logo-line2          { font-size: 0.52rem; }
+  .logo-line2          { font-size: 0.65rem; }
 
   /* Typography */
   h1                   { font-size: clamp(1.9rem, 7vw, 2.6rem); letter-spacing: -1px; white-space: normal; }
