@@ -382,7 +382,7 @@ p { font-weight: 300; }
   width: 100%;
 }
 .hero-line {
-  font-size: clamp(1.6rem, 5.5vw, 2.4rem);
+  font-size: clamp(1.15rem, 4.2vw, 2.1rem);
   font-weight: 700;
   color: #ffffff;
   line-height: 1.5;
@@ -1467,7 +1467,7 @@ p { font-weight: 300; }
   .btn-hero-cta        { width: 100%; text-align: center; padding: 14px 24px; }
   .hero-actions .btn   { width: 100%; text-align: center; }
   .hero-lines          { gap: 18px; }
-  .hero-line           { font-size: clamp(1.4rem, 5.5vw, 2.4rem); }
+  .hero-line           { font-size: clamp(1.15rem, 4.2vw, 2.4rem); }
   .hero-stats          { justify-content: center; gap: 20px; flex-wrap: wrap; }
   .stat                { text-align: center; }
   .stat-divider        { display: none; }
