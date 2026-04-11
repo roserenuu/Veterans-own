@@ -690,13 +690,13 @@ p { font-weight: 300; }
 }
 
 /* === HOW IT WORKS === */
-.how-it-works { padding: 88px 0; background: var(--white); overflow-x: hidden; }
+.how-it-works { padding: 40px 0; background: var(--white); overflow-x: hidden; }
 .checklist-row {
   display: flex;
   flex-direction: column;
   gap: 10px;
   max-width: 420px;
-  margin: 0 auto 40px;
+  margin: 0 auto 0;
   text-align: left;
 }
 .checklist-row li {
@@ -1520,7 +1520,7 @@ p { font-weight: 300; }
   .benefits-grid       { grid-template-columns: 1fr; }
 
   /* How it works */
-  .how-it-works        { padding: 56px 0; }
+  .how-it-works        { padding: 32px 0; }
   .steps               { grid-template-columns: 1fr; gap: 0; }
   .step                { border-left: none; border-top: 2px solid var(--border); text-align: center; padding: 24px 16px; }
 
