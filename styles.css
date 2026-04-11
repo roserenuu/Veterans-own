@@ -373,14 +373,14 @@ p { font-weight: 300; }
 /* === HERO === */
 .hero {
   background: var(--navy);
-  padding: 80px 0 60px;
+  padding: 90px 0 70px;
   position: relative;
   z-index: 2;
   overflow-x: hidden;
 }
 .hero-content {
-  max-width: 680px;
-  text-align: center;
+  max-width: 720px;
+  text-align: left;
   margin: 0 auto;
 }
 .hero-h1-top {
@@ -427,8 +427,8 @@ p { font-weight: 300; }
   letter-spacing: 0.01em;
 }
 .hero-lines {
-  max-width: 500px;
-  margin: 0 auto 24px;
+  max-width: 600px;
+  margin: 0 0 28px;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -439,15 +439,15 @@ p { font-weight: 300; }
   font-weight: 700;
   color: #ffffff;
   line-height: 1.5;
-  text-align: center;
+  text-align: left;
   text-shadow: 0 2px 14px rgba(0,0,0,0.5);
   letter-spacing: -0.02em;
 }
 .btn-hero-call {
   display: inline-block;
-  background: #f5c518;
-  color: var(--navy-dark);
-  border: none;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255,255,255,0.6);
   border-radius: 50px;
   padding: 14px 32px;
   font-size: 0.95rem;
@@ -456,15 +456,16 @@ p { font-weight: 300; }
   transition: all 0.2s;
 }
 .btn-hero-call:hover {
-  background: #e6b800;
+  background: rgba(255,255,255,0.12);
+  border-color: #ffffff;
   transform: scale(1.03);
 }
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 14px;
   margin-bottom: 16px;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .hero-stats {
   display: flex;
@@ -1541,11 +1542,12 @@ p { font-weight: 300; }
   .hero-badge          { display: inline-block; }
   .hero-h1-top         { font-size: 1rem; }
   .hero-sub            { margin-left: auto; margin-right: auto; font-size: 0.95rem; }
-  .hero-actions        { flex-direction: column; align-items: center; gap: 12px; }
+  .hero-content        { text-align: center; }
+  .hero-lines          { margin: 0 auto 24px; gap: 12px; }
+  .hero-line           { font-size: clamp(1.35rem, 5vw, 2.3rem); text-align: center; }
+  .hero-actions        { flex-direction: column; align-items: center; gap: 12px; justify-content: center; }
   .btn-hero-cta        { width: 100%; text-align: center; padding: 14px 24px; }
   .hero-actions .btn   { width: 100%; text-align: center; }
-  .hero-lines          { gap: 12px; }
-  .hero-line           { font-size: clamp(1.35rem, 5vw, 2.3rem); }
   .hero-stats          { justify-content: center; gap: 20px; flex-wrap: wrap; }
   .stat                { text-align: center; }
   .stat-divider        { display: none; }
