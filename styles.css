@@ -237,7 +237,7 @@ p { font-weight: 300; }
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.2em;
-  color: #f5c518;
+  color: #ff1f1f;
 }
 .footer-logo {
   display: flex;
@@ -253,7 +253,7 @@ p { font-weight: 300; }
   color: #ffffff;
 }
 .footer-wordmark .logo-line2 {
-  color: #f5c518;
+  color: #ff1f1f;
 }
 
 .nav-links {
