@@ -782,7 +782,7 @@ p { font-weight: 300; }
   scroll-padding: 0 20px;
   width: 100%;
   box-sizing: border-box;
-  touch-action: pan-x;
+  touch-action: pan-y pan-x;
 }
 .review-track-wrap::-webkit-scrollbar { display: none; }
 .review-track {
