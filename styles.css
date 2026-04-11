@@ -1,24 +1,37 @@
 /* === PULL TO REFRESH === */
 #ptr-indicator {
   position: fixed;
-  top: 0;
+  top: 12px;
   left: 50%;
-  transform: translateX(-50%) translateY(0);
+  transform: translateX(-50%) translateY(-80px);
   opacity: 0;
   z-index: 9999;
   pointer-events: none;
-  transition: opacity 0.15s;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.ptr-bubble {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .ptr-spinner {
-  width: 32px;
-  height: 32px;
-  border: 3px solid rgba(26,47,90,0.2);
-  border-top-color: var(--navy);
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  margin-top: 10px;
+  border: 3px solid #e8eaed;
+  border-top-color: #1a73e8;
+  border-right-color: #ea4335;
 }
-.ptr-spin .ptr-spinner {
-  animation: ptr-rotate 0.6s linear infinite;
+#ptr-indicator.ptr-visible {
+  opacity: 1;
+}
+#ptr-indicator.ptr-spin .ptr-spinner {
+  animation: ptr-rotate 0.7s linear infinite;
 }
 @keyframes ptr-rotate {
   to { transform: rotate(360deg); }

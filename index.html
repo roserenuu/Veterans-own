@@ -277,16 +277,15 @@
       window.scrollTo(0, 0);
     }
 
-    // Custom pull-to-refresh
+    // Custom pull-to-refresh (Google-style)
     (function() {
       const pageWrap = document.querySelector('.page-wrap');
       let startY = 0, pulling = false;
-      const threshold = 80;
+      const threshold = 72;
 
-      // Create indicator
       const ptr = document.createElement('div');
       ptr.id = 'ptr-indicator';
-      ptr.innerHTML = '<div class="ptr-spinner"></div>';
+      ptr.innerHTML = '<div class="ptr-bubble"><div class="ptr-spinner"></div></div>';
       document.body.appendChild(ptr);
 
       pageWrap.addEventListener('touchstart', e => {
@@ -299,10 +298,11 @@
       pageWrap.addEventListener('touchmove', e => {
         if (!pulling) return;
         const dy = e.touches[0].clientY - startY;
-        if (dy > 0) {
-          const pct = Math.min(dy / threshold, 1);
-          ptr.style.opacity = pct;
-          ptr.style.transform = `translateY(${Math.min(dy * 0.4, 48)}px)`;
+        if (dy > 10) {
+          const pull = Math.min(dy * 0.45, 64);
+          ptr.classList.add('ptr-visible');
+          ptr.style.transform = `translateX(-50%) translateY(${pull - 80}px)`;
+          ptr.querySelector('.ptr-spinner').style.transform = `rotate(${dy * 2}deg)`;
         }
       }, { passive: true });
 
@@ -312,10 +312,11 @@
         const dy = e.changedTouches[0].clientY - startY;
         if (dy >= threshold) {
           ptr.classList.add('ptr-spin');
-          setTimeout(() => window.location.reload(), 400);
+          ptr.style.transform = 'translateX(-50%) translateY(0px)';
+          setTimeout(() => window.location.reload(), 500);
         } else {
-          ptr.style.opacity = 0;
-          ptr.style.transform = 'translateY(0)';
+          ptr.classList.remove('ptr-visible');
+          ptr.style.transform = 'translateX(-50%) translateY(-80px)';
         }
       }, { passive: true });
     })();
