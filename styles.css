@@ -1549,7 +1549,7 @@ p { font-weight: 300; }
   /* Footer */
   .footer-center       { padding: 28px 0 24px; gap: 20px; }
   .footer-links ul     { flex-wrap: wrap; justify-content: center; gap: 4px 20px; }
-  .footer-bottom       { text-align: center; font-size: 0.72rem; padding: 14px 0; }
+  .footer-bottom       { text-align: center; font-size: 0.72rem; padding: 14px 0 28px; }
 
   /* Photo strip */
   .photo-strip-inner   { grid-template-columns: 1fr; height: auto; }
