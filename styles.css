@@ -247,7 +247,6 @@ p { font-weight: 300; }
 .footer-logo-img {
   height: 44px;
   width: auto;
-  filter: brightness(0) invert(1);
 }
 .footer-wordmark .logo-line1 {
   color: #ffffff;
@@ -744,11 +743,11 @@ p { font-weight: 300; }
 }
 
 /* === HOW IT WORKS === */
-.how-it-works { padding: 40px 0; background: var(--white); overflow-x: hidden; }
+.how-it-works { padding: 48px 0; background: var(--white); overflow-x: hidden; }
 .checklist-row {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   max-width: 420px;
   margin: 0 auto 0;
   text-align: left;
@@ -756,22 +755,22 @@ p { font-weight: 300; }
 .checklist-row li {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.95rem;
-  font-weight: 400;
+  gap: 14px;
+  font-size: 1.15rem;
+  font-weight: 500;
   color: var(--body-text);
 }
 .checklist-row li::before {
   content: '';
-  width: 18px;
-  height: 18px;
-  min-width: 18px;
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
   background: var(--navy);
   border-radius: 50%;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10' fill='none'%3E%3Cpath d='M1 5l3.5 3.5L11 1' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 10px;
+  background-size: 12px;
 }
 .steps {
   display: grid;
