@@ -1537,15 +1537,14 @@ p { font-weight: 300; }
   h2                   { font-size: 1.65rem; letter-spacing: -0.5px; }
 
   /* Hero */
-  .hero                { padding: 40px 0 44px; text-align: center; }
-  .hero-content        { margin: 0 auto; }
+  .hero                { padding: 40px 0 44px; }
+  .hero-content        { text-align: left; }
   .hero-badge          { display: inline-block; }
   .hero-h1-top         { font-size: 1rem; }
-  .hero-sub            { margin-left: auto; margin-right: auto; font-size: 0.95rem; }
-  .hero-content        { text-align: center; }
-  .hero-lines          { margin: 0 auto 24px; gap: 12px; }
-  .hero-line           { font-size: clamp(1.35rem, 5vw, 2.3rem); text-align: center; }
-  .hero-actions        { flex-direction: column; align-items: center; gap: 12px; justify-content: center; }
+  .hero-sub            { font-size: 0.95rem; }
+  .hero-lines          { margin: 0 0 24px; gap: 12px; }
+  .hero-line           { font-size: clamp(1.35rem, 5vw, 2.3rem); text-align: left; }
+  .hero-actions        { flex-direction: column; align-items: stretch; gap: 12px; }
   .btn-hero-cta        { width: 100%; text-align: center; padding: 14px 24px; }
   .hero-actions .btn   { width: 100%; text-align: center; }
   .hero-stats          { justify-content: center; gap: 20px; flex-wrap: wrap; }
