@@ -1,3 +1,29 @@
+/* === PULL TO REFRESH === */
+#ptr-indicator {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  opacity: 0;
+  z-index: 9999;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+.ptr-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(26,47,90,0.2);
+  border-top-color: var(--navy);
+  border-radius: 50%;
+  margin-top: 10px;
+}
+.ptr-spin .ptr-spinner {
+  animation: ptr-rotate 0.6s linear infinite;
+}
+@keyframes ptr-rotate {
+  to { transform: rotate(360deg); }
+}
+
 /* === RESET & BASE === */
 /* Inspired by Stripe DESIGN.md — applied with Veterans Own navy/white palette */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
