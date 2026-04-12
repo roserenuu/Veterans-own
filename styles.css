@@ -1558,6 +1558,19 @@ p { font-weight: 300; }
   color: rgba(255,255,255,0.35);
   text-align: center;
 }
+.footer-compliance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.45);
+  font-size: 0.75rem;
+  margin-bottom: 8px;
+}
+.equal-housing-logo {
+  opacity: 0.5;
+  flex-shrink: 0;
+}
 
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
