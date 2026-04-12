@@ -241,9 +241,9 @@ p { font-weight: 300; }
 }
 .footer-logo {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 14px;
+  gap: 12px;
   width: 100%;
   text-align: center;
 }
