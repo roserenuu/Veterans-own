@@ -447,8 +447,8 @@ p { font-weight: 300; }
   font-weight: 700;
   color: #ffffff;
   line-height: 1.5;
-  text-align: left;
-  text-shadow: 0 2px 14px rgba(0,0,0,0.5);
+  text-align: center;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.6);
   letter-spacing: -0.02em;
 }
 .btn-hero-call {
@@ -1560,7 +1560,7 @@ p { font-weight: 300; }
   .hero-h1-top         { font-size: 1rem; }
   .hero-sub            { font-size: 0.95rem; }
   .hero-lines          { margin: 0 0 32px; gap: 20px; }
-  .hero-line           { font-size: clamp(1.35rem, 5vw, 2.3rem); text-align: left; line-height: 1.6; }
+  .hero-line           { font-size: clamp(1.35rem, 5vw, 2.3rem); text-align: center; line-height: 1.6; }
   .hero-actions        { flex-direction: column; align-items: stretch; gap: 14px; }
   .btn-hero-cta        { width: 100%; text-align: center; padding: 16px 24px; }
   .hero-actions .btn   { width: 100%; text-align: center; padding: 16px 24px; }
