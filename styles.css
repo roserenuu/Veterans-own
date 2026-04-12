@@ -851,6 +851,10 @@ p { font-weight: 300; }
 .review-track {
   display: flex;
   gap: 16px;
+  padding: 0 16px 0 16px;
+}
+.review-track .review-card:last-child {
+  margin-right: 16px;
 }
 .review-card {
   background: var(--white);
