@@ -876,9 +876,11 @@ p { font-weight: 300; }
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, transparent 40%, rgba(0,0,0,0.55) 100%);
+  width: 80px;
+  height: 80px;
+  background: #000000;
+  opacity: 0.75;
+  border-radius: 4px 0 0 0;
 }
 .review-photo-1 {
   background: url('review-photo-1.png') center top / cover no-repeat;
