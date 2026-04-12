@@ -871,25 +871,14 @@ p { font-weight: 300; }
   background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
   position: relative;
 }
-.review-photo::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 80px;
-  height: 80px;
-  background: #000000;
-  opacity: 0.75;
-  border-radius: 4px 0 0 0;
-}
 .review-photo-1 {
-  background: url('review-photo-1.png') center top / cover no-repeat;
+  background: url('review-photo-1.png') left top / 120% auto no-repeat;
 }
 .review-photo-2 {
-  background: url('review-photo-2.png') center top / cover no-repeat;
+  background: url('review-photo-2.png') left top / 120% auto no-repeat;
 }
 .review-photo-3 {
-  background: url('review-photo-3.png') center top / cover no-repeat;
+  background: url('review-photo-3.png') left top / 120% auto no-repeat;
 }
 .review-body {
   padding: 22px 20px;
