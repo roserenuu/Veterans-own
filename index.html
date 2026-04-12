@@ -391,7 +391,8 @@
         if (dy > 8) {
           const pct = Math.min(dy / threshold, 1);
           const drop = Math.min(dy * 0.5, 60);
-          ptr.style.transform = `translateX(-50%) translateY(${drop - 60}px)`;
+          ptr.style.opacity = '1';
+          ptr.style.transform = `translateX(-50%) translateY(${drop - 80}px)`;
           setLines(pct);
         }
       }, { passive: true });
@@ -402,11 +403,13 @@
         const dy = e.changedTouches[0].clientY - startY;
         if (dy >= threshold) {
           setLines(1);
+          ptr.style.opacity = '1';
           ptr.style.transform = 'translateX(-50%) translateY(4px)';
           ptr.classList.add('ptr-spin');
           setTimeout(() => window.location.reload(), 600);
         } else {
-          ptr.style.transform = 'translateX(-50%) translateY(-60px)';
+          ptr.style.opacity = '0';
+          ptr.style.transform = 'translateX(-50%) translateY(-80px)';
           setLines(0);
         }
       }, { passive: true });
