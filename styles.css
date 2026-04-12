@@ -752,29 +752,29 @@ p { font-weight: 300; }
 }
 
 /* === HOW IT WORKS === */
-.how-it-works { padding: 48px 0; background: var(--white); overflow-x: hidden; }
+.how-it-works { padding: 52px 0; background: var(--navy-dark); overflow-x: hidden; }
 .checklist-row {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 420px;
-  margin: 0 auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 32px;
+  max-width: 640px;
+  margin: 0 auto;
   text-align: left;
 }
 .checklist-row li {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 1.15rem;
+  gap: 12px;
+  font-size: 1rem;
   font-weight: 500;
-  color: var(--body-text);
+  color: #ffffff;
 }
 .checklist-row li::before {
   content: '';
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
-  background: var(--navy);
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  background: rgba(255,255,255,0.15);
   border-radius: 50%;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10' fill='none'%3E%3Cpath d='M1 5l3.5 3.5L11 1' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -1594,7 +1594,8 @@ p { font-weight: 300; }
   .benefits-grid       { grid-template-columns: 1fr; }
 
   /* How it works */
-  .how-it-works        { padding: 32px 0; }
+  .how-it-works        { padding: 40px 0; }
+  .checklist-row       { grid-template-columns: 1fr 1fr; gap: 16px 20px; }
   .steps               { grid-template-columns: 1fr; gap: 0; }
   .step                { border-left: none; border-top: 2px solid var(--border); text-align: center; padding: 24px 16px; }
 
