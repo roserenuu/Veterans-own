@@ -868,6 +868,9 @@ p { font-weight: 300; }
 .review-photo-2 {
   background: url('review-photo-2.png') center top / cover no-repeat;
 }
+.review-photo-3 {
+  background: url('review-photo-3.png') center top / cover no-repeat;
+}
 .review-body {
   padding: 22px 20px;
   display: flex;
