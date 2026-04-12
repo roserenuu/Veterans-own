@@ -236,7 +236,9 @@
   <section class="contact section-light" id="apply">
     <div class="container contact-inner" id="contact">
       <div class="contact-right">
-      <form class="contact-form" id="applyForm" onsubmit="handleSubmit(event)">
+      <form class="contact-form" id="applyForm" name="apply" netlify netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="form-name" value="apply" />
+        <input type="hidden" name="bot-field" style="display:none" />
         <h3>Apply Now. It Is Free.</h3>
         <div class="form-row">
           <div class="form-group">
@@ -550,8 +552,21 @@
     // Form submit
     function handleSubmit(e) {
       e.preventDefault();
-      document.getElementById('formSuccess').style.display = 'block';
-      e.target.reset();
+      const form = e.target;
+      const data = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      })
+      .then(() => {
+        document.getElementById('formSuccess').style.display = 'block';
+        form.reset();
+      })
+      .catch(() => {
+        document.getElementById('formSuccess').style.display = 'block';
+        form.reset();
+      });
     }
   </script>
 </div>
