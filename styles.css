@@ -427,6 +427,14 @@ p { font-weight: 300; }
   line-height: 1.7;
   margin-bottom: 36px;
 }
+.hero-sub-text {
+  font-size: clamp(1rem, 3.5vw, 1.25rem);
+  font-weight: 400;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.75;
+  margin-bottom: 36px;
+  max-width: 520px;
+}
 .hero-tagline {
   font-size: clamp(1.1rem, 3vw, 1.4rem);
   font-weight: 700;
