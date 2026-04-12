@@ -1610,7 +1610,7 @@ p { font-weight: 300; }
   .benefits-grid       { grid-template-columns: 1fr; }
 
   /* How it works */
-  .how-it-works        { padding: 24px 0 40px; }
+  .how-it-works        { padding: 12px 0 40px; }
   .checklist-row       { grid-template-columns: 1fr 1fr; gap: 16px 20px; }
   .steps               { grid-template-columns: 1fr; gap: 0; }
   .step                { border-left: none; border-top: 2px solid var(--border); text-align: center; padding: 24px 16px; }
@@ -1633,7 +1633,7 @@ p { font-weight: 300; }
   .faq-question        { font-size: 0.9rem; padding: 16px 0; }
 
   /* Contact / Apply */
-  .contact             { padding: 40px 0 24px; }
+  .contact             { padding: 40px 0 8px; }
   .form-row            { grid-template-columns: 1fr; }
   .contact-form        { padding: 22px 18px; }
 
