@@ -244,6 +244,8 @@ p { font-weight: 300; }
   align-items: center;
   justify-content: center;
   gap: 14px;
+  width: 100%;
+  text-align: center;
 }
 .footer-phone {
   color: rgba(255,255,255,0.75);
@@ -260,9 +262,11 @@ p { font-weight: 300; }
 }
 .footer-wordmark .logo-line1 {
   color: #ffffff;
+  text-align: center;
 }
 .footer-wordmark .logo-line2 {
   color: #7eb8f7;
+  text-align: center;
 }
 
 .nav-links {
