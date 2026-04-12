@@ -220,7 +220,6 @@ p { font-weight: 300; }
   height: 44px;
   width: auto;
   display: block;
-  filter: saturate(1.6) brightness(1.05);
 }
 .logo-wordmark {
   display: flex;
@@ -505,7 +504,7 @@ p { font-weight: 300; }
   font-size: 1.6rem;
   font-weight: 300;
   letter-spacing: -0.64px;
-  color: #7eb8f7;
+  color: var(--white);
   line-height: 1.1;
 }
 .stat-label {
@@ -634,7 +633,7 @@ p { font-weight: 300; }
 .ratings-score {
   font-size: 3rem;
   font-weight: 800;
-  color: #7eb8f7;
+  color: var(--white);
   letter-spacing: -1.5px;
   line-height: 1;
 }
@@ -789,9 +788,9 @@ p { font-weight: 300; }
   width: 22px;
   height: 22px;
   min-width: 22px;
-  background: var(--navy);
+  background: #7eb8f7;
   border-radius: 50%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10' fill='none'%3E%3Cpath d='M1 5l3.5 3.5L11 1' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10' fill='none'%3E%3Cpath d='M1 5l3.5 3.5L11 1' stroke='%231a2f5a' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 10px;
@@ -1152,7 +1151,7 @@ p { font-weight: 300; }
   color: var(--white);
   font-weight: 600;
 }
-.detail-highlight { color: #7eb8f7 !important; }
+.detail-highlight { color: #7dd3fc !important; }
 .calc-disclaimer {
   color: rgba(255,255,255,0.22);
   font-size: 0.68rem;
