@@ -1616,7 +1616,7 @@ p { font-weight: 300; }
 
   /* How it works */
   .how-it-works        { padding: 12px 0 40px; }
-  .checklist-row       { grid-template-columns: 1fr 1fr; gap: 36px 20px; }
+  .checklist-row       { grid-template-columns: 1fr 1fr; gap: 48px 20px; }
   .steps               { grid-template-columns: 1fr; gap: 0; }
   .step                { border-left: none; border-top: 2px solid var(--border); text-align: center; padding: 24px 16px; }
 
