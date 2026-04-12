@@ -220,6 +220,7 @@ p { font-weight: 300; }
   height: 44px;
   width: auto;
   display: block;
+  filter: saturate(1.6) brightness(1.05);
 }
 .logo-wordmark {
   display: flex;
@@ -504,7 +505,7 @@ p { font-weight: 300; }
   font-size: 1.6rem;
   font-weight: 300;
   letter-spacing: -0.64px;
-  color: var(--white);
+  color: #7eb8f7;
   line-height: 1.1;
 }
 .stat-label {
@@ -633,7 +634,7 @@ p { font-weight: 300; }
 .ratings-score {
   font-size: 3rem;
   font-weight: 800;
-  color: var(--white);
+  color: #7eb8f7;
   letter-spacing: -1.5px;
   line-height: 1;
 }
@@ -1151,7 +1152,7 @@ p { font-weight: 300; }
   color: var(--white);
   font-weight: 600;
 }
-.detail-highlight { color: #7dd3fc !important; }
+.detail-highlight { color: #7eb8f7 !important; }
 .calc-disclaimer {
   color: rgba(255,255,255,0.22);
   font-size: 0.68rem;
