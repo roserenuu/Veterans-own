@@ -869,6 +869,16 @@ p { font-weight: 300; }
 .review-photo {
   height: 195px;
   background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  position: relative;
+}
+.review-photo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, transparent 40%, rgba(0,0,0,0.55) 100%);
 }
 .review-photo-1 {
   background: url('review-photo-1.png') center top / cover no-repeat;
