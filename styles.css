@@ -242,10 +242,11 @@ p { font-weight: 300; }
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 14px;
 }
 .footer-logo-img {
-  height: 44px;
+  height: 70px;
   width: auto;
 }
 .footer-wordmark .logo-line1 {
@@ -1567,8 +1568,9 @@ p { font-weight: 300; }
   .logo-img            { height: 36px; }
   .logo-line1          { font-size: 0.8rem; }
   .logo-line2          { font-size: 0.65rem; }
-  .footer-wordmark .logo-line2 { font-size: 0.65rem; }
-  .footer-logo-img     { height: 36px; }
+  .footer-logo-img     { height: 64px; }
+  .footer-wordmark .logo-line1 { font-size: 1.3rem; }
+  .footer-wordmark .logo-line2 { font-size: 0.85rem; }
 
   /* Typography */
   h1                   { font-size: clamp(1.9rem, 7vw, 2.6rem); letter-spacing: -1px; white-space: normal; }
