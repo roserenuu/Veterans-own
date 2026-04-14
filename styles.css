@@ -454,7 +454,7 @@ p { font-weight: 300; }
   font-weight: 400;
   color: rgba(255,255,255,0.82);
   line-height: 1.75;
-  margin-bottom: 36px;
+  margin: 0 auto 36px;
   max-width: 520px;
   text-align: center;
 }
@@ -837,7 +837,7 @@ p { font-weight: 300; }
 /* === FLAG BANNER === */
 .flag-banner {
   position: relative;
-  background: url('E10CCACA-D1BA-4F9C-A79B-0B8EA6FB81C2.jpeg') center 50% / cover no-repeat;
+  background: url('E10CCACA-D1BA-4F9C-A79B-0B8EA6FB81C2.jpeg') center 20% / cover no-repeat;
   padding: 200px 0;
   text-align: center;
   overflow-x: hidden;
