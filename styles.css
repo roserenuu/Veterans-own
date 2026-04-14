@@ -1621,6 +1621,7 @@ p { font-weight: 300; }
   .calc-body           { align-items: stretch; }
   .calc-fields         { padding: 48px 40px; }
   .calc-result-box     { padding: 48px 40px; }
+  .calc-checklist      { padding-left: 56px; }
 }
 
 /* === RESPONSIVE === */
