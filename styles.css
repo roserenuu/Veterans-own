@@ -1029,6 +1029,40 @@ p { font-weight: 300; }
   gap: 48px;
   align-items: start;
 }
+.calc-checklist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 48px;
+  margin-top: 40px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border);
+}
+.checklist-col {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.checklist-col li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--body-text);
+}
+.checklist-col li::before {
+  content: '';
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  background: #7eb8f7;
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10' fill='none'%3E%3Cpath d='M1 5l3.5 3.5L11 1' stroke='%231a2f5a' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+}
 /* Left panel — sliders */
 .calc-fields {
   background: var(--navy-dark);
@@ -1587,11 +1621,6 @@ p { font-weight: 300; }
   .calc-body           { align-items: stretch; }
   .calc-fields         { padding: 48px 40px; }
   .calc-result-box     { padding: 48px 40px; }
-
-  /* Checklist — wider, more spaced out */
-  .checklist-row       { max-width: 860px; gap: 28px 64px; }
-  .checklist-row li    { font-size: 1.1rem; gap: 16px; }
-  .how-it-works        { padding: 48px 0 80px; }
 }
 
 /* === RESPONSIVE === */
@@ -1683,6 +1712,7 @@ p { font-weight: 300; }
   .calc-body           { grid-template-columns: 1fr; gap: 32px; }
   .calc-result-num     { font-size: 2.6rem; }
   .calc-result-box     { padding: 28px 22px; }
+  .calc-checklist      { grid-template-columns: 1fr; gap: 16px; margin-top: 28px; padding-top: 24px; }
 
   /* FAQ */
   .faq                 { padding: 56px 0; }
