@@ -1582,6 +1582,16 @@ p { font-weight: 300; }
   .hero h1             { margin-bottom: 40px; font-size: clamp(3.2rem, 6vw, 5rem); }
   .hero-sub-text       { margin: 0 auto 60px; font-size: 1.25rem; }
   .hero-actions        { gap: 20px; margin-bottom: 0; }
+
+  /* Calculator — equal height boxes, matching padding */
+  .calc-body           { align-items: stretch; }
+  .calc-fields         { padding: 48px 40px; }
+  .calc-result-box     { padding: 48px 40px; }
+
+  /* Checklist — wider, more spaced out */
+  .checklist-row       { max-width: 860px; gap: 28px 64px; }
+  .checklist-row li    { font-size: 1.1rem; gap: 16px; }
+  .how-it-works        { padding: 48px 0 80px; }
 }
 
 /* === RESPONSIVE === */
