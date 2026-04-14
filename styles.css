@@ -1576,6 +1576,14 @@ p { font-weight: 300; }
   flex-shrink: 0;
 }
 
+/* === DESKTOP ONLY === */
+@media (min-width: 641px) {
+  .hero                { padding: 160px 0 140px; }
+  .hero h1             { margin-bottom: 40px; font-size: clamp(3.2rem, 6vw, 5rem); }
+  .hero-sub-text       { margin: 0 auto 60px; font-size: 1.25rem; }
+  .hero-actions        { gap: 20px; margin-bottom: 0; }
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
   .about-inner         { grid-template-columns: 1fr; gap: 32px; }
