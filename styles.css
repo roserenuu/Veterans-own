@@ -401,7 +401,7 @@ p { font-weight: 300; }
   overflow-x: hidden;
 }
 .hero-content {
-  max-width: 680px;
+  max-width: 860px;
   text-align: center;
   margin: 0 auto;
 }
@@ -782,7 +782,7 @@ p { font-weight: 300; }
 }
 
 /* === HOW IT WORKS === */
-.how-it-works { padding: 52px 0; background: var(--white); overflow-x: hidden; }
+.how-it-works { padding: 20px 0 56px; background: var(--white); overflow-x: hidden; }
 .checklist-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -836,8 +836,8 @@ p { font-weight: 300; }
 /* === FLAG BANNER === */
 .flag-banner {
   position: relative;
-  background: url('E10CCACA-D1BA-4F9C-A79B-0B8EA6FB81C2.jpeg') center 40% / cover no-repeat;
-  padding: 100px 0;
+  background: url('E10CCACA-D1BA-4F9C-A79B-0B8EA6FB81C2.jpeg') center 50% / cover no-repeat;
+  padding: 200px 0;
   text-align: center;
   overflow-x: hidden;
 }
@@ -1309,10 +1309,9 @@ p { font-weight: 300; }
 /* === CONTACT / APPLY === */
 .contact { padding: 88px 0; overflow-x: hidden; }
 .contact-inner {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 64px;
-  align-items: start;
+  display: block;
+  max-width: 680px;
+  margin: 0 auto;
 }
 .contact-text .section-tag { margin-bottom: 14px; }
 .contact-text h2 { margin-bottom: 16px; }
