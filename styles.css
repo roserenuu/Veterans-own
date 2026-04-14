@@ -838,7 +838,7 @@ p { font-weight: 300; }
 .flag-banner {
   position: relative;
   background: url('E10CCACA-D1BA-4F9C-A79B-0B8EA6FB81C2.jpeg') center 20% / cover no-repeat;
-  padding: 200px 0;
+  padding: 300px 0;
   text-align: center;
   overflow-x: hidden;
 }
@@ -988,14 +988,16 @@ p { font-weight: 300; }
     justify-content: center;
     flex-wrap: wrap;
     width: auto;
-    max-width: 980px;
+    max-width: 1200px;
     margin: 0 auto;
+    gap: 24px;
   }
   .review-card {
-    width: calc(33.33% - 14px);
+    width: calc(33.33% - 18px);
     min-width: 0;
     scroll-snap-align: none;
   }
+  .review-photo { height: 260px; }
   .review-dots { display: none; }
 }
 
@@ -1592,6 +1594,7 @@ p { font-weight: 300; }
   .nav-phone           { display: none; }
   .nav-right .btn-nav  { display: none; }
   .hamburger           { display: block; }
+  .nav-inner           { height: 64px; }
   .logo                { font-size: 0.95rem; gap: 8px; }
   .logo-img            { height: 36px; }
   .logo-line1          { font-size: 0.8rem; }
