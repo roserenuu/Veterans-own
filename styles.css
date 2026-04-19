@@ -459,14 +459,38 @@ p { font-weight: 300; }
   margin-bottom: 36px;
 }
 .hero-sub-text {
-  font-size: clamp(1.25rem, 4.2vw, 1.55rem);
+  font-size: clamp(1.1rem, 3.8vw, 1.35rem);
   font-weight: 400;
-  font-style: italic;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.9;
-  margin: 0 auto 56px;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.75;
+  margin: 0 auto 36px;
   max-width: 520px;
   text-align: center;
+}
+.hero-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 44px;
+  max-width: 520px;
+  text-align: left;
+  display: inline-block;
+}
+.hero-benefits li {
+  font-size: clamp(1.05rem, 3.6vw, 1.25rem);
+  font-weight: 500;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.5;
+  padding: 6px 0 6px 28px;
+  position: relative;
+}
+.hero-benefits li::before {
+  content: "\2022";
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  color: #f5c518;
+  font-size: 1.2em;
+  line-height: 1.5;
 }
 .hero-tagline {
   font-size: clamp(1.1rem, 3vw, 1.4rem);
