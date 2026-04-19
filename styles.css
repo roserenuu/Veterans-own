@@ -470,12 +470,12 @@ p { font-weight: 300; }
   margin-bottom: 36px;
 }
 .hero-sub-text {
-  font-size: clamp(1.1rem, 3.8vw, 1.35rem);
+  font-size: clamp(0.95rem, 3.3vw, 1.3rem);
   font-weight: 400;
-  color: rgba(255,255,255,0.82);
-  line-height: 1.75;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.8;
   margin: 0 auto 36px;
-  max-width: 520px;
+  max-width: 560px;
   text-align: center;
 }
 .hero-tagline {
