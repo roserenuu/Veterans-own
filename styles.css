@@ -220,7 +220,7 @@ p { font-weight: 300; }
   gap: 12px;
 }
 .logo-img {
-  height: 60px;
+  height: 76px;
   width: auto;
   display: block;
 }
@@ -228,16 +228,16 @@ p { font-weight: 300; }
   display: flex;
   flex-direction: column;
   line-height: 1;
-  gap: 2px;
+  gap: 3px;
 }
 .logo-line1 {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   color: #ffffff;
 }
 .logo-line2 {
-  font-size: 0.6rem;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   color: #7eb8f7;
