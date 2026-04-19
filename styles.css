@@ -471,7 +471,7 @@ p { font-weight: 300; }
 }
 .hero-sub-text {
   font-size: clamp(1rem, 3.4vw, 1.35rem);
-  font-weight: 400;
+  font-weight: 500;
   color: rgba(255,255,255,0.85);
   line-height: 1.8;
   margin: 0 auto 36px;
