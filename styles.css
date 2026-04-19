@@ -415,12 +415,22 @@ p { font-weight: 300; }
   line-height: 1;
   margin-bottom: 10px;
 }
+.hero-eyebrow {
+  display: block;
+  font-size: clamp(0.85rem, 2.4vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #f5c518;
+  margin-bottom: 14px;
+  text-align: center;
+}
 .hero h1 {
-  font-size: clamp(1.85rem, 6vw, 3.8rem);
+  font-size: clamp(2.2rem, 7vw, 4rem);
   font-weight: 800;
   letter-spacing: -0.8px;
-  line-height: 1.18;
-  margin-bottom: 24px;
+  line-height: 1.15;
+  margin-bottom: 28px;
   text-wrap: balance;
 }
 .hero-h1-sub {
@@ -451,7 +461,7 @@ p { font-weight: 300; }
   border: 1px solid rgba(255,255,255,0.20);
   margin-bottom: 22px;
 }
-.hero h1 { margin-bottom: 48px; text-align: center; }
+.hero h1 { margin-bottom: 32px; text-align: center; }
 .hero-sub {
   font-size: 1.1rem;
   font-weight: 300;
