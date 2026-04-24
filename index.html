@@ -409,9 +409,14 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 .fade-up.visible { opacity: 1; transform: none; }
 
 @media (max-width: 960px) {
-  nav { padding: 0 24px; }
+  nav { padding: 0 16px; height: 60px; }
+  nav.scrolled { height: 52px; }
+  .nav-logo img { height: 42px; }
+  .nav-logo-text { font-size: 15px; }
+  .nav-logo-text > span { font-size: 11px; letter-spacing: 0.18em; }
+  .btn-nav { font-size: 12px; padding: 8px 14px; letter-spacing: 0.06em; white-space: nowrap; }
   .hero { grid-template-columns: 1fr; }
-  .hero-left { padding: 100px 24px 40px; }
+  .hero-left { padding: 80px 24px 40px; }
   .hero-right { min-height: auto; }
   .form-grid { grid-template-columns: 1fr; }
   .form-field.full { grid-column: span 1; }
