@@ -258,11 +258,12 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 .plus-list li {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 17px;
+  gap: 12px;
+  font-size: 15px;
   color: var(--text);
   font-weight: 500;
-  line-height: 1.3;
+  line-height: 1;
+  white-space: nowrap;
   opacity: 0;
 }
 .plus-list li:nth-child(1) { animation: slideLeft 0.5s 0.4s ease forwards; }
@@ -453,7 +454,9 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   .nav-logo-text > span { font-size: 11px; letter-spacing: 0.18em; }
   .btn-nav { font-size: 12px; padding: 8px 14px; letter-spacing: 0.06em; white-space: nowrap; }
   .hero { grid-template-columns: 1fr; }
-  .hero-left { padding: 72px 28px 48px; gap: 0; }
+  .hero-left { padding: 72px 16px 48px 20px; gap: 0; }
+  .plus-list li { font-size: 14px; }
+  .plus-sign { font-size: 28px !important; width: 22px !important; }
   .hero-title { margin-bottom: 26px; }
   .hero-dare { margin-bottom: 26px; line-height: 1.5; }
   .hero-hook { margin-bottom: 30px; }
