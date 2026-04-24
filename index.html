@@ -334,7 +334,8 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 /* ── HERO RIGHT ── */
 .hero-right {
   height: 100%; min-height: 100vh;
-  display: flex; flex-direction: column; justify-content: center;
+  display: flex; flex-direction: column; justify-content: flex-start;
+  padding-top: 280px;
   background: var(--bg); position: relative;
 }
 
@@ -342,8 +343,8 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 .form-panel {
   background: var(--card);
   border: 1px solid var(--border);
-  margin: auto 40px;
-  padding: 36px 40px;
+  margin: 0 20px 0 10px;
+  padding: 28px 28px;
   position: relative;
   box-shadow: 0 4px 40px oklch(0 0 0 / 0.06);
   animation: formSlide 0.8s 0.3s ease both;
@@ -357,9 +358,9 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 
 .form-heading {
   font-family: var(--f-display);
-  font-size: 26px; font-weight: 900;
+  font-size: 20px; font-weight: 900;
   text-transform: uppercase; letter-spacing: 0.05em;
-  color: var(--navy); margin-bottom: 24px;
+  color: var(--navy); margin-bottom: 18px;
 }
 
 .form-grid {
