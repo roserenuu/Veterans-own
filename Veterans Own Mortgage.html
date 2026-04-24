@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veterans Own Mortgage | VA IRRRL Specialists</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        oklch(0.97 0.008 80);
+  --bg-mid:    oklch(0.93 0.008 80);
+  --card:      oklch(1.00 0.004 80);
+  --border:    oklch(0.86 0.008 80);
+  --navy:      oklch(0.22 0.08 255);
+  --navy-deep: oklch(0.16 0.08 255);
+  --red:       oklch(0.50 0.20 25);
+  --star:      oklch(0.82 0.17 85);
+  --text:      oklch(0.18 0.02 255);
+  --muted:     oklch(0.50 0.008 240);
+  --f-display: 'Barlow Condensed', sans-serif;
+  --f-body:    'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  background: oklch(0.97 0.008 80 / 0.94);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s;
+}
+nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
+
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-logo img { height: 60px; width: auto; }
+.nav-logo-text {
+  font-family: var(--f-display);
+  font-size: 22px; font-weight: 900;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--navy); line-height: 1.15;
+}
+.nav-logo-text > span { display: block; font-size: 14px; color: var(--red); letter-spacing: 0.25em; font-weight: 900; text-align: center; text-transform: uppercase; }
+
+.btn-nav {
+  background: var(--navy);
+  color: #fff;
+  font-family: var(--f-display);
+  font-size: 15px; font-weight: 800;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 10px 28px; border: none; cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-block;
+}
+.btn-nav:hover { background: var(--navy-deep); transform: scale(1.03); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  padding: 72px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left {
+  padding: 100px 60px 80px 88px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: oklch(0.50 0.20 25 / 0.1);
+  border: 1px solid oklch(0.50 0.20 25 / 0.3);
+  padding: 6px 16px;
+  margin-bottom: 24px;
+  font-family: var(--f-display);
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--red);
+}
+.hero-eyebrow::before {
+  content: ''; width: 6px; height: 6px;
+  background: var(--red); border-radius: 50%;
+  animation: blink 2s infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+}
+
+.hero-title {
+  font-family: var(--f-display);
+  font-size: clamp(72px, 8vw, 110px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 16px;
+  animation: slideUp 0.7s ease both;
+}
+.hero-title .red {
+  background: linear-gradient(90deg, var(--red) 0%, oklch(0.65 0.22 25) 50%, var(--red) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s 1.5s ease-in-out infinite;
+}
+
+.hero-tagline {
+  font-family: var(--f-display);
+  font-size: clamp(15px, 1.4vw, 18px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+  line-height: 1.4;
+  animation: slideUp 0.7s 0.15s ease both;
+}
+
+.hero-hook {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 28px;
+  padding-left: 0;
+  font-style: italic;
+  animation: slideUp 0.7s 0.25s ease both;
+}
+.hero-hook strong { color: var(--text); font-style: normal; font-weight: 600; }
+
+/* Plus bullets */
+.plus-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+.plus-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 17px;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.3;
+  opacity: 0;
+}
+.plus-list li:nth-child(1) { animation: slideLeft 0.5s 0.4s ease forwards; }
+.plus-list li:nth-child(2) { animation: slideLeft 0.5s 0.54s ease forwards; }
+.plus-list li:nth-child(3) { animation: slideLeft 0.5s 0.68s ease forwards; }
+.plus-list li:nth-child(4) { animation: slideLeft 0.5s 0.82s ease forwards; }
+.plus-sign {
+  font-family: var(--f-display);
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--star);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+  display: inline-block;
+  animation: popIn 0.5s ease both, plusPulse 2.5s ease-in-out infinite;
+}
+.plus-list li:nth-child(1) .plus-sign { animation-delay: 0.4s, 2s; }
+.plus-list li:nth-child(2) .plus-sign { animation-delay: 0.54s, 2.2s; }
+.plus-list li:nth-child(3) .plus-sign { animation-delay: 0.68s, 2.4s; }
+.plus-list li:nth-child(4) .plus-sign { animation-delay: 0.82s, 2.6s; }
+
+/* Fast hit bullets */
+.fast-hits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 24px;
+  margin-bottom: 36px;
+  padding: 18px 22px;
+  background: var(--bg-mid);
+  border-left: 3px solid var(--navy);
+}
+.fast-hit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.fast-hit::before {
+  content: '';
+  width: 14px; height: 14px;
+  background: var(--navy);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  flex-shrink: 0;
+}
+
+.btn-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--f-display);
+  font-size: 22px; font-weight: 900;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 18px 44px;
+  text-decoration: none; border: none; cursor: pointer;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%, 14px 50%);
+  transition: background 0.2s, transform 0.2s;
+  margin-bottom: 16px;
+  animation: slideUp 0.6s 0.95s ease both;
+  position: relative;
+  overflow: hidden;
+}
+.btn-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, oklch(1 0 0 / 0.25) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s 1.8s ease-in-out infinite;
+}
+.btn-hero:hover { background: oklch(0.42 0.20 25); transform: translateX(4px); }
+
+.micro-trust {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  font-style: italic;
+  text-align: center;
+  animation: slideUp 0.5s 1.1s ease both;
+}
+.micro-trust strong { color: var(--text); font-style: normal; }
+
+/* ── HERO RIGHT ── */
+.hero-right {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--bg);
+  position: relative;
+}
+
+.video-panel {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 340px;
+}
+
+/* ── VIDEO PLACEHOLDER ── */
+.video-placeholder {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 320px;
+  overflow: hidden;
+  cursor: pointer;
+  background: transparent;
+  border: 2px dashed var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 72px;
+}
+.video-placeholder:hover { background: oklch(0.94 0.008 80); }
+.play-ring {
+  width: 72px; height: 72px;
+  border: 3px solid var(--navy);
+  border-radius: 50%;
+  background: oklch(0.22 0.08 255 / 0.08);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+  animation: playPulse 2s ease-in-out infinite;
+}
+.video-placeholder:hover .play-ring {
+  background: oklch(0.22 0.08 255 / 0.15);
+  transform: scale(1.08);
+}
+.play-ring svg { margin-left: 5px; fill: var(--navy); }
+.video-label {
+  font-family: var(--f-display);
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--muted);
+}
+@keyframes playPulse {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.22 0.08 255 / 0.2); }
+  50% { box-shadow: 0 0 0 14px oklch(0.22 0.08 255 / 0); }
+}
+
+/* ── FORM PANEL ── */
+.form-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  margin: auto 40px;
+  padding: 36px 40px;
+  position: relative;
+  box-shadow: 0 4px 40px oklch(0 0 0 / 0.06);
+  animation: formSlide 0.8s 0.3s ease both;
+}
+.form-panel::before {
+  content: '';
+  position: absolute;
+  top: -4px; left: 0;
+  width: 80px; height: 4px;
+  background: var(--red);
+}
+
+.form-heading {
+  font-family: var(--f-display);
+  font-size: 26px; font-weight: 900;
+  text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--navy);
+  margin-bottom: 24px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form-field.full { grid-column: span 2; }
+.form-field label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted);
+}
+.form-field input, .form-field select {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 15px;
+  padding: 12px 14px;
+  width: 100%; outline: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  transition: border-color 0.2s;
+}
+.form-field input:focus, .form-field select:focus { border-color: var(--navy); }
+.form-field input::placeholder { color: oklch(0.72 0.005 240); }
+.form-field select option { background: var(--card); }
+
+.rate-hint {
+  font-size: 11px; color: var(--muted);
+  margin-top: -6px; font-style: italic;
+}
+
+.btn-submit {
+  display: block; width: 100%;
+  background: var(--navy);
+  color: #fff;
+  font-family: var(--f-display);
+  font-size: 20px; font-weight: 900;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 16px; border: none; cursor: pointer;
+  margin-top: 18px;
+  transition: background 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.btn-submit::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, oklch(1 0 0 / 0.2) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s 2s ease-in-out infinite;
+}
+.btn-submit:hover { background: var(--navy-deep); }
+
+.form-trust {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: 14px;
+  font-size: 11px; color: var(--muted);
+  font-style: italic;
+}
+.form-trust::before {
+  content: '';
+  width: 18px; height: 18px;
+  background: var(--navy);
+  clip-path: path('M9 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5L9 2z');
+  flex-shrink: 0;
+}
+
+/* SUCCESS */
+.form-success { display: none; text-align: center; padding: 40px 0; }
+.form-success h3 {
+  font-family: var(--f-display);
+  font-size: 28px; font-weight: 900;
+  text-transform: uppercase; color: var(--navy);
+  margin: 16px 0 8px;
+}
+.form-success p { color: var(--muted); font-size: 14px; line-height: 1.7; }
+.check-circle {
+  width: 56px; height: 56px;
+  background: oklch(0.28 0.08 255 / 0.1);
+  border: 2px solid var(--navy);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto;
+}
+
+/* ── TRUST SECTION ── */
+.trust-section {
+  background: var(--bg);
+  padding: 80px 88px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.trust-headline {
+  font-family: var(--f-display);
+  font-size: clamp(44px, 5vw, 72px);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--navy);
+  margin-bottom: 28px;
+}
+.trust-stars {
+  font-size: 40px;
+  letter-spacing: 6px;
+  color: var(--star);
+  margin-bottom: 12px;
+}
+.trust-rating {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.trust-big {
+  font-family: var(--f-display);
+  font-size: 72px;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1;
+}
+.trust-of {
+  font-size: 20px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.trust-sub {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.trust-divider {
+  width: 2px;
+  height: 48px;
+  background: var(--border);
+  margin: 32px auto;
+}
+.trust-count {
+  font-family: var(--f-display);
+  font-size: 72px;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.trust-plus {
+  color: var(--star);
+}
+
+/* ── SECTIONS ── */
+section.content-section {
+  padding: 80px 88px;
+}
+section.content-section.alt { background: var(--bg-mid); }
+
+.section-tag {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--red); margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--f-display);
+  font-size: clamp(44px, 5vw, 68px);
+  font-weight: 900; text-transform: uppercase; line-height: 1;
+  color: var(--navy); margin-bottom: 40px;
+}
+.section-title .accent { color: var(--red); }
+
+/* ── REVIEWS ── */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.review-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.review-card:hover {
+  box-shadow: 0 8px 32px oklch(0 0 0 / 0.08);
+  transform: translateY(-4px);
+}
+.review-photo-placeholder {
+  width: 100%;
+  height: 200px;
+  background: var(--bg-mid);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.review-body {
+  padding: 28px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.review-stars {
+  color: var(--star);
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+.review-quote {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.75;
+  font-style: italic;
+  flex: 1;
+}
+.review-author {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.review-name {
+  font-family: var(--f-display);
+  font-size: 17px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+}
+.review-branch {
+  font-size: 12px;
+  color: var(--red);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.review-verified {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.review-card:nth-child(1) { transition-delay: 0s; }
+.review-card:nth-child(2) { transition-delay: 0.15s; }
+.review-card:nth-child(3) { transition-delay: 0.3s; }
+
+/* ── HOW IT WORKS ── */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+  margin-top: 20px;
+}
+.steps::before { display: none; }
+.step {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; padding: 0 24px;
+  position: relative; z-index: 1;
+}
+.step-num {
+  width: 88px; height: 88px;
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-display);
+  font-size: 36px; font-weight: 900; color: #fff;
+  margin-bottom: 24px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transition: transform 0.2s;
+}
+.step:hover .step-num { transform: scale(1.08); }
+.step:nth-child(1) .step-num,
+.step:nth-child(3) .step-num { background: var(--navy); }
+.step:nth-child(2) .step-num,
+.step:nth-child(4) .step-num { background: var(--red); }
+.step-title {
+  font-family: var(--f-display);
+  font-size: 20px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--navy); margin-bottom: 10px;
+}
+.step-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+/* ── FINAL CTA ── */
+.cta-section {
+  background: var(--navy-deep);
+  padding: 80px 88px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    oklch(1 0 0 / 0.015) 40px,
+    oklch(1 0 0 / 0.015) 41px
+  );
+}
+.cta-main {
+  position: relative; z-index: 1;
+}
+.cta-overline {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: oklch(1 0 0 / 0.5); margin-bottom: 16px;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.cta-overline.visible { opacity: 1; transform: none; }
+.cta-title {
+  font-family: var(--f-display);
+  font-size: clamp(44px, 5vw, 72px);
+  font-weight: 900; text-transform: uppercase; line-height: 1;
+  color: #fff; margin-bottom: 16px;
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.7s 0.1s ease, transform 0.7s 0.1s ease;
+}
+.cta-title.visible { opacity: 1; transform: none; }
+.cta-title .gold {
+  color: var(--star);
+  background: linear-gradient(90deg, var(--star) 0%, oklch(0.95 0.18 85) 50%, var(--star) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+@keyframes goldShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.cta-title.visible .gold {
+  animation: goldShimmer 3s 0.5s ease-in-out infinite;
+}
+.cta-subtitle {
+  font-size: 16px; color: oklch(1 0 0 / 0.6);
+  line-height: 1.7; max-width: 520px;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s 0.25s ease, transform 0.6s 0.25s ease;
+}
+.cta-subtitle.visible { opacity: 1; transform: none; }
+.cta-subtitle strong { color: #fff; }
+
+.cta-actions {
+  display: flex; flex-direction: column;
+  gap: 16px; align-items: stretch;
+  position: relative; z-index: 1;
+  min-width: 280px;
+  opacity: 0; transform: translateX(30px);
+  transition: opacity 0.7s 0.2s ease, transform 0.7s 0.2s ease;
+}
+.cta-actions.visible { opacity: 1; transform: none; }
+.btn-cta-primary {
+  display: block; text-align: center;
+  background: var(--star);
+  color: var(--navy-deep);
+  font-family: var(--f-display);
+  font-size: 20px; font-weight: 900;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 18px 44px;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%, 12px 50%);
+  position: relative;
+  overflow: hidden;
+}
+.btn-cta-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, oklch(1 0 0 / 0.3) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s 2.5s ease-in-out infinite;
+}
+.btn-cta-primary:hover { background: oklch(0.88 0.14 85); transform: translateX(4px); }
+.btn-cta-phone {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  text-decoration: none;
+  border: 1px solid oklch(1 0 0 / 0.2);
+  color: #fff;
+  font-family: var(--f-display);
+  font-size: 20px; font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 16px 24px;
+  transition: border-color 0.2s;
+}
+.btn-cta-phone:hover { border-color: oklch(1 0 0 / 0.5); }
+.cta-no-obligation {
+  font-size: 11px; color: oklch(1 0 0 / 0.4);
+  text-align: center; letter-spacing: 0.04em; font-style: italic;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--bg-mid);
+  border-top: 1px solid var(--border);
+  padding: 48px 88px 28px;
+  text-align: center;
+}
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+}
+.footer-brand { display: flex; flex-direction: column; align-items: center; gap: 14px; max-width: 340px; }
+.footer-logo { display: flex; align-items: center; gap: 10px; justify-content: center; }
+.footer-logo img { height: 64px; width: auto; }
+.footer-logo-text {
+  font-family: var(--f-display);
+  font-size: 20px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.1;
+  color: var(--navy);
+}
+.footer-logo-text span { display: block; font-size: 14px; color: var(--red); letter-spacing: 0.25em; font-weight: 900; text-transform: uppercase; text-align: center; }
+.footer-tagline { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.footer-phone {
+  font-family: var(--f-display); font-size: 24px; font-weight: 800;
+  color: var(--red); text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.footer-phone:hover { color: var(--navy); }
+.footer-links {
+  display: flex; flex-direction: row; flex-wrap: wrap;
+  gap: 8px 32px; justify-content: center;
+}
+.footer-links h4 { display: none; }
+.footer-links a {
+  font-size: 13px; color: var(--muted);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--navy); }
+.footer-bottom {
+  display: flex; justify-content: center; align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap; gap: 10px; text-align: center;
+}
+.footer-bottom p { font-size: 11px; color: var(--muted); line-height: 1.7; }
+.eh { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted); }
+.eh-box {
+  width: 28px; height: 28px;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; color: var(--muted);
+}
+
+/* ── HERO ANIMATIONS ── */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes popIn {
+  0%   { opacity: 0; transform: scale(0.3) rotate(-15deg); }
+  70%  { transform: scale(1.25) rotate(5deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+@keyframes plusPulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.35); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes formSlide {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── ANIMATIONS ── */
+.fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.65s, transform 0.65s; }
+.fade-up.visible { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  nav { padding: 0 24px; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 100px 24px 40px; }
+  .hero-right { min-height: 60vh; }
+  section.content-section { padding: 60px 24px; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .steps::before { display: none; }
+  .cta-section { grid-template-columns: 1fr; padding: 60px 24px; }
+  .cta-actions { min-width: auto; }
+  footer { padding: 40px 24px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .form-field.full { grid-column: span 1; }
+  .fast-hits { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="logo.png" alt="Veterans Own Mortgage">
+    <div class="nav-logo-text">
+      Veterans Own
+      <span>Mortgage</span>
+    </div>
+  </a>
+  <a href="#form" class="btn-nav">Get My VA Breakdown</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+
+  <!-- LEFT -->
+  <div class="hero-left">
+    <h1 class="hero-title">VA<br><span class="red">IRRRL</span></h1>
+
+    <p class="hero-tagline">You Fought For Us. We Fight For You.<br>Save Money Today.</p>
+
+    <p class="hero-hook">
+      Every month you wait, you are <strong>overpaying on interest.</strong><br>Let us prove it.
+    </p>
+
+    <ul class="plus-list">
+      <li><span class="plus-sign">+</span> Lower your monthly payment</li>
+      <li><span class="plus-sign">+</span> Skip up to 2 mortgage payments</li>
+      <li><span class="plus-sign">+</span> Get an escrow refund (cash back)</li>
+      <li><span class="plus-sign">+</span> Close in as little as 10 days</li>
+    </ul>
+
+    <a href="#form" class="btn-hero">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Get My VA Loan Breakdown
+    </a>
+
+    <p class="micro-trust"><strong>"No obligation.</strong> If it doesn't make sense, don't do it."</p>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="hero-right">
+    <!-- Video goes here when ready -->
+
+    <!-- Form -->
+    <div class="form-panel" id="form">
+      <div class="form-heading">Get My Free VA Breakdown</div>
+      <div id="form-body">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" placeholder="First Name">
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="(xxx) xxx-xxxx">
+          </div>
+          <div class="form-field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Email Address">
+          </div>
+          <div class="form-field">
+            <label for="rate">Estimated Current Rate</label>
+            <input type="text" id="rate" placeholder="e.g. 6.5%">
+          </div>
+        </div>
+        <p class="rate-hint">Your current rate helps us calculate your exact savings immediately.</p>
+        <button class="btn-submit" onclick="submitForm()">Show Me My Savings</button>
+      </div>
+      <div class="form-success" id="form-success">
+        <div class="check-circle">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>We Got It!</h3>
+        <p>A specialist will call you within one business day with your personalized savings breakdown.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust-section">
+  <h2 class="trust-headline">Lowest VA Rate<br>In America.</h2>
+  <div class="trust-stars">★★★★★</div>
+  <div class="trust-rating">
+    <span class="trust-big" id="count-rating">0</span>
+    <span class="trust-of">out of 5</span>
+  </div>
+  <p class="trust-sub">Average Customer Satisfaction Rating</p>
+  <div class="trust-divider"></div>
+  <div class="trust-count"><span id="count-veterans">0</span><span class="trust-plus">+</span></div>
+  <p class="trust-sub">Veterans Served And Counting</p>
+</section>
+
+<!-- REVIEWS -->
+<section class="content-section" id="reviews">
+  <h2 class="section-title" style="text-align:center;">What Veterans<br><span class="accent">Are Saying.</span></h2>
+  <div class="reviews-grid">
+
+    <div class="review-card fade-up">
+      <div class="review-photo-placeholder">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" color="var(--border)"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span>Photo Coming Soon</span>
+      </div>
+      <div class="review-body">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"I had no idea how easy the VA loan process could be! Veterans Own Mortgage walked me through every step and I closed in under 30 days. As a veteran I felt like they truly understood what I needed."</p>
+        <div class="review-author">
+          <span class="review-name">Marcus T.</span>
+          <span class="review-branch">U.S. Navy, Retired</span>
+        </div>
+        <div class="review-verified">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--navy)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Verified Customer
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="review-photo-placeholder">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" color="var(--border)"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span>Photo Coming Soon</span>
+      </div>
+      <div class="review-body">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"Zero down and a rate I could not find anywhere else! After being turned away by two other lenders I found Veterans Own Mortgage. They got me into my home with zero down. I cannot recommend them enough."</p>
+        <div class="review-author">
+          <span class="review-name">Brian H.</span>
+          <span class="review-branch">U.S. Marines, Veteran</span>
+        </div>
+        <div class="review-verified">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--navy)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Verified Customer
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="review-photo-placeholder">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" color="var(--border)"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span>Photo Coming Soon</span>
+      </div>
+      <div class="review-body">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"The only lender I will ever use. They saved me hundreds a month by eliminating PMI and got me a rate lower than anything I found elsewhere. Veterans Own Mortgage is the real deal."</p>
+        <div class="review-author">
+          <span class="review-name">James L.</span>
+          <span class="review-branch">U.S. Army, Veteran</span>
+        </div>
+        <div class="review-verified">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--navy)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Verified Customer
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="content-section alt" id="how">
+  <h2 class="section-title" style="text-align:center;">How It<br><span class="accent">Works.</span></h2>
+  <div class="steps">
+    <div class="step fade-up">
+      <div class="step-num">1</div>
+      <div class="step-title">Request Your Breakdown</div>
+      <div class="step-desc">Fill out the simple form above. Takes less than 2 minutes. No commitment required.</div>
+    </div>
+    <div class="step fade-up">
+      <div class="step-num">2</div>
+      <div class="step-title">We Analyze Your Loan</div>
+      <div class="step-desc">We review your current loan details and find every dollar of savings available to you.</div>
+    </div>
+    <div class="step fade-up">
+      <div class="step-num">3</div>
+      <div class="step-title">You Review the Savings</div>
+      <div class="step-desc">We show you the real numbers in writing. You see exactly what you will save before anything is signed.</div>
+    </div>
+    <div class="step fade-up">
+      <div class="step-num">4</div>
+      <div class="step-title">If It Makes Sense, We Lock It</div>
+      <div class="step-desc">You decide. No pressure. If rates drop again, we do it again at no cost to you.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section" id="cta">
+  <div class="cta-main">
+    <p class="cta-overline">Act Now</p>
+    <h2 class="cta-title">Win Now.<br><span class="gold">Save Money Today.</span></h2>
+    <p class="cta-subtitle">
+      If rates drop we do it again at <strong>no cost.</strong> You have nothing to lose and hundreds of dollars a month to gain.
+    </p>
+  </div>
+  <div class="cta-actions">
+    <a href="#form" class="btn-cta-primary">Get My VA Breakdown</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="logo.png" alt="Veterans Own Mortgage">
+        <div class="footer-logo-text">
+          Veterans Own
+          <span>Mortgage</span>
+        </div>
+      </div>
+      <p class="footer-tagline">Serving those who served. Dedicated to getting veterans the lowest VA loan rates in America.</p>
+      <a href="tel:+13106982920" class="footer-phone">(310) 698-2920</a>
+    </div>
+    <div class="footer-links">
+      <h4>Navigate</h4>
+      <a href="#why">Why Veterans Choose Us</a>
+      <a href="#how">How It Works</a>
+      <a href="#form">Apply Now</a>
+      <a href="https://veteransown.com/privacy">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>
+      &copy; 2026 Veterans Own Mortgage. All rights reserved.<br>
+      Not affiliated with the U.S. Department of Veterans Affairs.
+    </p>
+    <div class="eh">
+      <div class="eh-box">⌂</div>
+      Equal Housing Lender
+    </div>
+  </div>
+</footer>
+
+<script>
+// VIDEO PLACEHOLDER
+function playVideo() {
+  const el = document.getElementById('video-placeholder');
+  // Swap with YouTube embed — replace VIDEO_ID with your real YouTube ID
+  el.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1" frameborder="0" allowfullscreen style="display:block;"></iframe>';
+  el.style.cursor = 'default';
+  el.onclick = null;
+}
+
+// NAV SCROLL
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// FORM SUBMIT
+function submitForm() {
+  const fname = document.getElementById('fname').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if (!fname || !phone || !email) {
+    [fname, phone, email].forEach((val, i) => {
+      const inputs = document.querySelectorAll('.form-field input');
+      if (!inputs[i].value.trim()) inputs[i].style.borderColor = 'var(--red)';
+      else inputs[i].style.borderColor = '';
+    });
+    return;
+  }
+  document.getElementById('form-body').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+
+// SCROLL ANIMATIONS
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Stagger fade-up children
+document.querySelectorAll('.why-grid, .steps').forEach(container => {
+  [...container.querySelectorAll('.fade-up')].forEach((el, i) => {
+    el.style.transitionDelay = (i * 0.1) + 's';
+  });
+});
+
+// CTA section animations
+const ctaObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.cta-overline, .cta-title, .cta-subtitle, .cta-actions')
+        .forEach(el => el.classList.add('visible'));
+      ctaObserver.disconnect();
+    }
+  });
+}, { threshold: 0.2 });
+const ctaSection = document.querySelector('.cta-section');
+if (ctaSection) ctaObserver.observe(ctaSection);
+
+// COUNT UP ANIMATION
+function countUp(el, target, duration, prefix = '', suffix = '') {
+  const start = 0;
+  const increment = target / (duration / 16);
+  let current = start;
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      current = target;
+      clearInterval(timer);
+    }
+    const display = target >= 1000
+      ? Math.floor(current).toLocaleString('en-US')
+      : current.toFixed(target % 1 !== 0 ? 1 : 0);
+    el.textContent = prefix + display + suffix;
+  }, 16);
+}
+
+// Trigger count-up when trust section is in view
+const trustObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      countUp(document.getElementById('count-rating'), 4.9, 1200);
+      countUp(document.getElementById('count-veterans'), 270000, 1800);
+      trustObserver.disconnect();
+    }
+  });
+}, { threshold: 0.3 });
+
+const trustSection = document.querySelector('.trust-section');
+if (trustSection) trustObserver.observe(trustSection);
+</script>
+</body>
+</html>
