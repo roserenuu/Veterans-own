@@ -295,21 +295,24 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 .plus-list li:nth-child(4) .plus-sign { animation-delay: 0.82s, 2.6s; }
 
 .btn-hero {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   background: var(--red);
   color: #fff;
   font-family: var(--f-display);
-  font-size: 22px; font-weight: 900;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 18px 44px;
+  font-size: clamp(14px, 1.3vw, 18px); font-weight: 900;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 18px 36px 18px 28px;
+  white-space: nowrap;
   text-decoration: none; border: none; cursor: pointer;
   clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%, 14px 50%);
   transition: background 0.2s, transform 0.2s;
   margin-bottom: 16px;
   animation: slideUp 0.6s 0.95s ease both;
   position: relative; overflow: hidden;
+  width: fit-content;
+  max-width: 100%;
 }
 .btn-hero::after {
   content: '';
