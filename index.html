@@ -178,15 +178,16 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 
 .hero-typewriter {
   font-family: 'Courier Prime', monospace;
-  font-size: 15px;
+  font-size: clamp(15px, 1.6vw, 22px);
   font-weight: 700;
   color: #000;
   text-align: center;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 14px;
-  min-height: 20px;
+  min-height: 28px;
   transition: opacity 0.6s ease;
+  width: 100%;
 }
 
 .hero-title {
