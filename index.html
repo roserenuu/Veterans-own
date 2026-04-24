@@ -664,8 +664,8 @@ section.content-section.alt { background: var(--bg-mid); }
   </div>
   <div class="review-swipe-hint" id="swipe-hint">← swipe →</div>
   <div class="swipe-dots" id="swipe-dots">
-    <div class="swipe-dot active"></div>
     <div class="swipe-dot"></div>
+    <div class="swipe-dot active"></div>
     <div class="swipe-dot"></div>
   </div>
 </section>
@@ -902,12 +902,19 @@ const reviewsGrid = document.querySelector('.reviews-grid');
 const dots = document.querySelectorAll('.swipe-dot');
 const swipeHint = document.getElementById('swipe-hint');
 if (reviewsGrid && window.innerWidth < 960) {
+  // Start on the middle card
+  const cards = reviewsGrid.querySelectorAll('.review-card');
+  if (cards.length >= 2) {
+    const cardWidth = cards[1].offsetWidth + 16;
+    reviewsGrid.scrollLeft = cardWidth;
+    dots.forEach((d, i) => d.classList.toggle('active', i === 1));
+  }
+
   reviewsGrid.addEventListener('scroll', () => {
     if (swipeHint) swipeHint.style.display = 'none';
     const cards = reviewsGrid.querySelectorAll('.review-card');
-    const scrollLeft = reviewsGrid.scrollLeft;
     const cardWidth = cards[0].offsetWidth + 16;
-    const index = Math.round(scrollLeft / cardWidth);
+    const index = Math.round(reviewsGrid.scrollLeft / cardWidth);
     dots.forEach((d, i) => d.classList.toggle('active', i === index));
   }, { passive: true });
 }
