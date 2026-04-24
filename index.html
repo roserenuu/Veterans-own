@@ -62,7 +62,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Special+Elite&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -173,6 +173,30 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 }
 @keyframes blink {
   0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+}
+
+.hero-typewriter {
+  font-family: 'Special Elite', monospace;
+  font-size: 13px;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+  min-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #000;
+  width: 0;
+  animation: typeReveal 1.4s steps(20, end) 0.3s forwards, blinkCursor 0.75s step-end 0.3s 4;
+}
+@keyframes typeReveal {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+@keyframes blinkCursor {
+  0%, 100% { border-color: #000; }
+  50%       { border-color: transparent; }
 }
 
 .hero-title {
@@ -468,6 +492,7 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-left">
+    <p class="hero-typewriter" id="typewriter"></p>
     <h1 class="hero-title">VA<br><span class="red">IRRRL</span></h1>
     <p class="hero-dare">We shop hundreds of lenders.<br>We will <strong>not</strong> get beat on rates.<br>We dare you to compare.</p>
     <p class="hero-hook"><span class="hook-red">YOU FOUGHT FOR US.</span> WE FIGHT FOR YOU.</p>
@@ -868,6 +893,10 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
 </footer>
 
 <script>
+// TYPEWRITER
+const tw = document.getElementById('typewriter');
+if (tw) tw.textContent = "The Nation's Best";
+
 // NAV SCROLL
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
