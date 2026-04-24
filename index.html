@@ -145,7 +145,7 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 }
 
 .hero-left {
-  padding: 120px 70px 100px 100px;
+  padding: 140px 70px 100px 100px;
   position: relative;
   z-index: 2;
   display: flex;
@@ -184,10 +184,12 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   text-align: center;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 14px;
-  min-height: 28px;
-  transition: opacity 0.6s ease;
+  position: absolute;
+  top: 90px;
+  left: 0; right: 0;
   width: 100%;
+  transition: opacity 0.6s ease;
+  z-index: 10;
 }
 
 .hero-title {
@@ -485,8 +487,9 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 
 <!-- HERO -->
 <section class="hero" id="top">
+  <p class="hero-typewriter" id="typewriter"></p>
+
   <div class="hero-left">
-    <p class="hero-typewriter" id="typewriter"></p>
     <h1 class="hero-title">VA<br><span class="red">IRRRL</span></h1>
     <p class="hero-dare">We shop hundreds of lenders.<br>We will <strong>not</strong> get beat on rates.<br>We dare you to compare.</p>
     <p class="hero-hook"><span class="hook-red">YOU FOUGHT FOR US.</span> WE FIGHT FOR YOU.</p>
