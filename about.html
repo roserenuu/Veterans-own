@@ -184,14 +184,19 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   animation: slideUp 0.7s 0.15s ease both;
 }
 
-/* aerial neighborhood illustration */
+/* hero photo */
 .hero-illustration {
   position: relative;
-  aspect-ratio: 5/4;
-  background: linear-gradient(135deg, oklch(0.62 0.10 130), oklch(0.50 0.12 130));
+  aspect-ratio: 1/1;
+  background: var(--bg-mid);
   border: 1px solid var(--border);
   overflow: hidden;
   animation: slideUp 0.8s 0.3s ease both;
+}
+.hero-illustration img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
 }
 .hero-illustration svg { width: 100%; height: 100%; display: block; }
 .hero-badge {
@@ -486,90 +491,7 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
 
   <div class="hero-illustration">
     <div class="hero-badge">Serving Those Who Served</div>
-    <svg viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg" aria-label="Aerial view of a circular residential neighborhood with houses arranged around a central green lawn and trees">
-      <!-- background -->
-      <rect width="600" height="480" fill="oklch(0.55 0.10 130)"/>
-      <!-- main road -->
-      <path d="M0 240 L200 240 A100 100 0 1 1 200 240 Z" fill="none" stroke="oklch(0.78 0.01 80)" stroke-width="22"/>
-      <!-- street ring -->
-      <circle cx="300" cy="240" r="170" fill="none" stroke="oklch(0.78 0.01 80)" stroke-width="20"/>
-      <!-- entry road from left -->
-      <rect x="0" y="228" width="130" height="24" fill="oklch(0.78 0.01 80)"/>
-      <!-- central park / lawn -->
-      <circle cx="300" cy="240" r="100" fill="oklch(0.62 0.13 130)"/>
-      <!-- trees in center -->
-      <circle cx="270" cy="220" r="18" fill="oklch(0.42 0.11 145)"/>
-      <circle cx="320" cy="210" r="22" fill="oklch(0.42 0.11 145)"/>
-      <circle cx="290" cy="265" r="20" fill="oklch(0.42 0.11 145)"/>
-      <circle cx="335" cy="270" r="16" fill="oklch(0.42 0.11 145)"/>
-
-      <!-- houses around the ring -->
-      <g fill="#fff" stroke="oklch(0.18 0.02 255)" stroke-width="2">
-        <!-- top -->
-        <g transform="translate(285,40) rotate(0)">
-          <rect x="0" y="0" width="30" height="36"/>
-          <polygon points="-4,0 15,-14 34,0" fill="oklch(0.50 0.20 25)" stroke="oklch(0.18 0.02 255)"/>
-        </g>
-        <g transform="translate(360,55) rotate(28)">
-          <rect x="0" y="0" width="30" height="36"/>
-          <polygon points="-4,0 15,-14 34,0" fill="oklch(0.50 0.20 25)" stroke="oklch(0.18 0.02 255)"/>
-        </g>
-        <g transform="translate(425,100) rotate(56)">
-          <rect x="0" y="0" width="30" height="36"/>
-          <polygon points="-4,0 15,-14 34,0" fill="oklch(0.50 0.20 25)" stroke="oklch(0.18 0.02 255)"/>
-        </g>
-        <g transform="translate(465,170) rotate(84)">
-          <rect x="0" y="0" width="30" height="36"/>
-          <polygon points="-4,0 15,-14 34,0" fill="oklch(0.50 0.20 25)" stroke="oklch(0.18 0.02 255)"/>
-        </g>
-        <g transform="translate(465,255) rotate(112)">
-          <rect x="0" y="0" width="30" height="36"/>
-          <polygon points="-4,0 15,-14 34,0" fill="oklch(0.22 0.08 255)" stroke="oklch(0.18 0.02 255)"/>
-        </g>
-        <g transform="translate(425,330) rotate(140)">
-          <rect x="0" y="0" width="30" height="36"/>
-          <polygon points="-4,0 15,-14 34,0" fill="oklch(0.22 0.08 255)" stroke="oklch(0.18 0.02 255)"/>
-        </g>
-        <g transform="translate(360,390) rotate(168)">
-          <rect x="0" y="0" width="30" height="36"/>
-          <polygon points="-4,0 15,-14 34,0" fill="oklch(0.22 0.08 255)" stroke="oklch(0.18 0.02 255)"/>
-        </g>
-        <g transform="translate(285,410) rotate(196)">
-          <rect x="0" y="0" width="30" height="36"/>
-          <polygon points="-4,0 15,-14 34,0" fill="oklch(0.22 0.08 255)" stroke="oklch(0.18 0.02 255)"/>
-        </g>
-        <g transform="translate(210,395) rotate(224)">
-          <rect x="0" y="0" width="30" height="36"/>
-          <polygon points="-4,0 15,-14 34,0" fill="oklch(0.50 0.20 25)" stroke="oklch(0.18 0.02 255)"/>
-        </g>
-        <g transform="translate(150,345) rotate(252)">
-          <rect x="0" y="0" width="30" height="36"/>
-          <polygon points="-4,0 15,-14 34,0" fill="oklch(0.50 0.20 25)" stroke="oklch(0.18 0.02 255)"/>
-        </g>
-        <g transform="translate(120,265) rotate(280)">
-          <rect x="0" y="0" width="30" height="36"/>
-          <polygon points="-4,0 15,-14 34,0" fill="oklch(0.50 0.20 25)" stroke="oklch(0.18 0.02 255)"/>
-        </g>
-        <g transform="translate(150,140) rotate(308)">
-          <rect x="0" y="0" width="30" height="36"/>
-          <polygon points="-4,0 15,-14 34,0" fill="oklch(0.22 0.08 255)" stroke="oklch(0.18 0.02 255)"/>
-        </g>
-        <g transform="translate(220,80) rotate(336)">
-          <rect x="0" y="0" width="30" height="36"/>
-          <polygon points="-4,0 15,-14 34,0" fill="oklch(0.22 0.08 255)" stroke="oklch(0.18 0.02 255)"/>
-        </g>
-      </g>
-
-      <!-- outer trees -->
-      <g fill="oklch(0.42 0.11 145)">
-        <circle cx="60" cy="80" r="22"/>
-        <circle cx="540" cy="60" r="20"/>
-        <circle cx="560" cy="420" r="24"/>
-        <circle cx="40" cy="400" r="22"/>
-        <circle cx="80" cy="180" r="14"/>
-        <circle cx="540" cy="370" r="16"/>
-      </g>
-    </svg>
+    <img src="veterans.jpg" alt="Group of smiling U.S. veterans of varied service branches standing together in front of an American flag" loading="eager" decoding="async">
   </div>
 </section>
 
@@ -612,7 +534,6 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
 
   <div class="values-grid">
     <div class="value-card fade-up">
-      <span class="value-num">01</span>
       <div class="value-icon">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
       </div>
@@ -621,7 +542,6 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
     </div>
 
     <div class="value-card fade-up">
-      <span class="value-num">02</span>
       <div class="value-icon">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       </div>
@@ -630,7 +550,6 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
     </div>
 
     <div class="value-card fade-up">
-      <span class="value-num">03</span>
       <div class="value-icon">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
       </div>
@@ -639,7 +558,6 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
     </div>
 
     <div class="value-card fade-up">
-      <span class="value-num">04</span>
       <div class="value-icon">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
       </div>
@@ -648,7 +566,6 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
     </div>
 
     <div class="value-card fade-up">
-      <span class="value-num">05</span>
       <div class="value-icon">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><circle cx="17" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M15 15a4 4 0 0 1 4 4v2"/></svg>
       </div>
