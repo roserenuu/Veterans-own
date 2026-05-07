@@ -93,10 +93,33 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ── ANNOUNCEMENT BAR ── */
+.announce-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 101;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: var(--navy-deep);
+  color: #fff;
+  font-family: var(--f-display);
+  font-size: 12px; font-weight: 800;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 0 16px;
+  text-align: center;
+}
+.announce-bar span { color: var(--star); font-size: 11px; }
+@media (max-width: 600px) {
+  .announce-bar { font-size: 10px; letter-spacing: 0.14em; gap: 8px; height: 30px; }
+}
+
 /* ── NAV ── */
 nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 34px; left: 0; right: 0;
   z-index: 100;
   height: 72px;
   display: flex;
@@ -161,8 +184,8 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 
 /* ── HERO ── */
 .hero {
-  min-height: calc(100vh - 72px);
-  padding: 96px 0 32px;
+  min-height: calc(100vh - 106px);
+  padding: 130px 0 32px;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
@@ -577,7 +600,7 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 .fade-up.visible { opacity: 1; transform: none; }
 
 @media (max-width: 960px) {
-  nav { padding: 0 16px; height: 60px; }
+  nav { padding: 0 16px; height: 60px; top: 30px; }
   nav.scrolled { height: 52px; }
   .nav-logo img { height: 42px; }
   .nav-logo-text { font-size: 15px; }
@@ -601,6 +624,11 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 </style>
 </head>
 <body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  <span>★</span> The Nation's Lowest VA Rates · Free Quote In 30 Seconds <span>★</span>
+</div>
 
 <!-- NAV -->
 <nav id="navbar">
