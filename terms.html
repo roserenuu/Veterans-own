@@ -11,10 +11,14 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Inter', sans-serif; background: #f7f8fb; color: #2d3748; line-height: 1.75; }
-    .navbar { background: #1a2f5a; padding: 16px 24px; display: flex; align-items: center; gap: 10px; }
+    .navbar { background: #1a2f5a; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
     .logo-img { height: 40px; width: auto; }
     .logo-line1 { display: block; font-size: 0.88rem; font-weight: 800; letter-spacing: 0.08em; color: #ffffff; }
     .logo-line2 { display: block; font-size: 0.52rem; font-weight: 600; letter-spacing: 0.2em; color: #7eb8f7; }
+    .nav-pages { display: flex; gap: 22px; }
+    .nav-pages a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-pages a:hover { color: #f5c518; }
+    @media (max-width: 600px) { .nav-pages { display: none; } }
     .container { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
     h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); font-weight: 800; color: #1a2f5a; margin-bottom: 8px; }
     .updated { font-size: 0.85rem; color: #718096; margin-bottom: 40px; }
@@ -37,6 +41,11 @@
         <span class="logo-line2">MORTGAGE</span>
       </div>
     </a>
+    <div class="nav-pages">
+      <a href="/buy.html">Buy</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
   </nav>
 
   <div class="container">
