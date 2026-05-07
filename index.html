@@ -375,11 +375,91 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   background: var(--red);
 }
 
+.wizard-eyebrow {
+  font-family: var(--f-display);
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 8px;
+}
 .form-heading {
   font-family: var(--f-display);
-  font-size: 20px; font-weight: 900;
-  text-transform: uppercase; letter-spacing: 0.05em;
+  font-size: 28px; font-weight: 900;
+  text-transform: uppercase; letter-spacing: 0.04em;
   color: var(--navy); margin-bottom: 18px;
+  line-height: 1;
+}
+
+/* ── WIZARD ── */
+.wizard { position: relative; }
+.wizard-progress { display: flex; gap: 8px; margin-bottom: 18px; }
+.wizard-dot {
+  flex: 1;
+  height: 4px;
+  background: var(--border);
+  transition: background 0.3s;
+}
+.wizard-dot.active { background: var(--red); }
+.wizard-dot.completed { background: var(--navy); }
+.wizard-step { display: none; animation: wizardFade 0.35s ease; }
+.wizard-step.active { display: block; }
+@keyframes wizardFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.wizard-question {
+  font-family: var(--f-display);
+  font-size: 18px; font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+.wizard-options { display: flex; flex-direction: column; gap: 10px; }
+.wizard-choice {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  padding: 14px 16px;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--f-body);
+  display: flex; flex-direction: column; gap: 3px;
+  transition: border-color 0.15s, background 0.15s, transform 0.1s;
+}
+.wizard-choice:hover {
+  border-color: var(--navy);
+  background: var(--card);
+}
+.wizard-choice:active { transform: scale(0.99); }
+.wizard-choice-title {
+  font-family: var(--f-display);
+  font-size: 15px; font-weight: 900;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--navy);
+}
+.wizard-choice-sub {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+.wizard-back {
+  background: none; border: none; padding: 0;
+  font-family: var(--f-display);
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: color 0.15s;
+}
+.wizard-back:hover { color: var(--navy); }
+.wizard-fields {
+  display: flex; flex-direction: column; gap: 12px;
+  margin-bottom: 6px;
+}
+.wizard-trust {
+  font-size: 11px; color: var(--muted); font-style: italic;
+  text-align: center; margin-top: 10px;
 }
 
 .form-grid {
@@ -565,32 +645,82 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 
   <div class="hero-right">
     <div class="form-panel" id="form">
-      <div class="form-heading">Get My Free VA Breakdown</div>
-      <form id="form-body" name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-        <input type="hidden" name="form-name" value="quote">
-        <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
-        <div class="form-grid">
-          <div class="form-field">
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="first_name" placeholder="First Name" autocomplete="given-name" required>
-            <span class="field-error" id="err-fname"></span>
-          </div>
-          <div class="form-field">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="(xxx) xxx-xxxx" autocomplete="tel" required>
-            <span class="field-error" id="err-phone"></span>
-          </div>
-          <div class="form-field">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Email Address" autocomplete="email" required>
-            <span class="field-error" id="err-email"></span>
-          </div>
-          <div class="form-field">
-            <input type="text" id="rate" name="current_rate" placeholder="Current Rate (e.g. 6.5%)">
+      <div class="wizard-eyebrow">30 Seconds. No Credit Pull.</div>
+      <div class="form-heading">See My VA Rate</div>
+
+      <div class="wizard" id="wizard">
+        <div class="wizard-progress" aria-hidden="true">
+          <span class="wizard-dot active" data-dot="1"></span>
+          <span class="wizard-dot" data-dot="2"></span>
+          <span class="wizard-dot" data-dot="3"></span>
+        </div>
+
+        <div class="wizard-step active" data-step="1">
+          <p class="wizard-question">What are you looking to do?</p>
+          <div class="wizard-options">
+            <button type="button" class="wizard-choice" data-field="goal" data-value="refinance">
+              <span class="wizard-choice-title">Refinance My VA Loan</span>
+              <span class="wizard-choice-sub">Lower my payment with an IRRRL</span>
+            </button>
+            <button type="button" class="wizard-choice" data-field="goal" data-value="buy">
+              <span class="wizard-choice-title">Buy A Home</span>
+              <span class="wizard-choice-sub">Use my VA benefit, $0 down</span>
+            </button>
+            <button type="button" class="wizard-choice" data-field="goal" data-value="cashout">
+              <span class="wizard-choice-title">Cash Out</span>
+              <span class="wizard-choice-sub">Pull equity from my home</span>
+            </button>
           </div>
         </div>
-        <button type="submit" class="btn-submit">Show Me My Savings</button>
+
+        <div class="wizard-step" data-step="2">
+          <button type="button" class="wizard-back" data-back="1">&larr; Back</button>
+          <p class="wizard-question">Do you currently have a VA loan?</p>
+          <div class="wizard-options">
+            <button type="button" class="wizard-choice" data-field="va_status" data-value="yes">
+              <span class="wizard-choice-title">Yes, I Have A VA Loan</span>
+            </button>
+            <button type="button" class="wizard-choice" data-field="va_status" data-value="eligible">
+              <span class="wizard-choice-title">No, But I'm A Veteran</span>
+              <span class="wizard-choice-sub">I have VA loan eligibility</span>
+            </button>
+            <button type="button" class="wizard-choice" data-field="va_status" data-value="unsure">
+              <span class="wizard-choice-title">Not Sure</span>
+              <span class="wizard-choice-sub">Help me figure it out</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="wizard-step" data-step="3">
+          <button type="button" class="wizard-back" data-back="2">&larr; Back</button>
+          <p class="wizard-question">Almost done. Where should we send your rate?</p>
+          <div class="wizard-fields">
+            <div class="form-field">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" placeholder="First Name" autocomplete="given-name" required>
+              <span class="field-error" id="err-fname"></span>
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="(xxx) xxx-xxxx" autocomplete="tel" required>
+              <span class="field-error" id="err-phone"></span>
+            </div>
+          </div>
+          <button type="button" class="btn-submit" id="wizard-submit">Show Me My Rate</button>
+          <p class="wizard-trust">No credit pull. No spam. Free, no-obligation quote.</p>
+        </div>
+      </div>
+
+      <!-- Hidden Netlify form (detected at build time) -->
+      <form name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="quote">
+        <input type="text" name="bot-field">
+        <input type="text" name="first_name">
+        <input type="tel" name="phone">
+        <input type="text" name="goal">
+        <input type="text" name="va_status">
       </form>
+
       <div class="form-success" id="form-success">
         <div class="check-circle">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1017,35 +1147,61 @@ if (phoneInput) {
   });
 }
 
-const quoteForm = document.getElementById('form-body');
-if (quoteForm) {
-  quoteForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+// WIZARD
+const wizard = document.getElementById('wizard');
+if (wizard) {
+  const answers = { goal: '', va_status: '', first_name: '', phone: '' };
+  const steps = wizard.querySelectorAll('.wizard-step');
+  const dots = wizard.querySelectorAll('.wizard-dot');
+
+  function goToStep(n) {
+    steps.forEach(s => s.classList.toggle('active', +s.dataset.step === n));
+    dots.forEach(d => {
+      const i = +d.dataset.dot;
+      d.classList.toggle('active', i === n);
+      d.classList.toggle('completed', i < n);
+    });
+  }
+
+  wizard.querySelectorAll('.wizard-choice').forEach(btn => {
+    btn.addEventListener('click', () => {
+      answers[btn.dataset.field] = btn.dataset.value;
+      const currentStep = +btn.closest('.wizard-step').dataset.step;
+      goToStep(currentStep + 1);
+    });
+  });
+
+  wizard.querySelectorAll('.wizard-back').forEach(btn => {
+    btn.addEventListener('click', () => goToStep(+btn.dataset.back));
+  });
+
+  const submitBtn = document.getElementById('wizard-submit');
+  submitBtn.addEventListener('click', async () => {
     const fname = document.getElementById('fname').value.trim();
     const phone = document.getElementById('phone').value.trim();
-    const email = document.getElementById('email').value.trim();
     let valid = true;
     if (!fname) { setError('fname', 'Please enter your first name'); valid = false; } else setError('fname', '');
     if (digitsOnly(phone).length < 10) { setError('phone', 'Please enter a valid 10-digit phone number'); valid = false; } else setError('phone', '');
-    if (!EMAIL_RE.test(email)) { setError('email', 'Please enter a valid email address'); valid = false; } else setError('email', '');
     if (!valid) return;
 
-    const submitBtn = quoteForm.querySelector('.btn-submit');
+    answers.first_name = fname;
+    answers.phone = phone;
+
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
     try {
-      const formData = new FormData(quoteForm);
+      const body = new URLSearchParams({ 'form-name': 'quote', ...answers }).toString();
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
+        body
       });
       if (!response.ok) throw new Error('Network error');
-      quoteForm.style.display = 'none';
+      wizard.style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
     } catch (err) {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Show Me My Savings';
+      submitBtn.textContent = 'Show Me My Rate';
       alert("Sorry, we couldn't send that. Please try again or call (310) 698-2920.");
     }
   });
