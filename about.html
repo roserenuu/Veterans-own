@@ -199,15 +199,86 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   display: block;
 }
 .hero-illustration svg { width: 100%; height: 100%; display: block; }
+.pledge-card {
+  background: linear-gradient(135deg, var(--navy), oklch(0.16 0.08 255));
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pledge-inner {
+  width: 100%;
+  padding: 56px 48px;
+  color: #fff;
+  position: relative;
+}
+.pledge-stars {
+  display: flex;
+  gap: 6px;
+  color: oklch(0.82 0.17 85);
+  font-size: 18px;
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+.pledge-heading {
+  font-family: var(--f-display);
+  font-size: clamp(34px, 3.6vw, 48px);
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+.pledge-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.pledge-list li {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 14px;
+  align-items: start;
+  font-family: var(--f-body);
+  font-size: 15px;
+  line-height: 1.5;
+  color: oklch(0.92 0.01 80);
+}
+.pledge-list strong {
+  color: #fff;
+  font-weight: 700;
+}
+.pledge-num {
+  font-family: var(--f-display);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: oklch(0.82 0.17 85);
+  border-top: 2px solid oklch(0.82 0.17 85);
+  padding-top: 6px;
+  text-align: left;
+}
+.pledge-sign {
+  font-family: var(--f-display);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: oklch(0.82 0.17 85);
+  font-weight: 800;
+}
 .hero-badge {
   position: absolute;
   top: 22px; left: -18px;
-  background: var(--navy); color: #fff;
+  background: var(--red); color: #fff;
   font-family: var(--f-display); font-weight: 900;
   font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
   padding: 11px 22px;
   z-index: 3;
   clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  box-shadow: 0 4px 16px oklch(0.50 0.20 25 / 0.35);
 }
 
 /* ── ANIMATIONS ── */
@@ -489,9 +560,21 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
     <p class="hero-sub">Financing homeownership responsibly for the men and women who served, and the families that stood beside them.</p>
   </div>
 
-  <div class="hero-illustration">
-    <div class="hero-badge">Serving Those Who Served</div>
-    <img src="veterans.png" alt="Group of smiling U.S. veterans of varied service branches standing together in front of an American flag" loading="eager" decoding="async">
+  <div class="hero-illustration pledge-card">
+    <div class="hero-badge">The Veterans Own Pledge</div>
+    <div class="pledge-inner">
+      <div class="pledge-stars" aria-hidden="true">
+        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+      </div>
+      <h2 class="pledge-heading">Our Promise<br>To You.</h2>
+      <ul class="pledge-list">
+        <li><span class="pledge-num">01</span><div><strong>Lowest rate, guaranteed.</strong> Get a better quote, we'll beat it.</div></li>
+        <li><span class="pledge-num">02</span><div><strong>No upsells, no nonsense.</strong> One job: getting you a better VA loan.</div></li>
+        <li><span class="pledge-num">03</span><div><strong>Veterans first, always.</strong> Decisions made by people who served.</div></li>
+        <li><span class="pledge-num">04</span><div><strong>Plain-English answers.</strong> No jargon. No runaround. Ever.</div></li>
+      </ul>
+      <p class="pledge-sign">&mdash; The Veterans Own Mortgage team</p>
+    </div>
   </div>
 </section>
 
