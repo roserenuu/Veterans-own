@@ -629,17 +629,18 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
 .nav-drawer {
   position: fixed; top: 0; right: -100%;
   width: 84%; max-width: 360px;
-  height: 100vh; background: var(--navy);
+  height: 100vh; background: var(--bg);
   z-index: 200; padding: 70px 28px 28px;
   display: flex; flex-direction: column;
   transition: right 0.32s ease;
-  box-shadow: -8px 0 32px oklch(0 0 0 / 0.25);
+  box-shadow: -8px 0 32px oklch(0 0 0 / 0.18);
+  border-left: 1px solid var(--border);
 }
 .nav-drawer.open { right: 0; }
 .nav-drawer-close {
   position: absolute; top: 14px; right: 18px;
   background: none; border: none; cursor: pointer;
-  font-size: 32px; color: #fff; line-height: 1; padding: 4px 10px;
+  font-size: 32px; color: var(--navy); line-height: 1; padding: 4px 10px;
 }
 .nav-drawer-links {
   list-style: none; padding: 0; margin: 0 0 auto;
@@ -650,11 +651,11 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
   font-family: var(--f-display);
   font-size: 22px; font-weight: 800;
   letter-spacing: 0.06em; text-transform: uppercase;
-  color: #fff; text-decoration: none;
-  border-bottom: 1px solid oklch(1 0 0 / 0.12);
+  color: var(--navy); text-decoration: none;
+  border-bottom: 1px solid var(--border);
   transition: color 0.2s;
 }
-.nav-drawer-links a:hover { color: oklch(0.82 0.17 85); }
+.nav-drawer-links a:hover { color: var(--red); }
 .nav-drawer-cta {
   background: var(--red); color: #fff;
   font-family: var(--f-display);
