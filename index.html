@@ -93,10 +93,33 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ── ANNOUNCEMENT BAR ── */
+.announce-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 101;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: var(--navy-deep);
+  color: #fff;
+  font-family: var(--f-display);
+  font-size: 12px; font-weight: 800;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 0 16px;
+  text-align: center;
+}
+.announce-bar span { color: var(--star); font-size: 11px; }
+@media (max-width: 600px) {
+  .announce-bar { font-size: 10px; letter-spacing: 0.14em; gap: 8px; height: 30px; }
+}
+
 /* ── NAV ── */
 nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 34px; left: 0; right: 0;
   z-index: 100;
   height: 72px;
   display: flex;
@@ -161,18 +184,17 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 
 /* ── HERO ── */
 .hero {
-  min-height: 100vh;
-  padding: 72px 0 0;
+  min-height: calc(100vh - 106px);
+  padding: 130px 0 32px;
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
   position: relative;
   overflow: hidden;
 }
 
 .hero-left {
-  padding: 0px 70px 40px 100px;
-  margin-top: -20px;
+  padding: 0 40px 0 88px;
   position: relative;
   z-index: 2;
   display: flex;
@@ -352,9 +374,7 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 
 /* ── HERO RIGHT ── */
 .hero-right {
-  height: 100%; min-height: 100vh;
-  display: flex; flex-direction: column; justify-content: flex-start;
-  padding-top: 270px;
+  display: flex; flex-direction: column; justify-content: center;
   background: var(--bg); position: relative;
 }
 
@@ -362,8 +382,8 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 .form-panel {
   background: var(--card);
   border: 1px solid var(--border);
-  margin: 0 24px 0 -60px;
-  padding: 24px 22px;
+  margin: 0 88px 0 0;
+  padding: 32px 32px 28px;
   position: relative;
   box-shadow: 0 4px 40px oklch(0 0 0 / 0.06);
   animation: formSlide 0.8s 0.3s ease both;
@@ -377,16 +397,16 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 
 .wizard-eyebrow {
   font-family: var(--f-display);
-  font-size: 11px; font-weight: 800;
+  font-size: 12px; font-weight: 800;
   letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--red);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .form-heading {
   font-family: var(--f-display);
-  font-size: 28px; font-weight: 900;
+  font-size: 36px; font-weight: 900;
   text-transform: uppercase; letter-spacing: 0.04em;
-  color: var(--navy); margin-bottom: 18px;
+  color: var(--navy); margin-bottom: 22px;
   line-height: 1;
 }
 
@@ -409,21 +429,21 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 }
 .wizard-question {
   font-family: var(--f-display);
-  font-size: 18px; font-weight: 800;
+  font-size: 22px; font-weight: 800;
   letter-spacing: 0.02em;
   color: var(--navy);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   line-height: 1.25;
 }
-.wizard-options { display: flex; flex-direction: column; gap: 10px; }
+.wizard-options { display: flex; flex-direction: column; gap: 12px; }
 .wizard-choice {
   background: var(--bg);
   border: 1.5px solid var(--border);
-  padding: 14px 16px;
+  padding: 18px 20px;
   text-align: left;
   cursor: pointer;
   font-family: var(--f-body);
-  display: flex; flex-direction: column; gap: 3px;
+  display: flex; flex-direction: column; gap: 4px;
   transition: border-color 0.15s, background 0.15s, transform 0.1s;
 }
 .wizard-choice:hover {
@@ -433,14 +453,14 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 .wizard-choice:active { transform: scale(0.99); }
 .wizard-choice-title {
   font-family: var(--f-display);
-  font-size: 15px; font-weight: 900;
+  font-size: 18px; font-weight: 900;
   letter-spacing: 0.04em; text-transform: uppercase;
   color: var(--navy);
 }
 .wizard-choice-sub {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
-  line-height: 1.35;
+  line-height: 1.4;
 }
 .wizard-back {
   background: none; border: none; padding: 0;
@@ -580,7 +600,7 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 .fade-up.visible { opacity: 1; transform: none; }
 
 @media (max-width: 960px) {
-  nav { padding: 0 16px; height: 60px; }
+  nav { padding: 0 16px; height: 60px; top: 30px; }
   nav.scrolled { height: 52px; }
   .nav-logo img { height: 42px; }
   .nav-logo-text { font-size: 15px; }
@@ -605,6 +625,11 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 </head>
 <body>
 
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  <span>★</span> The Nation's Lowest VA Rates · Free Quote In 30 Seconds <span>★</span>
+</div>
+
 <!-- NAV -->
 <nav id="navbar">
   <a href="#" class="nav-logo">
@@ -624,8 +649,6 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <p class="hero-typewriter" id="typewriter"></p>
-
   <div class="hero-left">
     <h1 class="hero-title">VA<br><span class="red">IRRRL</span></h1>
     <p class="hero-dare">We shop hundreds of lenders.<br>We will <strong>not</strong> get beat on rates.<br>We dare you to compare.</p>
@@ -1094,22 +1117,6 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
 </footer>
 
 <script>
-// TYPEWRITER
-const tw = document.getElementById('typewriter');
-if (tw) {
-  const text = "THE NATION'S LOWEST RATES.";
-  let i = 0;
-  const cursor = '▌';
-  const type = () => {
-    if (i <= text.length) {
-      tw.textContent = text.slice(0, i) + (i < text.length ? cursor : '');
-      i++;
-      setTimeout(type, 80);
-    }
-  };
-  setTimeout(type, 400);
-}
-
 // NAV BUTTON PULSE
 const btnNav = document.getElementById('btn-nav-animated');
 if (btnNav) setTimeout(() => btnNav.classList.add('btn-nav-pulse'), 1500);
