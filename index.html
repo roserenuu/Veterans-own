@@ -405,6 +405,25 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 
 .rate-hint { font-size: 11px; color: var(--muted); margin-top: -6px; font-style: italic; }
 
+.form-field input.invalid, .form-field select.invalid { border-color: var(--red); }
+.field-error {
+  display: none;
+  font-size: 11px; font-weight: 600;
+  color: var(--red);
+  margin-top: 2px;
+}
+.field-error.show { display: block; }
+.form-error-banner {
+  display: none;
+  background: oklch(0.50 0.20 25 / 0.08);
+  border: 1px solid oklch(0.50 0.20 25 / 0.3);
+  color: var(--red);
+  font-size: 13px;
+  padding: 10px 12px;
+  margin-top: 10px;
+}
+.form-error-banner.show { display: block; }
+
 .btn-submit {
   display: block; width: 100%;
   background: var(--navy); color: #fff;
@@ -547,26 +566,31 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   <div class="hero-right">
     <div class="form-panel" id="form">
       <div class="form-heading">Get My Free VA Breakdown</div>
-      <div id="form-body">
+      <form id="form-body" name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="quote">
+        <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
         <div class="form-grid">
           <div class="form-field">
             <label for="fname">First Name</label>
-            <input type="text" id="fname" placeholder="First Name">
+            <input type="text" id="fname" name="first_name" placeholder="First Name" autocomplete="given-name" required>
+            <span class="field-error" id="err-fname"></span>
           </div>
           <div class="form-field">
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" placeholder="(xxx) xxx-xxxx">
+            <input type="tel" id="phone" name="phone" placeholder="(xxx) xxx-xxxx" autocomplete="tel" required>
+            <span class="field-error" id="err-phone"></span>
           </div>
           <div class="form-field">
             <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="Email Address">
+            <input type="email" id="email" name="email" placeholder="Email Address" autocomplete="email" required>
+            <span class="field-error" id="err-email"></span>
           </div>
           <div class="form-field">
-            <input type="text" id="rate" placeholder="Current Rate (e.g. 6.5%)">
+            <input type="text" id="rate" name="current_rate" placeholder="Current Rate (e.g. 6.5%)">
           </div>
         </div>
-        <button class="btn-submit" onclick="submitForm()">Show Me My Savings</button>
-      </div>
+        <button type="submit" class="btn-submit">Show Me My Savings</button>
+      </form>
       <div class="form-success" id="form-success">
         <div class="check-circle">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -956,18 +980,66 @@ window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// FORM SUBMIT
-function submitForm() {
-  const fname = document.getElementById('fname').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const inputs = document.querySelectorAll('.form-field input');
-  [fname, phone, email].forEach((val, i) => {
-    inputs[i].style.borderColor = !inputs[i].value.trim() ? 'var(--red)' : '';
+// FORM VALIDATION + NETLIFY SUBMISSION
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+function digitsOnly(v) { return (v || '').replace(/\D/g, ''); }
+function formatPhone(v) {
+  const d = digitsOnly(v).slice(0, 10);
+  if (d.length < 4) return d;
+  if (d.length < 7) return `(${d.slice(0,3)}) ${d.slice(3)}`;
+  return `(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}`;
+}
+function setError(id, msg) {
+  const input = document.getElementById(id);
+  const err = document.getElementById('err-' + id);
+  if (msg) {
+    input.classList.add('invalid');
+    if (err) { err.textContent = msg; err.classList.add('show'); }
+  } else {
+    input.classList.remove('invalid');
+    if (err) { err.textContent = ''; err.classList.remove('show'); }
+  }
+}
+
+const phoneInput = document.getElementById('phone');
+if (phoneInput) {
+  phoneInput.addEventListener('input', () => {
+    phoneInput.value = formatPhone(phoneInput.value);
   });
-  if (!fname || !phone || !email) return;
-  document.getElementById('form-body').style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
+}
+
+const quoteForm = document.getElementById('form-body');
+if (quoteForm) {
+  quoteForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fname = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+    let valid = true;
+    if (!fname) { setError('fname', 'Please enter your first name'); valid = false; } else setError('fname', '');
+    if (digitsOnly(phone).length < 10) { setError('phone', 'Please enter a valid 10-digit phone number'); valid = false; } else setError('phone', '');
+    if (!EMAIL_RE.test(email)) { setError('email', 'Please enter a valid email address'); valid = false; } else setError('email', '');
+    if (!valid) return;
+
+    const submitBtn = quoteForm.querySelector('.btn-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    try {
+      const formData = new FormData(quoteForm);
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
+      if (!response.ok) throw new Error('Network error');
+      quoteForm.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Show Me My Savings';
+      alert("Sorry, we couldn't send that. Please try again or call (310) 698-2920.");
+    }
+  });
 }
 
 // SCROLL ANIMATIONS

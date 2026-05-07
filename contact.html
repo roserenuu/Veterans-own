@@ -294,6 +294,16 @@ section.content-section.alt { background: var(--bg-mid); }
 .form-field input::placeholder,
 .form-field textarea::placeholder { color: oklch(0.72 0.005 240); }
 .form-field textarea { min-height: 140px; line-height: 1.55; }
+.form-field input.invalid,
+.form-field select.invalid,
+.form-field textarea.invalid { border-color: var(--red); }
+.field-error {
+  display: none;
+  font-size: 11px; font-weight: 600;
+  color: var(--red);
+  margin-top: 2px;
+}
+.field-error.show { display: block; }
 
 .btn-submit {
   display: block; width: 100%;
@@ -580,27 +590,33 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
 
   <div class="form-card">
     <p class="form-required-note">Fields marked with <span style="color:var(--red);">*</span> are required.</p>
-    <div id="form-active">
+    <form id="form-active" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="contact">
+      <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
       <div class="form-grid">
         <div class="form-field">
           <label for="fname">First Name <span class="req">*</span></label>
-          <input type="text" id="fname" placeholder="First Name" required>
+          <input type="text" id="fname" name="first_name" placeholder="First Name" autocomplete="given-name" required>
+          <span class="field-error" id="err-fname"></span>
         </div>
         <div class="form-field">
           <label for="lname">Last Name <span class="req">*</span></label>
-          <input type="text" id="lname" placeholder="Last Name" required>
+          <input type="text" id="lname" name="last_name" placeholder="Last Name" autocomplete="family-name" required>
+          <span class="field-error" id="err-lname"></span>
         </div>
         <div class="form-field">
           <label for="email">Email <span class="req">*</span></label>
-          <input type="email" id="email" placeholder="you@example.com" required>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+          <span class="field-error" id="err-email"></span>
         </div>
         <div class="form-field">
           <label for="phone">Phone <span class="req">*</span></label>
-          <input type="tel" id="phone" placeholder="(000) 000-0000" required>
+          <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000" autocomplete="tel" required>
+          <span class="field-error" id="err-phone"></span>
         </div>
         <div class="form-field full">
           <label for="topic">Regarding (please choose) <span class="req">*</span></label>
-          <select id="topic" required>
+          <select id="topic" name="topic" required>
             <option value="">Select one...</option>
             <option value="purchase">Buying a home (VA purchase loan)</option>
             <option value="irrrl">VA IRRRL / streamline refinance</option>
@@ -610,19 +626,21 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
             <option value="general">General inquiry</option>
             <option value="careers">Careers</option>
           </select>
+          <span class="field-error" id="err-topic"></span>
         </div>
         <div class="form-field full">
           <label for="address">Property Address (if applicable)</label>
-          <input type="text" id="address" placeholder="123 Main St, City, ST 00000">
+          <input type="text" id="address" name="property_address" placeholder="123 Main St, City, ST 00000" autocomplete="street-address">
         </div>
         <div class="form-field full">
           <label for="message">Message <span class="req">*</span></label>
-          <textarea id="message" placeholder="Tell us a little about what you need..." required></textarea>
+          <textarea id="message" name="message" placeholder="Tell us a little about what you need..." required></textarea>
+          <span class="field-error" id="err-message"></span>
         </div>
       </div>
-      <button class="btn-submit" onclick="submitContact()">Send Message</button>
+      <button type="submit" class="btn-submit">Send Message</button>
       <p class="form-trust">By submitting, you agree to be contacted by Veterans Own Mortgage about your inquiry. We never sell or share your information.</p>
-    </div>
+    </form>
 
     <div class="form-success" id="form-success">
       <div class="check-circle">
@@ -766,22 +784,73 @@ document.querySelectorAll('.dept-grid').forEach(container => {
   });
 });
 
-function submitContact() {
-  const required = ['fname', 'lname', 'email', 'phone', 'topic', 'message'];
-  let valid = true;
-  required.forEach(id => {
-    const el = document.getElementById(id);
-    if (!el.value.trim()) {
-      el.style.borderColor = 'var(--red)';
-      valid = false;
-    } else {
-      el.style.borderColor = '';
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+function digitsOnly(v) { return (v || '').replace(/\D/g, ''); }
+function formatPhone(v) {
+  const d = digitsOnly(v).slice(0, 10);
+  if (d.length < 4) return d;
+  if (d.length < 7) return `(${d.slice(0,3)}) ${d.slice(3)}`;
+  return `(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}`;
+}
+function setError(id, msg) {
+  const input = document.getElementById(id);
+  const err = document.getElementById('err-' + id);
+  if (msg) {
+    input.classList.add('invalid');
+    if (err) { err.textContent = msg; err.classList.add('show'); }
+  } else {
+    input.classList.remove('invalid');
+    if (err) { err.textContent = ''; err.classList.remove('show'); }
+  }
+}
+
+const phoneInput = document.getElementById('phone');
+if (phoneInput) {
+  phoneInput.addEventListener('input', () => {
+    phoneInput.value = formatPhone(phoneInput.value);
+  });
+}
+
+const contactForm = document.getElementById('form-active');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fname = document.getElementById('fname').value.trim();
+    const lname = document.getElementById('lname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const topic = document.getElementById('topic').value;
+    const message = document.getElementById('message').value.trim();
+
+    let valid = true;
+    if (!fname) { setError('fname', 'Please enter your first name'); valid = false; } else setError('fname', '');
+    if (!lname) { setError('lname', 'Please enter your last name'); valid = false; } else setError('lname', '');
+    if (!EMAIL_RE.test(email)) { setError('email', 'Please enter a valid email address'); valid = false; } else setError('email', '');
+    if (digitsOnly(phone).length < 10) { setError('phone', 'Please enter a valid 10-digit phone number'); valid = false; } else setError('phone', '');
+    if (!topic) { setError('topic', 'Please pick a topic'); valid = false; } else setError('topic', '');
+    if (!message) { setError('message', 'Please tell us a little about what you need'); valid = false; } else setError('message', '');
+    if (!valid) return;
+
+    const submitBtn = contactForm.querySelector('.btn-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    try {
+      const formData = new FormData(contactForm);
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
+      if (!response.ok) throw new Error('Network error');
+      contactForm.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+      window.scrollTo({ top: document.getElementById('form').offsetTop - 80, behavior: 'smooth' });
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+      alert("Sorry, we couldn't send that. Please try again or call (310) 698-2920.");
     }
   });
-  if (!valid) return;
-  document.getElementById('form-active').style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
-  window.scrollTo({ top: document.getElementById('form').offsetTop - 80, behavior: 'smooth' });
 }
 </script>
 
