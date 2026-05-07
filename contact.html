@@ -560,6 +560,31 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
   .careers-band { grid-template-columns: 1fr; padding: 50px 24px; gap: 24px; }
   footer { padding: 40px 24px; }
 }
+
+@media (max-width: 480px) {
+  .nav-actions { gap: 8px; }
+  .nav-actions .nav-link { display: none; }
+  .btn-nav { font-size: 11px; padding: 7px 12px; }
+  .hero-contact { padding: 90px 18px 40px; gap: 28px; }
+  .hero-title { font-size: clamp(40px, 11vw, 60px) !important; margin-bottom: 14px; }
+  .hero-sub { font-size: 15px; line-height: 1.55; }
+  .contact-eyebrow { font-size: 11px; margin-bottom: 16px; letter-spacing: 0.18em; }
+  .contact-number { font-size: clamp(36px, 10vw, 50px); }
+  .contact-line { width: 48px; height: 3px; margin: 22px 0 20px; }
+  .contact-rows { gap: 16px; }
+  .contact-row-label { font-size: 10px; letter-spacing: 0.18em; }
+  .contact-row-value { font-size: 17px; }
+  section.content-section { padding: 44px 18px; }
+  .section-title { font-size: clamp(32px, 9vw, 46px); }
+  .form-card { padding: 22px 18px; }
+  .careers-band { padding: 44px 22px; }
+  footer { padding: 36px 20px 24px; }
+  .footer-logo img { height: 52px; }
+  .footer-logo-text { font-size: 17px; }
+  .footer-phone { font-size: 20px; }
+  .footer-links { gap: 8px 18px; }
+  .footer-links a { font-size: 12px; }
+}
 </style>
 </head>
 <body>
