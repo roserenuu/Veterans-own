@@ -94,6 +94,25 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 }
 .nav-logo-text > span { display: block; font-size: 14px; color: var(--red); letter-spacing: 0.25em; font-weight: 900; text-align: center; text-transform: uppercase; }
 
+.nav-actions { display: flex; align-items: center; gap: 22px; }
+.nav-link {
+  font-family: var(--f-display);
+  font-size: 15px; font-weight: 800;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--navy); text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute; left: 0; right: 0; bottom: -6px;
+  height: 2px; background: var(--red);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-link:hover { color: var(--red); }
+.nav-link:hover::after { transform: scaleX(1); }
+
 .btn-nav {
   background: var(--navy);
   color: #fff;
@@ -568,6 +587,8 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
   .nav-logo-text { font-size: 15px; }
   .nav-logo-text > span { font-size: 11px; letter-spacing: 0.18em; }
   .btn-nav { font-size: 12px; padding: 8px 14px; letter-spacing: 0.06em; white-space: nowrap; }
+  .nav-actions { gap: 14px; }
+  .nav-link { font-size: 12px; letter-spacing: 0.06em; }
   .hero-buy { grid-template-columns: 1fr; padding: 100px 20px 60px; gap: 40px; }
   section.content-section { padding: 60px 24px; }
   .split { grid-template-columns: 1fr; gap: 32px; }
@@ -594,7 +615,10 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
       <span>Mortgage</span>
     </div>
   </a>
-  <a href="#advisor" class="btn-nav" id="btn-nav-animated">Contact An Advisor</a>
+  <div class="nav-actions">
+    <a href="/" class="nav-link">Refinance</a>
+    <a href="#advisor" class="btn-nav" id="btn-nav-animated">Contact An Advisor</a>
+  </div>
 </nav>
 
 <!-- HERO -->
