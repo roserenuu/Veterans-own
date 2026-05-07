@@ -621,8 +621,6 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <p class="hero-typewriter" id="typewriter"></p>
-
   <div class="hero-left">
     <h1 class="hero-title">VA<br><span class="red">IRRRL</span></h1>
     <p class="hero-dare">We shop hundreds of lenders.<br>We will <strong>not</strong> get beat on rates.<br>We dare you to compare.</p>
@@ -1091,22 +1089,6 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
 </footer>
 
 <script>
-// TYPEWRITER
-const tw = document.getElementById('typewriter');
-if (tw) {
-  const text = "THE NATION'S LOWEST RATES.";
-  let i = 0;
-  const cursor = '▌';
-  const type = () => {
-    if (i <= text.length) {
-      tw.textContent = text.slice(0, i) + (i < text.length ? cursor : '');
-      i++;
-      setTimeout(type, 80);
-    }
-  };
-  setTimeout(type, 400);
-}
-
 // NAV BUTTON PULSE
 const btnNav = document.getElementById('btn-nav-animated');
 if (btnNav) setTimeout(() => btnNav.classList.add('btn-nav-pulse'), 1500);
