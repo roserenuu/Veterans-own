@@ -224,25 +224,17 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 .hero-image {
   width: 100%;
   aspect-ratio: 5/4;
-  background: linear-gradient(135deg, oklch(0.86 0.04 220), oklch(0.78 0.03 220));
+  background: var(--bg-mid);
   border: 1px solid var(--border);
   position: relative;
   overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  display: block;
 }
-.hero-image::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; bottom: 35%;
-  background: linear-gradient(180deg, oklch(0.78 0.04 230) 0%, oklch(0.88 0.03 220) 100%);
+.hero-image img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
 }
-.hero-image::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0; height: 35%;
-  background: linear-gradient(180deg, oklch(0.72 0.06 130) 0%, oklch(0.55 0.08 130) 100%);
-}
-.hero-image svg { position: relative; z-index: 2; width: 78%; max-width: 520px; height: auto; }
 .hero-image-badge {
   position: absolute;
   top: 20px; left: -16px;
@@ -626,7 +618,6 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
 <!-- HERO -->
 <section class="hero-buy" id="top">
   <div class="hero-text">
-    <div class="hero-eyebrow">Veterans Own Home Buying</div>
     <h1 class="hero-title">Buy A House.<br>Make It A <span class="red">Home</span>.<br>We Can Help.</h1>
     <p class="hero-sub">From pre-approval to closing, our advisors guide you every step of the way — using your VA benefit to put you in the right home with the lowest payment in America.</p>
     <a href="#advisor" class="btn-hero">
@@ -637,35 +628,8 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
 
   <div class="hero-image-wrap">
     <div class="hero-image-badge">$0 Down VA</div>
-    <div class="hero-image" aria-label="Couple walking towards a modern white two-story home with black-trimmed windows and a front garden">
-      <svg viewBox="0 0 520 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <!-- ground -->
-        <rect x="0" y="280" width="520" height="80" fill="oklch(0.55 0.08 130)"/>
-        <!-- walkway -->
-        <path d="M210 360 L240 270 L280 270 L310 360 Z" fill="oklch(0.78 0.01 80)"/>
-        <!-- garden hedges -->
-        <ellipse cx="120" cy="290" rx="50" ry="14" fill="oklch(0.45 0.10 145)"/>
-        <ellipse cx="400" cy="290" rx="50" ry="14" fill="oklch(0.45 0.10 145)"/>
-        <!-- house body -->
-        <rect x="120" y="120" width="280" height="160" fill="#fff" stroke="oklch(0.18 0.02 255)" stroke-width="3"/>
-        <!-- roof -->
-        <polygon points="100,120 260,40 420,120" fill="oklch(0.22 0.02 255)" stroke="oklch(0.16 0.02 255)" stroke-width="3"/>
-        <!-- second floor windows -->
-        <rect x="150" y="140" width="42" height="50" fill="oklch(0.86 0.04 220)" stroke="oklch(0.18 0.02 255)" stroke-width="3"/>
-        <rect x="328" y="140" width="42" height="50" fill="oklch(0.86 0.04 220)" stroke="oklch(0.18 0.02 255)" stroke-width="3"/>
-        <line x1="171" y1="140" x2="171" y2="190" stroke="oklch(0.18 0.02 255)" stroke-width="2"/>
-        <line x1="349" y1="140" x2="349" y2="190" stroke="oklch(0.18 0.02 255)" stroke-width="2"/>
-        <!-- first floor windows -->
-        <rect x="150" y="210" width="42" height="50" fill="oklch(0.86 0.04 220)" stroke="oklch(0.18 0.02 255)" stroke-width="3"/>
-        <rect x="328" y="210" width="42" height="50" fill="oklch(0.86 0.04 220)" stroke="oklch(0.18 0.02 255)" stroke-width="3"/>
-        <line x1="171" y1="210" x2="171" y2="260" stroke="oklch(0.18 0.02 255)" stroke-width="2"/>
-        <line x1="349" y1="210" x2="349" y2="260" stroke="oklch(0.18 0.02 255)" stroke-width="2"/>
-        <!-- door -->
-        <rect x="240" y="200" width="40" height="80" fill="oklch(0.50 0.20 25)" stroke="oklch(0.18 0.02 255)" stroke-width="3"/>
-        <circle cx="272" cy="244" r="2.5" fill="oklch(0.82 0.17 85)"/>
-        <!-- chimney -->
-        <rect x="350" y="60" width="22" height="40" fill="oklch(0.22 0.02 255)"/>
-      </svg>
+    <div class="hero-image">
+      <img src="house.png" alt="Navy blue craftsman home with white columns, an American flag on the front porch, and lush landscaping under a blue sky" loading="eager" decoding="async">
     </div>
   </div>
 </section>
