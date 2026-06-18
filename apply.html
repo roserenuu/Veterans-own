@@ -88,7 +88,7 @@
 
 <section class="section alt" id="application">
 <div class="split">
-<form name="va-application" class="form-card" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+<form name="va-application" class="form-card" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
 <input type="hidden" name="form-name" value="va-application">
 <p class="hidden-field">
 <label>Don't fill this out if you're human: <input name="bot-field"></label>
@@ -147,9 +147,12 @@
 <textarea id="message" name="message"></textarea>
 </div>
 </div>
-<p class="fine-print">By submitting this form, I agree to be contacted by Veterans Own Mortgage by telephone, text message, and email regarding mortgage products. Consent is not a condition of obtaining services.</p>
+<label class="consent-row">
+<input type="checkbox" name="consent" value="agreed" required>
+<span>By submitting this form, I agree to be contacted by Veterans Own Mortgage by telephone, text message, and email regarding mortgage products. Consent is not a condition of obtaining services.</span>
+</label>
 <div class="button-row">
-<button type="submit" class="btn">Continue &rarr;</button>
+<button type="submit" class="btn">Submit Application</button>
 </div>
 </form>
 

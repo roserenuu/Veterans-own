@@ -1038,7 +1038,7 @@ Your browser does not support the video tag.
 <div class="form-heading">Get Your Free VA Loan Quote</div>
 <p class="quote-intro">Call <a href="tel:+18558387696">1-855-VETS-OWN</a> or fill out the form below.</p>
 
-<form name="quote" id="quote-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+<form name="quote" id="quote-form" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" novalidate>
 <input type="hidden" name="form-name" value="quote">
 <p class="sr-only">
 <label>Don't fill this out if you're human: <input name="bot-field"></label>
@@ -1815,7 +1815,7 @@ if (quoteForm) {
       document.getElementById('form-success').style.display = 'block';
     } catch (err) {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Get My Free Pre-Approval →';
+      submitBtn.textContent = 'Get My Free Pre Approval →';
       alert("Sorry, we couldn't send that. Please try again or call 1-855-VETS-OWN.");
     }
   });

@@ -909,6 +909,29 @@ fieldset {
   line-height: 1.55;
 }
 
+.consent-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 14px;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.55;
+  text-transform: none;
+}
+
+.consent-row input {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  margin-top: 2px;
+  accent-color: var(--red);
+}
+
 .footer {
   background: #111a2b;
   color: rgba(255, 255, 255, 0.78);
