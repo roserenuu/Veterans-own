@@ -99,9 +99,7 @@ body {
   top: 0; left: 0; right: 0;
   z-index: 101;
   height: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   gap: 14px;
   background: var(--navy-deep);
   color: #fff;
@@ -110,15 +108,29 @@ body {
   letter-spacing: 0.2em; text-transform: uppercase;
   padding: 0 16px;
   text-align: center;
+  overflow: hidden;
+}
+.announce-item {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: #fff;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.announce-item.is-active {
+  display: flex;
 }
 .announce-star { color: var(--star); font-size: 11px; }
-.announce-message {
+.announce-text {
   color: #fff;
-  white-space: nowrap;
-  transition: opacity 0.18s ease;
 }
 @media (max-width: 600px) {
   .announce-bar { font-size: 10px; letter-spacing: 0.14em; gap: 8px; height: 30px; }
+  .announce-item { gap: 8px; }
 }
 
 /* ── NAV ── */
@@ -919,10 +931,10 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 <body>
 
 <!-- ANNOUNCEMENT BAR -->
-<div class="announce-bar">
-<span class="announce-star">★</span>
-<span class="announce-message" id="announce-message">Serving Those Who Served</span>
-<span class="announce-star">★</span>
+<div class="announce-bar" aria-live="polite">
+<span class="announce-item is-active" aria-hidden="false"><span class="announce-star">★</span><span class="announce-text">Serving Those Who Served</span><span class="announce-star">★</span></span>
+<span class="announce-item" aria-hidden="true"><span class="announce-star">★</span><span class="announce-text">1-855-VETS-OWN</span><span class="announce-star">★</span></span>
+<span class="announce-item" aria-hidden="true"><span class="announce-star">★</span><span class="announce-text">info@veteransown.com</span><span class="announce-star">★</span></span>
 </div>
 
 <!-- NAV -->
@@ -1654,21 +1666,15 @@ window.addEventListener('scroll', () => {
 });
 
 // ANNOUNCEMENT BAR ROTATION
-const announceMessage = document.getElementById('announce-message');
-if (announceMessage) {
-  const announceMessages = [
-    'Serving Those Who Served',
-    '1-855-VETS-OWN',
-    'info@veteransown.com'
-  ];
+const announceItems = Array.from(document.querySelectorAll('.announce-item'));
+if (announceItems.length > 1) {
   let announceIndex = 0;
   setInterval(() => {
-    announceIndex = (announceIndex + 1) % announceMessages.length;
-    announceMessage.style.opacity = '0';
-    setTimeout(() => {
-      announceMessage.textContent = announceMessages[announceIndex];
-      announceMessage.style.opacity = '1';
-    }, 180);
+    announceItems[announceIndex].classList.remove('is-active');
+    announceItems[announceIndex].setAttribute('aria-hidden', 'true');
+    announceIndex = (announceIndex + 1) % announceItems.length;
+    announceItems[announceIndex].classList.add('is-active');
+    announceItems[announceIndex].setAttribute('aria-hidden', 'false');
   }, 5000);
 }
 
