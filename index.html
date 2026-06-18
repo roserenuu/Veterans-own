@@ -447,41 +447,19 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   background: var(--red);
   transform: translateY(-1px);
 }
-.volume-mark {
-  width: 20px;
-  height: 20px;
-  position: relative;
-  display: inline-block;
+.volume-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
 }
-.volume-mark::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 5px;
-  width: 6px;
-  height: 10px;
-  background: currentColor;
+.volume-icon-off {
+  display: none;
 }
-.volume-mark::after {
-  content: '';
-  position: absolute;
-  left: 7px;
-  top: 2px;
-  width: 10px;
-  height: 16px;
-  border: 2px solid currentColor;
-  border-left: 0;
-  border-radius: 0 16px 16px 0;
+.hero-volume-button.is-muted .volume-icon-on {
+  display: none;
 }
-.hero-volume-button.is-muted .volume-mark::after {
-  width: 16px;
-  height: 2px;
-  top: 9px;
-  left: 3px;
-  border: 0;
-  border-radius: 0;
-  background: currentColor;
-  transform: rotate(-35deg);
+.hero-volume-button.is-muted .volume-icon-off {
+  display: block;
 }
 .quote-section {
   background: var(--bg-mid);
@@ -996,7 +974,16 @@ Veterans Own
 Your browser does not support the video tag.
 </video>
 <button type="button" class="hero-volume-button is-muted" id="hero-volume-toggle" aria-label="Turn video sound on" aria-pressed="false">
-<span class="volume-mark" aria-hidden="true"></span>
+<svg class="volume-icon volume-icon-on" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+<path d="M15.5 8.5a5 5 0 0 1 0 7"></path>
+<path d="M18.5 5.5a9 9 0 0 1 0 13"></path>
+</svg>
+<svg class="volume-icon volume-icon-off" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+<path d="M22 9l-6 6"></path>
+<path d="M16 9l6 6"></path>
+</svg>
 </button>
 </div>
 </div>
