@@ -1092,6 +1092,53 @@ fieldset {
   }
 
   .footer {
-    padding: 38px 18px 24px;
+    padding: 28px 18px 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 18px;
+    margin-bottom: 20px;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-grid > div:last-child {
+    display: none;
+  }
+
+  .footer h3 {
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  .footer p {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .footer-grid > div:first-child p:first-of-type,
+  .footer-grid > div:first-child p:last-of-type {
+    display: none;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    margin-top: 8px;
+  }
+
+  .footer-links a {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .footer-bottom {
+    padding-top: 16px;
+    font-size: 9px;
+    line-height: 1.45;
   }
 }
