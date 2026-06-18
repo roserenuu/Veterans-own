@@ -818,12 +818,14 @@ fieldset {
 
 @media (max-width: 1000px) {
   .site-header {
-    align-items: flex-start;
+    align-items: stretch;
     flex-direction: column;
+    gap: 16px;
   }
 
   .site-nav {
-    justify-content: flex-start;
+    width: 100%;
+    justify-content: center;
   }
 
   .page-hero,
@@ -853,31 +855,79 @@ fieldset {
 
   .utility {
     align-items: center;
-    flex-direction: column;
+    display: grid;
+    gap: 4px;
+    padding: 8px 14px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    line-height: 1.25;
+  }
+
+  .utility span {
+    display: none;
+  }
+
+  .service-bar {
+    padding: 10px 14px;
+    font-size: 21px;
+    letter-spacing: 0.08em;
   }
 
   .site-header {
-    padding: 12px 16px;
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .brand {
+    width: 100%;
+    min-width: 0;
   }
 
   .brand img {
-    width: 46px;
-    height: 46px;
+    width: 50px;
+    height: 50px;
   }
 
   .brand strong {
-    font-size: 19px;
+    font-size: 22px;
+    letter-spacing: 0.06em;
+  }
+
+  .brand > span > span {
+    font-size: 13px;
+    letter-spacing: 0.16em;
   }
 
   .site-nav {
-    gap: 9px 12px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
   }
 
   .site-nav a {
-    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 9px 4px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    font-size: 13px;
+    letter-spacing: 0;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
   }
 
-  .site-nav .nav-cta,
+  .site-nav .nav-cta {
+    grid-column: 1 / -1;
+    min-height: 52px;
+    border: 0;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+
   .btn {
     width: 100%;
   }

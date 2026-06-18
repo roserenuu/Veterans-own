@@ -882,7 +882,18 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   .plus-list { gap: 14px; margin: 0 auto 30px; max-width: 300px; text-align: left; align-self: center; }
   .plus-list li { font-size: 14px; line-height: 1.4; white-space: normal; align-items: flex-start; gap: 10px; }
   .plus-sign { font-size: 18px !important; width: 18px !important; margin-top: 2px; }
-  .btn-hero { font-size: 13px; padding: 14px 22px; letter-spacing: 0.04em; align-self: center; }
+  .hero-actions { width: 100%; max-width: 370px; justify-content: center; flex-wrap: nowrap; gap: 12px; }
+  .btn-hero {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 178px;
+    min-height: 68px;
+    justify-content: center;
+    font-size: 17px;
+    padding: 18px 26px 18px 24px;
+    letter-spacing: 0;
+    align-self: center;
+  }
   .hero-video-wrap { padding: 0 18px 36px; }
   .hero-video-panel { width: 100%; }
   .hero-volume-button { right: 10px; bottom: 10px; padding: 8px 10px; font-size: 10px; gap: 6px; }
@@ -1403,7 +1414,7 @@ Verified Customer
 <div class="review-card">
 <div class="review-body">
 <div class="review-header">
-<img class="review-avatar" src="photo-celebrate.jpg" alt="Veterans Own customer">
+<img class="review-avatar" src="photo-phone.jpg" alt="Veterans Own customer Jeff">
 <div class="review-stars">★★★★★</div>
 </div>
 <p class="review-quote">"I am a Veteran and they helped me understand the best options with my VA loan. They were great all through the process. I will definitely be telling others about Veterans Own Mortgage."</p>
