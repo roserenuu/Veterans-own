@@ -116,7 +116,7 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 0;
   color: #fff;
   pointer-events: none;
   white-space: nowrap;
@@ -124,7 +124,6 @@ body {
 .announce-item.is-active {
   display: flex;
 }
-.announce-star { color: var(--star); font-size: 11px; }
 .announce-text {
   color: #fff;
 }
@@ -132,11 +131,11 @@ body {
 .announce-text a:visited,
 .announce-text a[x-apple-data-detectors] {
   color: #fff !important;
+  pointer-events: auto;
   text-decoration: none !important;
 }
 @media (max-width: 600px) {
-  .announce-bar { font-size: 10px; letter-spacing: 0.14em; gap: 8px; height: 30px; }
-  .announce-item { gap: 8px; }
+  .announce-bar { font-size: 12px; letter-spacing: 0.12em; height: 30px; }
 }
 
 /* ── NAV ── */
@@ -360,17 +359,26 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 .plus-list li:nth-child(5) { animation: slideLeft 0.5s 0.96s ease forwards; }
 .plus-sign {
   font-family: var(--f-display);
-  font-size: 16px; font-weight: 900;
-  color: var(--navy); line-height: 1;
-  flex-shrink: 0; width: 20px; text-align: center;
-  display: inline-block;
-  animation: popIn 0.5s ease both, plusPulse 2.5s ease-in-out infinite;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  animation: popIn 0.5s ease both;
 }
-.plus-list li:nth-child(1) .plus-sign { animation-delay: 0.4s, 2s; }
-.plus-list li:nth-child(2) .plus-sign { animation-delay: 0.54s, 2.2s; }
-.plus-list li:nth-child(3) .plus-sign { animation-delay: 0.68s, 2.4s; }
-.plus-list li:nth-child(4) .plus-sign { animation-delay: 0.82s, 2.6s; }
-.plus-list li:nth-child(5) .plus-sign { animation-delay: 0.96s, 2.8s; }
+.plus-list li:nth-child(1) .plus-sign { animation-delay: 0.4s; }
+.plus-list li:nth-child(2) .plus-sign { animation-delay: 0.54s; }
+.plus-list li:nth-child(3) .plus-sign { animation-delay: 0.68s; }
+.plus-list li:nth-child(4) .plus-sign { animation-delay: 0.82s; }
+.plus-list li:nth-child(5) .plus-sign { animation-delay: 0.96s; }
 
 .btn-hero {
   display: flex;
@@ -892,9 +900,9 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   .hero-title { font-size: clamp(56px, 16vw, 80px); margin-bottom: 0; }
   .hero-dare { font-size: clamp(19px, 5.6vw, 24px); line-height: 1.38; margin: 0 auto 24px; border-left: none; padding-left: 0; max-width: 350px; text-align: center; }
   .hero-hook { font-size: 17px; line-height: 1.35; margin: 0 auto 28px; max-width: 340px; text-align: center; }
-  .plus-list { width: 100%; gap: 14px; margin: 0 auto 30px; max-width: 360px; text-align: center; align-self: center; align-items: center; }
-  .plus-list li { width: 100%; justify-content: center; font-size: 14px; line-height: 1.4; white-space: normal; align-items: center; gap: 10px; text-align: left; opacity: 1 !important; animation: none !important; transform: none !important; }
-  .plus-sign { flex: 0 0 18px; font-size: 18px !important; width: 18px !important; margin-top: 0; animation: none !important; }
+  .plus-list { width: 100%; gap: 16px; margin: 0 auto 32px; max-width: 370px; text-align: center; align-self: center; align-items: center; }
+  .plus-list li { width: 100%; justify-content: center; font-size: 18px; font-weight: 600; line-height: 1.35; white-space: normal; align-items: center; gap: 12px; text-align: left; opacity: 1 !important; animation: none !important; transform: none !important; }
+  .plus-sign { flex: 0 0 24px; width: 24px !important; height: 24px; font-size: 15px !important; margin-top: 0; animation: none !important; }
   .hero-actions { width: 100%; max-width: 370px; justify-content: center; flex-wrap: nowrap; gap: 12px; }
   .btn-hero {
     flex: 1 1 0;
@@ -938,9 +946,9 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 
 <!-- ANNOUNCEMENT BAR -->
 <div class="announce-bar" aria-live="polite">
-<span class="announce-item is-active" aria-hidden="false"><span class="announce-star">★</span><span class="announce-text">Serving Those Who Served</span><span class="announce-star">★</span></span>
-<span class="announce-item" aria-hidden="true"><span class="announce-star">★</span><span class="announce-text"><a href="tel:+18558387696">1-855-VETS-OWN</a></span><span class="announce-star">★</span></span>
-<span class="announce-item" aria-hidden="true"><span class="announce-star">★</span><span class="announce-text"><a href="mailto:info@veteransown.com">info@veteransown.com</a></span><span class="announce-star">★</span></span>
+<span class="announce-item is-active" aria-hidden="false"><span class="announce-text">Serving Those Who Served</span></span>
+<span class="announce-item" aria-hidden="true"><span class="announce-text"><a href="tel:+18558387696">1-855-VETS-OWN</a></span></span>
+<span class="announce-item" aria-hidden="true"><span class="announce-text"><a href="mailto:info@veteransown.com">info@veteransown.com</a></span></span>
 </div>
 
 <!-- NAV -->
@@ -1013,11 +1021,11 @@ Your browser does not support the video tag.
 <p class="hero-dare">Apply for a VA loan with a 580 credit score through Veterans Own Mortgage.</p>
 <p class="hero-hook"><span class="hook-red">Call now:</span> <a href="tel:+18558387696" class="hero-phone-inline">1-855-VETS-OWN</a></p>
 <ul class="plus-list">
-<li><span class="plus-sign">★</span> VA Approved Lender</li>
-<li><span class="plus-sign">★</span> Secure Application</li>
-<li><span class="plus-sign">★</span> Fast Pre Approval</li>
-<li><span class="plus-sign">★</span> Veteran Focused</li>
-<li><span class="plus-sign">★</span> Free application no obligation</li>
+<li><span class="plus-sign">✓</span> VA Approved Lender</li>
+<li><span class="plus-sign">✓</span> Secure Application</li>
+<li><span class="plus-sign">✓</span> Fast Pre Approval</li>
+<li><span class="plus-sign">✓</span> Veteran Focused</li>
+<li><span class="plus-sign">✓</span> Free application no obligation</li>
 </ul>
 <div class="hero-actions">
 <a href="/apply.html" class="btn-hero">Purchase</a>
