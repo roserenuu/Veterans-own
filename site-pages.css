@@ -172,9 +172,7 @@ a {
   gap: clamp(28px, 5vw, 64px);
   align-items: center;
   padding: clamp(54px, 7vw, 92px) clamp(20px, 7vw, 96px);
-  background:
-    linear-gradient(135deg, rgba(16, 35, 63, 0.93), rgba(24, 54, 95, 0.9)),
-    url("veterans.png") center / cover;
+  background: linear-gradient(135deg, var(--navy), var(--navy-2));
   color: var(--white);
 }
 
