@@ -380,6 +380,45 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   display: flex; flex-direction: column; justify-content: center;
   background: var(--bg); position: relative;
 }
+.hero-video-wrap {
+  align-items: flex-end;
+  padding: 0 88px 0 0;
+}
+.hero-video-panel {
+  width: min(430px, 100%);
+  aspect-ratio: 9 / 16;
+  background: #000;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 46px oklch(0 0 0 / 0.16);
+  overflow: hidden;
+  position: relative;
+  animation: formSlide 0.8s 0.3s ease both;
+}
+.hero-video-panel::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--red);
+  z-index: 1;
+}
+.hero-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.quote-section {
+  background: var(--bg-mid);
+  border-top: 1px solid var(--border);
+  padding: 72px 24px 84px;
+}
+.quote-section-inner {
+  max-width: 880px;
+  margin: 0 auto;
+}
+.quote-section .form-panel {
+  margin: 0;
+}
 
 /* ── FORM PANEL ── */
 .form-panel {
@@ -688,6 +727,10 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   .hero-hook { margin-bottom: 30px; }
   .plus-list { gap: 20px; margin-bottom: 40px; }
   .hero-right { min-height: auto; }
+  .hero-video-wrap { align-items: center; padding: 0 24px 44px; }
+  .hero-video-panel { width: min(360px, 100%); }
+  .quote-section { padding: 52px 18px 62px; }
+  .quote-section .form-panel { margin: 0; }
   .form-grid { grid-template-columns: 1fr; }
   .form-grid.two { grid-template-columns: 1fr; }
   .form-field.full { grid-column: span 1; }
@@ -778,6 +821,10 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   .plus-list li { font-size: 14px; line-height: 1.4; white-space: normal; align-items: flex-start; gap: 10px; }
   .plus-sign { font-size: 18px !important; width: 18px !important; margin-top: 2px; }
   .btn-hero { font-size: 13px; padding: 14px 22px; letter-spacing: 0.04em; align-self: center; }
+  .hero-video-wrap { padding: 0 18px 36px; }
+  .hero-video-panel { width: min(310px, 100%); }
+  .quote-section { padding: 40px 16px 52px; }
+  .quote-section .form-panel { margin: 0; }
   .form-panel { margin: 16px; padding: 28px 22px; }
   .wizard-eyebrow { font-size: 11px; }
   .form-heading { font-size: 26px; line-height: 1.08; }
@@ -865,7 +912,19 @@ Veterans Own
 </div>
 </div>
 
-<div class="hero-right">
+<div class="hero-right hero-video-wrap">
+<div class="hero-video-panel">
+<video class="hero-video" controls playsinline preload="metadata" poster="hero-va-loan-poster.jpg">
+<source src="hero-va-loan.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</section>
+
+<!-- QUOTE FORM -->
+<section class="quote-section" aria-label="Free VA loan quote">
+<div class="quote-section-inner">
 <div class="form-panel" id="form">
 <div class="wizard-eyebrow">Free No Obligation</div>
 <div class="form-heading">Get Your Free VA Loan Quote</div>
@@ -1000,29 +1059,6 @@ Veterans Own
 .trust-divider { width: 2px; height: 48px; background: var(--border); margin: 32px auto; }
 .trust-count { font-family: var(--f-display); font-size: 72px; font-weight: 900; color: var(--navy); line-height: 1; margin-bottom: 8px; }
 .trust-plus { color: #D4A017; margin-left: 4px; }
-.trust-icons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  max-width: 960px;
-  margin: 0 auto 56px;
-}
-.trust-icon {
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 20px 16px;
-  color: var(--navy);
-  font-family: var(--f-display);
-  font-size: 17px;
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-.trust-icon span {
-  display: block;
-  font-size: 24px;
-  margin-bottom: 8px;
-}
 .loan-options {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1148,6 +1184,20 @@ section.content-section.alt { background: var(--bg-mid); }
 }
 .review-card:hover { box-shadow: 0 8px 32px oklch(0 0 0 / 0.08); transform: translateY(-4px); }
 .review-body { display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.review-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 auto;
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 1px var(--border);
+}
 .review-stars { color: #D4A017; font-size: 18px; letter-spacing: 3px; }
 .review-quote { font-size: 14px; color: var(--text); line-height: 1.75; font-style: italic; flex: 1; }
 .review-author { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
@@ -1159,7 +1209,6 @@ section.content-section.alt { background: var(--bg-mid); }
 
 @media (max-width: 960px) {
   .trust-section { padding: 60px 24px; }
-  .trust-icons,
   .loan-options,
   .copy-grid { grid-template-columns: 1fr; }
   section.content-section { padding: 60px 24px; }
@@ -1173,12 +1222,6 @@ section.content-section.alt { background: var(--bg-mid); }
 </style>
 
 <section class="trust-section">
-<div class="trust-icons">
-<div class="trust-icon"><span>★</span>VA Approved Lender</div>
-<div class="trust-icon"><span>✓</span>Secure Application</div>
-<div class="trust-icon"><span>↗</span>Fast Pre Approval</div>
-<div class="trust-icon"><span>🇺🇸</span>Veteran Focused</div>
-</div>
 <p class="trust-sub">Learn More</p>
 <h2 class="trust-headline">Explore Your<br>VA Loan Options</h2>
 <div class="loan-options">
@@ -1238,7 +1281,10 @@ section.content-section.alt { background: var(--bg-mid); }
 
 <div class="review-card">
 <div class="review-body">
+<div class="review-header">
+<img class="review-avatar" src="review-photo-1.jpg" alt="Veterans Own customer">
 <div class="review-stars">★★★★★</div>
+</div>
 <p class="review-quote">"I just want to thank you very much for your work to help us refinance our loans. I know you had to do so much work for us and we really appreciate it. If I know anyone who wants to buy a home or refinance I will do my best to refer you to them. Again, thank you very much."</p>
 <div class="review-author">
 <span class="review-name">Mary</span>
@@ -1253,7 +1299,10 @@ Verified Customer
 
 <div class="review-card">
 <div class="review-body">
+<div class="review-header">
+<img class="review-avatar" src="review-photo-3.jpg" alt="Veterans Own customer">
 <div class="review-stars">★★★★★</div>
+</div>
 <p class="review-quote">"My mother recently had a refinance with Veterans Own Mortgage. The process was easy for her (and I) to follow. The loan representative was very helpful and responsive for the entire process and explained everything. I would definitely recommend this company."</p>
 <div class="review-author">
 <span class="review-name">Dorothy</span>
@@ -1268,7 +1317,10 @@ Verified Customer
 
 <div class="review-card">
 <div class="review-body">
+<div class="review-header">
+<img class="review-avatar" src="review-photo-2.jpg" alt="Veterans Own customer">
 <div class="review-stars">★★★★★</div>
+</div>
 <p class="review-quote">"This company out did themselves in my expectations. They were not pushy; they waited on me and kept contact with me even when I wasn't sure if I was going to be able to refinance. I had a wonderful experience and highly recommend them for your next mortgage needs!"</p>
 <div class="review-author">
 <span class="review-name">Paul</span>
@@ -1283,7 +1335,10 @@ Verified Customer
 
 <div class="review-card">
 <div class="review-body">
+<div class="review-header">
+<img class="review-avatar" src="photo-celebrate.jpg" alt="Veterans Own customer">
 <div class="review-stars">★★★★★</div>
+</div>
 <p class="review-quote">"I am a Veteran and they helped me understand the best options with my VA loan. They were great all through the process. I will definitely be telling others about Veterans Own Mortgage."</p>
 <div class="review-author">
 <span class="review-name">Jeff</span>
