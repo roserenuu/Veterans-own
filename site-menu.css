@@ -1,0 +1,150 @@
+.site-menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-left: auto;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.site-menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: var(--navy, #1a2f5a);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.site-menu-toggle.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.site-menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-menu-toggle.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.navbar .site-menu-toggle span {
+  background: #fff;
+}
+
+.not-found-menu span {
+  background: #fff;
+}
+
+.site-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 199;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.site-drawer-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.site-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  z-index: 200;
+  width: 84%;
+  max-width: 360px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 72px 28px 28px;
+  background: var(--paper, #fbfaf7);
+  border-left: 1px solid var(--line, #d9deea);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.18);
+  transition: right 0.28s ease;
+}
+
+.site-drawer.open {
+  right: 0;
+}
+
+.site-drawer-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  padding: 4px 10px;
+  background: transparent;
+  border: 0;
+  color: var(--navy, #1a2f5a);
+  cursor: pointer;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.site-drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.site-drawer-links a {
+  display: block;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line, #d9deea);
+  color: var(--navy, #1a2f5a);
+  font-family: var(--display, "Barlow Condensed", Arial, sans-serif);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.site-drawer-links a:hover {
+  color: var(--red, #b6202a);
+}
+
+.site-drawer-cta {
+  margin-top: 24px;
+  padding: 16px 24px;
+  background: var(--red, #b6202a);
+  color: #fff;
+  font-family: var(--display, "Barlow Condensed", Arial, sans-serif);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  line-height: 1.1;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.site-drawer-cta:hover {
+  background: var(--red-dark, #8f1821);
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .site-nav,
+  .nav-pages {
+    display: none;
+  }
+
+  .site-menu-toggle {
+    display: flex;
+  }
+}

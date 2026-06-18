@@ -18,9 +18,34 @@
     .logo-img { height: 44px; width: auto; }
     .logo-line1 { display: block; font-size: 0.9rem; font-weight: 800; letter-spacing: 0.08em; color: #ffffff; }
     .logo-line2 { display: block; font-size: 0.55rem; font-weight: 600; letter-spacing: 0.2em; color: #7eb8f7; }
+    .not-found-menu { position: fixed; top: 18px; right: 18px; z-index: 150; }
+    .not-found-menu span { background: #fff; }
   </style>
+<link rel="stylesheet" href="site-menu.css" />
 </head>
 <body>
+<button type="button" class="site-menu-toggle not-found-menu" data-site-menu-toggle aria-label="Open menu" aria-expanded="false">
+<span></span>
+<span></span>
+<span></span>
+</button>
+
+<div class="site-drawer-backdrop" data-site-menu-backdrop></div>
+<aside class="site-drawer" data-site-menu-drawer aria-hidden="true">
+<button type="button" class="site-drawer-close" data-site-menu-close aria-label="Close menu">&times;</button>
+<ul class="site-drawer-links">
+<li><a href="/">Home</a></li>
+<li><a href="/va-loans.html">VA Loans</a></li>
+<li><a href="/learning-center.html">Learning Center</a></li>
+<li><a href="/about.html">About Us</a></li>
+<li><a href="/contact.html">Contact</a></li>
+<li><a href="/careers.html">Careers</a></li>
+<li><a href="/apply.html">Apply For A Home Loan</a></li>
+<li><a href="/faq.html">FAQ</a></li>
+</ul>
+<a href="tel:+18558387696" class="site-drawer-cta">Call 1-855-VETS-OWN</a>
+</aside>
+
 <div class="wrap">
 <div class="logo-wrap">
 <img src="logo.png" alt="Veterans Own Mortgage" class="logo-img" />
@@ -35,6 +60,7 @@
 <a href="/" class="btn-home">Back to Home</a>
 </div>
 <!-- Crisp Chat Widget -->
+<script src="site-menu.js"></script>
 <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="cbcb5f4f-ac52-4285-a6e8-de1dd007e281";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 </body>
 </html>
