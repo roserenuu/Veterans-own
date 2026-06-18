@@ -426,12 +426,14 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   z-index: 3;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
   background: oklch(0.18 0.06 255 / 0.92);
   color: #fff;
   border: 1px solid oklch(1 0 0 / 0.28);
   border-radius: 4px;
-  padding: 10px 14px;
+  padding: 0;
   font-family: var(--f-display);
   font-size: 12px;
   font-weight: 900;
@@ -446,8 +448,8 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   transform: translateY(-1px);
 }
 .volume-mark {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   position: relative;
   display: inline-block;
 }
@@ -455,27 +457,27 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   content: '';
   position: absolute;
   left: 0;
-  top: 4px;
-  width: 5px;
-  height: 8px;
+  top: 5px;
+  width: 6px;
+  height: 10px;
   background: currentColor;
 }
 .volume-mark::after {
   content: '';
   position: absolute;
-  left: 6px;
+  left: 7px;
   top: 2px;
-  width: 8px;
-  height: 12px;
+  width: 10px;
+  height: 16px;
   border: 2px solid currentColor;
   border-left: 0;
-  border-radius: 0 12px 12px 0;
+  border-radius: 0 16px 16px 0;
 }
 .hero-volume-button.is-muted .volume-mark::after {
-  width: 12px;
+  width: 16px;
   height: 2px;
-  top: 7px;
-  left: 4px;
+  top: 9px;
+  left: 3px;
   border: 0;
   border-radius: 0;
   background: currentColor;
@@ -910,7 +912,7 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   }
   .hero-video-wrap { padding: 0 18px 28px; }
   .hero-video-panel { width: 100%; }
-  .hero-volume-button { right: 10px; bottom: 10px; padding: 8px 10px; font-size: 10px; gap: 6px; }
+  .hero-volume-button { right: 10px; bottom: 10px; width: 40px; height: 40px; }
   .quote-section { padding: 40px 16px 52px; }
   .quote-section .form-panel { margin: 0; }
   .form-panel { margin: 16px; padding: 28px 22px; }
@@ -995,7 +997,6 @@ Your browser does not support the video tag.
 </video>
 <button type="button" class="hero-volume-button is-muted" id="hero-volume-toggle" aria-label="Turn video sound on" aria-pressed="false">
 <span class="volume-mark" aria-hidden="true"></span>
-<span class="volume-label">Sound On</span>
 </button>
 </div>
 </div>
@@ -1666,13 +1667,11 @@ window.addEventListener('scroll', () => {
 const heroVideo = document.getElementById('hero-video');
 const heroVolumeToggle = document.getElementById('hero-volume-toggle');
 if (heroVideo && heroVolumeToggle) {
-  const volumeLabel = heroVolumeToggle.querySelector('.volume-label');
   function updateHeroVolumeButton() {
     const isMuted = heroVideo.muted || heroVideo.volume === 0;
     heroVolumeToggle.classList.toggle('is-muted', isMuted);
     heroVolumeToggle.setAttribute('aria-pressed', String(!isMuted));
     heroVolumeToggle.setAttribute('aria-label', isMuted ? 'Turn video sound on' : 'Mute video sound');
-    if (volumeLabel) volumeLabel.textContent = isMuted ? 'Sound On' : 'Mute';
   }
   heroVolumeToggle.addEventListener('click', async () => {
     const shouldUnmute = heroVideo.muted || heroVideo.volume === 0;
