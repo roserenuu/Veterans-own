@@ -139,6 +139,13 @@
 }
 
 @media (max-width: 640px) {
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 120;
+    box-shadow: 0 10px 24px rgba(16, 35, 63, 0.16);
+  }
+
   .site-nav,
   .nav-pages {
     display: none;

@@ -1012,9 +1012,13 @@ fieldset {
   }
 
   .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 120;
     flex-wrap: nowrap;
     gap: 12px;
     padding: 10px 16px;
+    box-shadow: 0 10px 24px rgba(16, 35, 63, 0.08);
   }
 
   .brand {
