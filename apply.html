@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Veterans Own Mortgage</title>
-  <meta name="description" content="Contact a VA loan expert with Veterans Own Mortgage by phone, email, or message form.">
-  <link rel="canonical" href="https://veteransown.com/contact.html">
+  <title>Apply For A VA Home Loan | Veterans Own Mortgage</title>
+  <meta name="description" content="Start your free, no-obligation VA home loan application with Veterans Own Mortgage.">
+  <link rel="canonical" href="https://veteransown.com/apply.html">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,115 +37,123 @@
   </header>
 
   <main>
-    <section class="page-hero">
+    <section class="page-hero simple">
       <div>
-        <p class="eyebrow">Get In Touch</p>
-        <h1>Contact Veterans Own Mortgage</h1>
-        <p>Contact a VA loan expert with Veterans Own Mortgage today at <a href="tel:+18558387696">1-855-VETS-OWN</a>.</p>
-        <div class="button-row">
-          <a href="tel:+18558387696" class="btn">Call 1-855-VETS-OWN</a>
-          <a href="mailto:info@veteransown.com" class="btn light">Email Our Team</a>
-        </div>
+        <p class="eyebrow">Free - No Obligation</p>
+        <h1>Apply For A VA Home Loan</h1>
+        <p>Start your free application below or call us at <a href="tel:+18558387696">1-855-VETS-OWN</a>. Our VA loan experts are ready to help.</p>
       </div>
-      <aside class="hero-panel">
-        <h2>Office Hours</h2>
-        <p>Monday - Friday<br>8:00 AM - 8:00 PM ET</p>
-        <a href="/apply.html" class="btn secondary">Apply Online</a>
-      </aside>
     </section>
 
     <section class="section">
-      <div class="split">
-        <div>
-          <div class="section-header left">
-            <p class="kicker">Get In Touch</p>
-            <h2>Contact Details</h2>
-          </div>
-          <div class="contact-list">
-            <div class="contact-row">
-              <strong>Phone</strong>
-              <a href="tel:+18558387696">1-855-VETS-OWN</a>
-            </div>
-            <div class="contact-row">
-              <strong>Email</strong>
-              <a href="mailto:info@veteransown.com">info@veteransown.com</a>
-            </div>
-            <div class="contact-row">
-              <strong>Headquarters</strong>
-              <span>12400 Molly Pitcher Highway<br>Greencastle, PA 17225</span>
-            </div>
-            <div class="contact-row">
-              <strong>Office Hours</strong>
-              <span>Monday - Friday<br>8:00 AM - 8:00 PM ET</span>
-            </div>
-          </div>
-        </div>
+      <div class="grid four number-steps">
+        <article class="card">
+          <h3>Complete The Application</h3>
+          <p>Fill out our simple online application in minutes. It's free, secure, and there's no obligation.</p>
+        </article>
+        <article class="card">
+          <h3>Speak With An Expert</h3>
+          <p>A VA loan specialist will review your application and contact you to discuss your options.</p>
+        </article>
+        <article class="card">
+          <h3>Get Pre-Approved</h3>
+          <p>Receive your pre-approval letter so you can shop with confidence or lock in your refinance rate.</p>
+        </article>
+        <article class="card">
+          <h3>Close Your Loan</h3>
+          <p>We handle the paperwork and guide you through closing. Most loans close in 3-4 weeks.</p>
+        </article>
+      </div>
+    </section>
 
-        <form name="contact" class="form-card" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact">
+    <section class="section alt" id="application">
+      <div class="split">
+        <form name="va-application" class="form-card" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="va-application">
           <p class="hidden-field">
             <label>Don't fill this out if you're human: <input name="bot-field"></label>
           </p>
-          <h2>Send Us A Message</h2>
-          <p>Fill out the form below and a VA loan expert will contact you shortly.</p>
-          <div class="form-grid">
+          <p class="kicker">Step 1 Of 3</p>
+          <h2>What Type Of Loan Are You Looking For?</h2>
+          <p>Select the option that best describes your needs, then share your contact information so a VA loan expert can follow up.</p>
+
+          <fieldset class="field full">
+            <legend>Loan Type</legend>
+            <div class="choice-grid">
+              <label class="choice"><input type="radio" name="loan_type" value="VA Purchase Loan" required> VA Purchase Loan</label>
+              <label class="choice"><input type="radio" name="loan_type" value="VA Cash-Out Refinance"> VA Cash-Out Refinance</label>
+              <label class="choice"><input type="radio" name="loan_type" value="VA IRRRL"> VA IRRRL (Streamline Refinance)</label>
+              <label class="choice"><input type="radio" name="loan_type" value="VA Debt Consolidation"> VA Debt Consolidation</label>
+              <label class="choice"><input type="radio" name="loan_type" value="Other / Not Sure"> Other / Not Sure</label>
+            </div>
+          </fieldset>
+
+          <div class="form-grid spaced-top">
             <div class="field">
-              <label for="full_name">Full Name *</label>
-              <input id="full_name" name="full_name" type="text" autocomplete="name" required>
+              <label for="first_name">First Name *</label>
+              <input id="first_name" name="first_name" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label for="last_name">Last Name *</label>
+              <input id="last_name" name="last_name" type="text" autocomplete="family-name" required>
             </div>
             <div class="field">
               <label for="phone">Phone Number *</label>
               <input id="phone" name="phone" type="tel" autocomplete="tel" required>
             </div>
-            <div class="field full">
+            <div class="field">
               <label for="email">Email Address *</label>
               <input id="email" name="email" type="email" autocomplete="email" required>
             </div>
+            <div class="field">
+              <label for="state">State *</label>
+              <input id="state" name="state" type="text" autocomplete="address-level1" required>
+            </div>
+            <div class="field">
+              <label for="credit_score">Credit Score</label>
+              <select id="credit_score" name="credit_score">
+                <option value="">Select One</option>
+                <option>580-599</option>
+                <option>600-619</option>
+                <option>620-649</option>
+                <option>650-679</option>
+                <option>680-719</option>
+                <option>720 or Higher</option>
+                <option>I Don't Know</option>
+              </select>
+            </div>
             <div class="field full">
-              <label for="message">Message</label>
+              <label for="message">Anything Else We Should Know?</label>
               <textarea id="message" name="message"></textarea>
             </div>
           </div>
+          <p class="fine-print">By submitting this form, I agree to be contacted by Veterans Own Mortgage by telephone, text message, and email regarding mortgage products. Consent is not a condition of obtaining services.</p>
           <div class="button-row">
-            <button type="submit" class="btn">Send Message</button>
+            <button type="submit" class="btn">Continue &rarr;</button>
           </div>
         </form>
-      </div>
-    </section>
 
-    <section class="section alt">
-      <div class="section-header">
-        <p class="kicker">F.A.Q.</p>
-        <h2>Frequently Asked Questions</h2>
-      </div>
-      <div class="grid three">
-        <article class="card">
-          <h3>Is Applying To Veterans Own Mortgage Free?</h3>
-          <p>Yes. Your application is free, secure, and there is no obligation to continue.</p>
-        </article>
-        <article class="card">
-          <h3>Are You A Broker Or Lender?</h3>
-          <p>Veterans Own Mortgage is a DBA/trade name of Mortgages for America, NMLS #993846.</p>
-        </article>
-        <article class="card">
-          <h3>How Soon Will My Loan Close?</h3>
-          <p>Many loans close in 3 to 4 weeks, depending on borrower, property, underwriting, and VA or lender requirements.</p>
-        </article>
-        <article class="card">
-          <h3>Which States Are You Licensed In?</h3>
-          <p>Contact a VA loan specialist so we can review your state, loan goal, and current eligibility.</p>
-        </article>
-        <article class="card">
-          <h3>Why Do You Provide These Services?</h3>
-          <p>Veterans Own Mortgage is dedicated to helping Veterans achieve the dream of homeownership.</p>
-        </article>
-        <article class="card">
-          <h3>Where Are You Located?</h3>
-          <p>Our headquarters are located at 12400 Molly Pitcher Highway, Greencastle, PA 17225.</p>
-        </article>
-      </div>
-      <div class="button-row center">
-        <a href="/faq.html" class="btn secondary">See Full FAQ</a>
+        <aside>
+          <div class="quote-panel">
+            <h2>Why Veterans Own Mortgage?</h2>
+            <ul class="check-list">
+              <li>Credit scores as low as 580 accepted</li>
+              <li>100% VA cash-out refinance available</li>
+              <li>No down payment required</li>
+              <li>No monthly mortgage insurance</li>
+              <li>Fast closings - 3 to 4 weeks</li>
+              <li>Free application - no obligation</li>
+              <li>VA loan specialists on staff</li>
+              <li>Serving Veterans for over 15 years</li>
+            </ul>
+          </div>
+          <div class="quote-panel spaced-top">
+            <h2>Prefer To Call?</h2>
+            <p>Mon-Fri 8am-8pm ET</p>
+            <a href="tel:+18558387696" class="phone-link">1-855-VETS-OWN</a>
+            <p><a href="mailto:info@veteransown.com">info@veteransown.com</a></p>
+          </div>
+        </aside>
       </div>
     </section>
 

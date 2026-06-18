@@ -207,9 +207,9 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: oklch(0.50 0.20 25 / 0.1);
-  border: 1px solid oklch(0.50 0.20 25 / 0.3);
-  padding: 6px 16px;
+  background: transparent;
+  border: 0;
+  padding: 0;
   margin-bottom: 24px;
   font-family: var(--f-display);
   font-size: 12px; font-weight: 700;
@@ -756,6 +756,13 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 }
 .nav-drawer-cta:hover { background: oklch(0.42 0.20 25); }
 
+@media (min-width: 961px) and (max-width: 1120px) {
+  nav { padding: 0 24px; }
+  .nav-actions .nav-link,
+  .nav-actions .btn-nav { display: none; }
+  .nav-burger { display: flex; }
+}
+
 @media (max-width: 480px) {
   .nav-actions { gap: 8px; }
   .nav-actions .nav-link { display: none; }
@@ -802,7 +809,7 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="#" class="nav-logo">
+  <a href="/" class="nav-logo">
     <img src="logo.png" alt="Veterans Own Mortgage VA home loan and IRRRL refinance lender">
     <div class="nav-logo-text">
       Veterans Own
@@ -810,10 +817,12 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
     </div>
   </a>
   <div class="nav-actions">
-    <a href="/buy.html" class="nav-link">Buy a Home</a>
+    <a href="/va-loans.html" class="nav-link">VA Loans</a>
+    <a href="/learning-center.html" class="nav-link">Learning Center</a>
     <a href="/about.html" class="nav-link">About</a>
     <a href="/contact.html" class="nav-link">Contact</a>
-    <a href="#form" class="btn-nav" id="btn-nav-animated">Apply For A Home Loan</a>
+    <a href="/careers.html" class="nav-link">Careers</a>
+    <a href="/apply.html" class="btn-nav" id="btn-nav-animated">Apply For A Home Loan</a>
     <button type="button" class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -825,9 +834,12 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   <button type="button" class="nav-drawer-close" id="nav-drawer-close" aria-label="Close menu">&times;</button>
   <ul class="nav-drawer-links">
     <li><a href="/">Home</a></li>
-    <li><a href="/buy.html">Buy a Home</a></li>
+    <li><a href="/va-loans.html">VA Loans</a></li>
+    <li><a href="/learning-center.html">Learning Center</a></li>
     <li><a href="/about.html">About</a></li>
     <li><a href="/contact.html">Contact</a></li>
+    <li><a href="/careers.html">Careers</a></li>
+    <li><a href="/apply.html">Apply For A Home Loan</a></li>
     <li><a href="/faq.html">FAQ</a></li>
   </ul>
   <a href="tel:+18558387696" class="nav-drawer-cta">Call 1-855-VETS-OWN</a>
@@ -848,8 +860,8 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
       <li><span class="plus-sign">★</span> Free application — no obligation</li>
     </ul>
     <div class="hero-actions">
-      <a href="#form" class="btn-hero">Purchase</a>
-      <a href="#form" class="btn-hero btn-hero-secondary">Refinance</a>
+      <a href="/apply.html" class="btn-hero">Purchase</a>
+      <a href="/apply.html" class="btn-hero btn-hero-secondary">Refinance</a>
     </div>
   </div>
 
@@ -1202,12 +1214,12 @@ section.content-section.alt { background: var(--bg-mid); }
     <article class="loan-option-card">
       <h3>VA Purchase</h3>
       <p>Use your VA home loan benefit to purchase a home with guidance from a Veterans Own Mortgage loan specialist.</p>
-      <a href="#form">Get Pre-Approved To Buy</a>
+      <a href="/apply.html">Get Pre-Approved To Buy</a>
     </article>
     <article class="loan-option-card">
       <h3>VA IRRRL Refinance</h3>
       <p>Already have a VA loan? See how much you may be able to save with a VA IRRRL streamline refinance.</p>
-      <a href="#form">See How Much I Can Save</a>
+      <a href="/apply.html">See How Much I Can Save</a>
     </article>
   </div>
 </section>
@@ -1242,7 +1254,7 @@ section.content-section.alt { background: var(--bg-mid); }
       </div>
     </div>
     <div class="copy-actions">
-      <a href="#form" class="btn-copy">Get My Free Pre-Approval</a>
+      <a href="/apply.html" class="btn-copy">Get My Free Pre-Approval</a>
       <a href="tel:+18558387696" class="btn-copy secondary">Speak With A VA Loan Specialist</a>
     </div>
   </div>
@@ -1418,11 +1430,11 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
 <section class="content-section alt" id="how">
   <h2 class="section-title" style="text-align:center;">More VA Loan<br><span class="accent">Options.</span></h2>
   <div class="related-links">
-    <a href="#form">Apply For A VA Cash Out Refinance →</a>
-    <a href="/buy.html">See VA Home Loan Benefits Here →</a>
-    <a href="#form">Apply For A VA Debt Consolidation Loan →</a>
-    <a href="#form">Apply For A VA Loan After Bankruptcy →</a>
-    <a href="#form">Apply For A VA Loan With A Low Credit Score →</a>
+    <a href="/apply.html">Apply For A VA Cash Out Refinance →</a>
+    <a href="/va-loans.html">See VA Home Loan Benefits Here →</a>
+    <a href="/apply.html">Apply For A VA Debt Consolidation Loan →</a>
+    <a href="/apply.html">Apply For A VA Loan After Bankruptcy →</a>
+    <a href="/apply.html">Apply For A VA Loan With A Low Credit Score →</a>
   </div>
 </section>
 
@@ -1438,8 +1450,8 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
     </p>
   </div>
   <div class="cta-actions">
-    <a href="#form" class="btn-cta-primary">Get My Free Pre-Approval</a>
-    <a href="#form" class="btn-cta-primary">See My VA Rate</a>
+    <a href="/apply.html" class="btn-cta-primary">Get My Free Pre-Approval</a>
+    <a href="/apply.html" class="btn-cta-primary">See My VA Rate</a>
   </div>
 </section>
 
@@ -1455,18 +1467,22 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
         </div>
       </div>
       <p class="footer-tagline">Veterans Own Mortgage is dedicated to helping Veterans achieve the dream of homeownership.</p>
+      <p class="footer-tagline">Accreditations: BBB A+ Rating, Equal Housing Lender, VA Approved Lender, NMLS #993846.</p>
       <a href="tel:+18558387696" class="footer-phone">1-855-VETS-OWN</a>
       <span class="footer-phone-digits">(1-855-838-7696)</span>
     </div>
     <div class="footer-links">
       <h4>Navigate</h4>
-      <a href="/buy.html">Buy a Home</a>
+      <a href="/">Home</a>
+      <a href="/va-loans.html">VA Loans</a>
+      <a href="/learning-center.html">Learning Center</a>
       <a href="/about.html">About</a>
       <a href="/contact.html">Contact</a>
+      <a href="/careers.html">Careers</a>
       <a href="#credit-score">580 Credit Score</a>
       <a href="#how">VA Loan Options</a>
       <a href="#reviews">Reviews</a>
-      <a href="#form">Apply Now</a>
+      <a href="/apply.html">Apply Now</a>
       <a href="/faq.html">FAQ</a>
       <a href="/disclosures.html">Disclosures</a>
       <a href="/terms.html">Terms</a>
