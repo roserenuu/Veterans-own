@@ -356,29 +356,26 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 .plus-list li:nth-child(2) { animation: slideLeft 0.5s 0.54s ease forwards; }
 .plus-list li:nth-child(3) { animation: slideLeft 0.5s 0.68s ease forwards; }
 .plus-list li:nth-child(4) { animation: slideLeft 0.5s 0.82s ease forwards; }
-.plus-list li:nth-child(5) { animation: slideLeft 0.5s 0.96s ease forwards; }
 .plus-sign {
-  font-family: var(--f-display);
-  width: 22px;
-  height: 22px;
+  font-family: var(--f-body);
+  width: 30px;
+  height: 30px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--navy);
-  color: #fff;
-  font-size: 14px;
+  color: oklch(0.47 0.13 154);
+  font-size: 29px;
   font-weight: 900;
   line-height: 1;
   text-align: center;
+  transform: rotate(-8deg);
   animation: popIn 0.5s ease both;
 }
 .plus-list li:nth-child(1) .plus-sign { animation-delay: 0.4s; }
 .plus-list li:nth-child(2) .plus-sign { animation-delay: 0.54s; }
 .plus-list li:nth-child(3) .plus-sign { animation-delay: 0.68s; }
 .plus-list li:nth-child(4) .plus-sign { animation-delay: 0.82s; }
-.plus-list li:nth-child(5) .plus-sign { animation-delay: 0.96s; }
 
 .btn-hero {
   display: flex;
@@ -769,8 +766,8 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 }
 @keyframes popIn {
   0%   { opacity: 0; transform: scale(0.3) rotate(-15deg); }
-  70%  { transform: scale(1.25) rotate(5deg); }
-  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+  70%  { transform: scale(1.2) rotate(-3deg); }
+  100% { opacity: 1; transform: scale(1) rotate(-8deg); }
 }
 @keyframes plusPulse {
   0%, 100% { transform: scale(1); }
@@ -803,7 +800,7 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   .hero-left { padding: 72px 16px 16px 20px; gap: 0; align-self: center; }
   .hero-copy { padding: 0 16px 48px 20px; }
   .plus-list li { font-size: 14px; }
-  .plus-sign { font-size: 28px !important; width: 22px !important; }
+  .plus-sign { font-size: 28px !important; width: 28px !important; }
   .hero-title { font-size: clamp(52px, 11vw, 82px); margin-bottom: 26px; overflow-wrap: anywhere; }
   .hero-dare { margin-bottom: 26px; line-height: 1.5; max-width: min(620px, calc(100vw - 40px)); }
   .hero-hook { margin-bottom: 30px; }
@@ -902,7 +899,7 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   .hero-hook { font-size: 17px; line-height: 1.35; margin: 0 auto 28px; max-width: 340px; text-align: center; }
   .plus-list { width: 100%; gap: 16px; margin: 0 auto 32px; max-width: 370px; text-align: center; align-self: center; align-items: center; }
   .plus-list li { width: 100%; justify-content: center; font-size: 18px; font-weight: 600; line-height: 1.35; white-space: normal; align-items: center; gap: 12px; text-align: left; opacity: 1 !important; animation: none !important; transform: none !important; }
-  .plus-sign { flex: 0 0 24px; width: 24px !important; height: 24px; font-size: 15px !important; margin-top: 0; animation: none !important; }
+  .plus-sign { flex: 0 0 30px; width: 30px !important; height: 30px; font-size: 29px !important; margin-top: 0; animation: none !important; }
   .hero-actions { width: 100%; max-width: 370px; justify-content: center; flex-wrap: nowrap; gap: 12px; }
   .btn-hero {
     flex: 1 1 0;
@@ -1025,7 +1022,6 @@ Your browser does not support the video tag.
 <li><span class="plus-sign">✓</span> Secure Application</li>
 <li><span class="plus-sign">✓</span> Fast Pre Approval</li>
 <li><span class="plus-sign">✓</span> Veteran Focused</li>
-<li><span class="plus-sign">✓</span> Free application no obligation</li>
 </ul>
 <div class="hero-actions">
 <a href="/apply.html" class="btn-hero">Purchase</a>
@@ -1609,11 +1605,11 @@ footer { background: var(--bg-mid); border-top: 1px solid var(--border); padding
 <section class="content-section alt" id="how">
 <h2 class="section-title" style="text-align:center;">More VA Loan<br><span class="accent">Options.</span></h2>
 <div class="related-links">
-<a href="/apply.html">Apply For A VA Cash Out Refinance →</a>
-<a href="/va-loans.html">See VA Home Loan Benefits Here →</a>
-<a href="/apply.html">Apply For A VA Debt Consolidation Loan →</a>
-<a href="/apply.html">Apply For A VA Loan After Bankruptcy →</a>
-<a href="/apply.html">Apply For A VA Loan With A Low Credit Score →</a>
+<a href="/apply.html">Apply For A VA Cash Out Refinance</a>
+<a href="/va-loans.html">See VA Home Loan Benefits Here</a>
+<a href="/apply.html">Apply For A VA Debt Consolidation Loan</a>
+<a href="/apply.html">Apply For A VA Loan After Bankruptcy</a>
+<a href="/apply.html">Apply For A VA Loan With A Low Credit Score</a>
 </div>
 </section>
 
