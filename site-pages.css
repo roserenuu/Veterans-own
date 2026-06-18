@@ -42,7 +42,7 @@ a {
 }
 
 .utility {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px 18px;
@@ -60,6 +60,7 @@ a {
 }
 
 .service-bar {
+  display: none;
   background: var(--red);
   color: var(--white);
   padding: 8px 18px;
@@ -72,8 +73,8 @@ a {
 }
 
 .site-header {
-  position: sticky;
-  top: 0;
+  position: relative;
+  top: auto;
   z-index: 10;
   display: flex;
   align-items: center;
@@ -818,14 +819,15 @@ fieldset {
 
 @media (max-width: 1000px) {
   .site-header {
-    align-items: stretch;
-    flex-direction: column;
-    gap: 16px;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14px;
   }
 
   .site-nav {
-    width: 100%;
-    justify-content: center;
+    flex: 1 1 420px;
+    justify-content: flex-end;
   }
 
   .page-hero,
@@ -854,13 +856,7 @@ fieldset {
   }
 
   .utility {
-    align-items: center;
-    display: grid;
-    gap: 4px;
-    padding: 8px 14px;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    line-height: 1.25;
+    display: none;
   }
 
   .utility span {
@@ -868,64 +864,57 @@ fieldset {
   }
 
   .service-bar {
-    padding: 10px 14px;
-    font-size: 21px;
-    letter-spacing: 0.08em;
+    display: none;
   }
 
   .site-header {
-    gap: 14px;
-    padding: 14px;
+    flex-wrap: nowrap;
+    gap: 12px;
+    padding: 10px 16px;
   }
 
   .brand {
-    width: 100%;
+    width: auto;
     min-width: 0;
   }
 
   .brand img {
-    width: 50px;
-    height: 50px;
+    width: 42px;
+    height: 42px;
   }
 
   .brand strong {
-    font-size: 22px;
+    font-size: 18px;
     letter-spacing: 0.06em;
   }
 
   .brand > span > span {
-    font-size: 13px;
-    letter-spacing: 0.16em;
+    font-size: 11px;
+    letter-spacing: 0.14em;
   }
 
   .site-nav {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 7px;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: flex-end;
+    width: auto;
+    margin-left: auto;
   }
 
   .site-nav a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 40px;
-    padding: 9px 4px;
-    background: var(--white);
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    font-size: 13px;
-    letter-spacing: 0;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
+    display: none;
   }
 
   .site-nav .nav-cta {
-    grid-column: 1 / -1;
-    min-height: 52px;
+    display: inline-flex;
+    min-height: 40px;
+    width: auto;
+    padding: 9px 12px;
     border: 0;
-    border-radius: 6px;
-    font-size: 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
   }
 
   .btn {
