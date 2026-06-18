@@ -111,7 +111,12 @@ body {
   padding: 0 16px;
   text-align: center;
 }
-.announce-bar span { color: var(--star); font-size: 11px; }
+.announce-star { color: var(--star); font-size: 11px; }
+.announce-message {
+  color: #fff;
+  white-space: nowrap;
+  transition: opacity 0.18s ease;
+}
 @media (max-width: 600px) {
   .announce-bar { font-size: 10px; letter-spacing: 0.14em; gap: 8px; height: 30px; }
 }
@@ -407,11 +412,7 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   animation: formSlide 0.8s 0.3s ease both;
 }
 .hero-video-panel::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0;
-  height: 4px;
-  background: var(--red);
-  z-index: 1;
+  content: none;
 }
 .hero-video {
   display: block;
@@ -871,8 +872,8 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   .hero-left { padding: 130px 24px 14px; align-items: center; text-align: center; }
   .hero-copy { padding: 0 24px 40px; text-align: center; }
   .hero-title { font-size: clamp(56px, 16vw, 80px); margin-bottom: 0; }
-  .hero-dare { font-size: 16px; line-height: 1.5; margin: 0 auto 22px; border-left: none; padding-left: 0; max-width: 320px; }
-  .hero-hook { font-size: 15px; line-height: 1.35; margin-bottom: 26px; max-width: 320px; }
+  .hero-dare { font-size: clamp(19px, 5.6vw, 24px); line-height: 1.38; margin: 0 auto 24px; border-left: none; padding-left: 0; max-width: 350px; text-align: center; }
+  .hero-hook { font-size: 17px; line-height: 1.35; margin: 0 auto 28px; max-width: 340px; text-align: center; }
   .plus-list { gap: 14px; margin: 0 auto 30px; max-width: 300px; text-align: left; align-self: center; }
   .plus-list li { font-size: 14px; line-height: 1.4; white-space: normal; align-items: flex-start; gap: 10px; }
   .plus-sign { font-size: 18px !important; width: 18px !important; margin-top: 2px; }
@@ -919,7 +920,9 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 
 <!-- ANNOUNCEMENT BAR -->
 <div class="announce-bar">
-<span>★</span> Serving Those Who Served <span>★</span>
+<span class="announce-star">★</span>
+<span class="announce-message" id="announce-message">Serving Those Who Served</span>
+<span class="announce-star">★</span>
 </div>
 
 <!-- NAV -->
@@ -1649,6 +1652,25 @@ if (btnNav) setTimeout(() => btnNav.classList.add('btn-nav-pulse'), 1500);
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
 });
+
+// ANNOUNCEMENT BAR ROTATION
+const announceMessage = document.getElementById('announce-message');
+if (announceMessage) {
+  const announceMessages = [
+    'Serving Those Who Served',
+    '1-855-VETS-OWN',
+    'info@veteransown.com'
+  ];
+  let announceIndex = 0;
+  setInterval(() => {
+    announceIndex = (announceIndex + 1) % announceMessages.length;
+    announceMessage.style.opacity = '0';
+    setTimeout(() => {
+      announceMessage.textContent = announceMessages[announceIndex];
+      announceMessage.style.opacity = '1';
+    }, 180);
+  }, 5000);
+}
 
 // HERO VIDEO SOUND TOGGLE
 const heroVideo = document.getElementById('hero-video');
