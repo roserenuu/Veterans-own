@@ -256,6 +256,11 @@ a {
   font-size: 15px;
 }
 
+.contact-hours-panel h2,
+.contact-hours-panel p {
+  color: var(--white);
+}
+
 .phone-link {
   color: var(--red);
   font-family: var(--display);

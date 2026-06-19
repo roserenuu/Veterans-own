@@ -14,7 +14,8 @@
 /buy.html /buy 301!
 /about.html /about 301!
 /contact.html /contact 301!
-/careers.html /careers 301!
+/careers / 301!
+/careers.html / 301!
 /disclosures.html /disclosures 301!
 /terms.html /terms 301!
 /faq.html /faq 301!
@@ -24,6 +25,7 @@
 /va-loan-580-credit-score.html /va-loan-580-credit-score 301!
 /va-loan-option-quiz.html /va-loan-option-quiz 301!
 /va-refinance-savings-calculator.html /va-refinance-savings-calculator 301!
+/va-loans-california.html /va-loans-california 301!
 /va-loans-colorado.html /va-loans-colorado 301!
 /va-loans-florida.html /va-loans-florida 301!
 /va-loans-idaho.html /va-loans-idaho 301!
