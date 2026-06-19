@@ -245,13 +245,13 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   padding: 0;
   margin-bottom: 24px;
   font-family: var(--f-display);
-  font-size: 12px; font-weight: 700;
+  font-size: clamp(14px, 1.2vw, 16px); font-weight: 800;
   letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--red);
+  color: var(--navy);
 }
 .hero-eyebrow::before {
   content: ''; width: 6px; height: 6px;
-  background: var(--red); border-radius: 50%;
+  background: var(--navy); border-radius: 50%;
   animation: blink 2s infinite;
 }
 @keyframes blink {
