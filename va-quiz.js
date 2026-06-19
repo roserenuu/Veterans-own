@@ -111,6 +111,14 @@
     if (summaryInput) summaryInput.value = summary;
     if (answerPreview) answerPreview.textContent = summary;
 
+    document.dispatchEvent(new CustomEvent("veteransown:quiz_complete", {
+      detail: {
+        quiz_name: "Find My VA Loan Option",
+        recommended_option: result.title,
+        answer_summary: summary
+      }
+    }));
+
     resultPanel?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 

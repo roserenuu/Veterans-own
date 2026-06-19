@@ -223,10 +223,13 @@
 <li>Veterans Own Mortgage is not affiliated with or endorsed by the U.S. Department of Veterans Affairs.</li>
 </ul>
 </div>
-<form action="/thank-you" class="form-card" method="POST" name="va-option-quiz">
+<form action="/thank-you" class="form-card" method="POST" name="va-option-quiz" data-netlify="true" netlify-honeypot="bot-field">
 <input type="hidden" name="form-name" value="va-option-quiz">
 <input type="hidden" name="recommended_option" value="">
 <input type="hidden" name="quiz_summary" value="">
+<p class="hidden-field">
+<label>Don't fill this out if you're human: <input name="bot-field"></label>
+</p>
 <h2>Get My Free Review</h2>
 <p>Share your contact information and a VA loan specialist can follow up with next steps.</p>
 <div class="form-grid spaced-top">
@@ -265,6 +268,12 @@
 </div>
 </div>
 <p class="fine-print">By submitting this form, I agree to be contacted by Veterans Own Mortgage by telephone, text message, and email regarding mortgage products. Consent is not a condition of obtaining services. Message and data rates may apply.</p>
+<div class="form-trust-proof" aria-label="Quiz review trust details">
+<span>Free review with no obligation to move forward.</span>
+<span>NMLS #993846 and Equal Housing Lender.</span>
+<span>Not affiliated with or endorsed by the VA or any government agency.</span>
+<span>Your quiz result helps the team start with the right VA loan option.</span>
+</div>
 <button class="btn" type="submit">Request My Review</button>
 </form>
 </div>
@@ -317,5 +326,6 @@
 </footer>
 <script src="site-menu.js"></script>
 <script src="va-quiz.js"></script>
+<script src="conversion-tracking.js"></script>
 </body>
 </html>

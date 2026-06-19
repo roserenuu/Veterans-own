@@ -348,6 +348,114 @@
   font-size: 14px;
 }
 
+.form-trust-proof {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 18px 0;
+  padding: 16px;
+  background: var(--paper, var(--bg, #fbfaf7));
+  border: 1px solid var(--line, var(--border, #d9deea));
+  border-radius: 8px;
+}
+
+.form-trust-proof span {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--muted, #647084);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.form-trust-proof span::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  margin-top: 5px;
+  background: var(--red, #b6202a);
+  border-radius: 50%;
+}
+
+.thank-you-steps {
+  counter-reset: thankStep;
+}
+
+.thank-you-steps .card {
+  position: relative;
+  padding-top: 52px;
+}
+
+.thank-you-steps .card::before {
+  counter-increment: thankStep;
+  content: counter(thankStep);
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 6px;
+  font-family: var(--display);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.doc-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.doc-checklist li {
+  padding: 14px 16px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.calculator-results {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.calculator-result {
+  padding: 18px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.calculator-result strong {
+  display: block;
+  color: var(--navy);
+  font-family: var(--display);
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.calculator-result span {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
 .template-warning {
   padding: 16px;
   background: #fff4d8;
@@ -360,7 +468,13 @@
 @media (max-width: 1000px) {
   .quick-facts,
   .quiz-shell,
-  .estimate-grid {
+  .estimate-grid,
+  .calculator-results {
+    grid-template-columns: 1fr;
+  }
+
+  .form-trust-proof,
+  .doc-checklist {
     grid-template-columns: 1fr;
   }
 }
