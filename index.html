@@ -1537,8 +1537,12 @@ Verified Customer
 .cta-section {
   background: var(--navy-deep);
   padding: 80px 88px;
-  display: grid; grid-template-columns: 1fr auto;
-  align-items: center; gap: 60px;
+  display: grid;
+  grid-template-columns: minmax(0, 560px) minmax(280px, 360px);
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  column-gap: clamp(48px, 4vw, 72px);
   position: relative; overflow: hidden;
 }
 .cta-section::before {
