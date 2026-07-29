@@ -457,14 +457,16 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 }
 .hero-volume-button {
   position: absolute;
-  left: 18px;
-  right: 18px;
+  left: 0;
+  right: 0;
   bottom: 18px;
   z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: auto;
+  width: 68%;
+  max-width: 320px;
+  margin-inline: auto;
   min-height: 54px;
   background: var(--navy);
   color: #fff;
@@ -922,7 +924,7 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   }
   .hero-video-wrap { padding: 0 18px 28px; }
   .hero-video-panel { width: 100%; height: auto; }
-  .hero-volume-button { left: 14px; right: 14px; bottom: 14px; width: auto; min-height: 48px; padding: 10px 18px; font-size: 16px; }
+  .hero-volume-button { bottom: 14px; min-height: 48px; padding: 10px 18px; font-size: 16px; }
   .quote-section { padding: 40px 16px 52px; }
   .quote-section .form-panel { margin: 0; }
   .form-panel { margin: 16px; padding: 28px 22px; }
