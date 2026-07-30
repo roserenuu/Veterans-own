@@ -1015,8 +1015,9 @@ Veterans Own
 
 <div class="hero-right hero-video-wrap">
 <div class="hero-video-panel">
-<video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="auto" poster="hero-va-loan-poster.jpg" aria-label="Veterans Own VA loan video">
-<source src="hero-va-loan-portrait.mp4" type="video/mp4">
+<video class="hero-video" id="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="hero-va-loan-poster.jpg" aria-label="Veterans Own VA loan video">
+<source src="hero-va-loan-portrait-web.mp4" type="video/mp4" media="(min-width: 961px)">
+<source src="hero-va-loan-portrait-mobile.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 <button type="button" class="hero-volume-button is-muted" id="hero-volume-toggle" aria-label="Turn video sound on" aria-pressed="false">
@@ -1751,6 +1752,28 @@ const heroVideo = document.getElementById('hero-video');
 const heroVolumeToggle = document.getElementById('hero-volume-toggle');
 if (heroVideo && heroVolumeToggle) {
   const heroVolumeLabel = heroVolumeToggle.querySelector('.hero-volume-label');
+  let heroSoundEnabled = false;
+
+  function prepareHeroVideoForAutoplay(forceMuted = false) {
+    heroVideo.playsInline = true;
+    heroVideo.setAttribute('playsinline', '');
+    heroVideo.setAttribute('webkit-playsinline', '');
+    if (forceMuted || !heroSoundEnabled) {
+      heroVideo.defaultMuted = true;
+      heroVideo.muted = true;
+    }
+  }
+
+  async function startHeroVideo(forceMuted = false) {
+    prepareHeroVideoForAutoplay(forceMuted);
+    try {
+      await heroVideo.play();
+      return true;
+    } catch (err) {
+      return false;
+    }
+  }
+
   function updateHeroVolumeButton() {
     const isMuted = heroVideo.muted || heroVideo.volume === 0;
     heroVolumeToggle.classList.toggle('is-muted', isMuted);
@@ -1761,22 +1784,53 @@ if (heroVideo && heroVolumeToggle) {
   heroVolumeToggle.addEventListener('click', async () => {
     const shouldUnmute = heroVideo.muted || heroVideo.volume === 0;
     if (shouldUnmute) {
-      heroVideo.volume = 1;
-      if (heroVideo.paused) {
-        heroVideo.muted = true;
-        try { await heroVideo.play(); } catch (err) {}
-      }
+      heroSoundEnabled = true;
+      heroVideo.defaultMuted = false;
       heroVideo.muted = false;
+      heroVideo.volume = 1;
+      try {
+        await heroVideo.play();
+      } catch (err) {
+        heroSoundEnabled = false;
+        heroVideo.muted = true;
+        heroVideo.defaultMuted = true;
+        await startHeroVideo(true);
+      }
     } else {
+      heroSoundEnabled = false;
+      heroVideo.defaultMuted = true;
       heroVideo.muted = true;
       heroVideo.volume = 0;
-    }
-    if (heroVideo.paused) {
-      try { await heroVideo.play(); } catch (err) {}
+      await startHeroVideo(true);
     }
     updateHeroVolumeButton();
   });
-  heroVideo.play().catch(() => {});
+
+  const retryAutoplay = () => {
+    if (document.visibilityState === 'visible' && heroVideo.paused) {
+      startHeroVideo(!heroSoundEnabled);
+    }
+  };
+
+  const retryOnFirstInteraction = async () => {
+    if (!heroVideo.paused || await startHeroVideo(true)) {
+      document.removeEventListener('pointerdown', retryOnFirstInteraction, true);
+      document.removeEventListener('touchstart', retryOnFirstInteraction, true);
+      document.removeEventListener('keydown', retryOnFirstInteraction, true);
+    }
+  };
+
+  prepareHeroVideoForAutoplay(true);
+  startHeroVideo(true);
+  heroVideo.addEventListener('loadedmetadata', retryAutoplay);
+  heroVideo.addEventListener('canplay', retryAutoplay);
+  window.addEventListener('load', retryAutoplay, { once: true });
+  window.addEventListener('pageshow', retryAutoplay);
+  document.addEventListener('visibilitychange', retryAutoplay);
+  document.addEventListener('pointerdown', retryOnFirstInteraction, { capture: true, passive: true });
+  document.addEventListener('touchstart', retryOnFirstInteraction, { capture: true, passive: true });
+  document.addEventListener('keydown', retryOnFirstInteraction, true);
+
   updateHeroVolumeButton();
   setTimeout(() => heroVolumeToggle.classList.add('btn-nav-pulse'), 1500);
 }
