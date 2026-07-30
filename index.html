@@ -55,6 +55,9 @@
 </script>
 
 <link rel="icon" type="image/png" href="logo.png" />
+<link rel="preload" as="image" href="hero-va-loan-poster.jpg" fetchpriority="high">
+<link rel="preload" as="video" href="hero-va-loan-portrait-mobile-v2.mp4" type="video/mp4" media="(max-width: 960px)" fetchpriority="high">
+<link rel="preload" as="video" href="hero-va-loan-portrait-web-v2.mp4" type="video/mp4" media="(min-width: 961px)" fetchpriority="high">
 <script>
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   if (window.location.hash) history.replaceState(null, '', window.location.pathname);
@@ -1021,9 +1024,9 @@ Veterans Own
 
 <div class="hero-right hero-video-wrap">
 <div class="hero-video-panel">
-<video class="hero-video" id="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="hero-va-loan-poster.jpg" aria-label="Veterans Own VA loan video">
-<source src="hero-va-loan-portrait-web.mp4" type="video/mp4" media="(min-width: 961px)">
-<source src="hero-va-loan-portrait-mobile.mp4" type="video/mp4">
+<video class="hero-video" id="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" fetchpriority="high" poster="hero-va-loan-poster.jpg" aria-label="Veterans Own VA loan video">
+<source src="hero-va-loan-portrait-web-v2.mp4" type="video/mp4" media="(min-width: 961px)">
+<source src="hero-va-loan-portrait-mobile-v2.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 <button type="button" class="hero-volume-button is-muted" id="hero-volume-toggle" aria-label="Turn video sound on" aria-pressed="false">
@@ -1478,7 +1481,7 @@ section.content-section.alt { background: var(--bg-mid); }
 <div class="review-card">
 <div class="review-body">
 <div class="review-header">
-<img class="review-avatar" src="review-photo-1.jpg" alt="Veterans Own customer">
+<img class="review-avatar" src="review-photo-1.jpg" alt="Veterans Own customer" loading="lazy" decoding="async">
 <div class="review-stars">★★★★★</div>
 </div>
 <p class="review-quote">"I just want to thank you very much for your work to help us refinance our loans. I know you had to do so much work for us and we really appreciate it. If I know anyone who wants to buy a home or refinance I will do my best to refer you to them. Again, thank you very much."</p>
@@ -1496,7 +1499,7 @@ Verified Customer
 <div class="review-card">
 <div class="review-body">
 <div class="review-header">
-<img class="review-avatar" src="review-photo-3.jpg" alt="Veterans Own customer">
+<img class="review-avatar" src="review-photo-3.jpg" alt="Veterans Own customer" loading="lazy" decoding="async">
 <div class="review-stars">★★★★★</div>
 </div>
 <p class="review-quote">"My mother recently had a refinance with Veterans Own Mortgage. The process was easy for her (and I) to follow. The loan representative was very helpful and responsive for the entire process and explained everything. I would definitely recommend this company."</p>
@@ -1514,7 +1517,7 @@ Verified Customer
 <div class="review-card">
 <div class="review-body">
 <div class="review-header">
-<img class="review-avatar" src="review-photo-2.jpg" alt="Veterans Own customer">
+<img class="review-avatar" src="review-photo-2.jpg" alt="Veterans Own customer" loading="lazy" decoding="async">
 <div class="review-stars">★★★★★</div>
 </div>
 <p class="review-quote">"This company out did themselves in my expectations. They were not pushy; they waited on me and kept contact with me even when I wasn't sure if I was going to be able to refinance. I had a wonderful experience and highly recommend them for your next mortgage needs!"</p>
@@ -1532,7 +1535,7 @@ Verified Customer
 <div class="review-card">
 <div class="review-body">
 <div class="review-header">
-<img class="review-avatar" src="photo-phone.jpg" alt="Veterans Own customer Jeff">
+<img class="review-avatar" src="photo-phone.jpg" alt="Veterans Own customer Jeff" loading="lazy" decoding="async">
 <div class="review-stars">★★★★★</div>
 </div>
 <p class="review-quote">"I am a Veteran and they helped me understand the best options with my VA loan. They were great all through the process. I will definitely be telling others about Veterans Own Mortgage."</p>
@@ -2080,7 +2083,25 @@ if (trustSection) trustObserver.observe(trustSection);
 </script>
 
 <!-- Crisp Chat Widget -->
-<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="cbcb5f4f-ac52-4285-a6e8-de1dd007e281";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+<script type="text/javascript">
+window.$crisp=[];
+window.CRISP_WEBSITE_ID="cbcb5f4f-ac52-4285-a6e8-de1dd007e281";
+(function(){
+  let crispLoaded=false;
+  function loadCrisp(){
+    if(crispLoaded) return;
+    crispLoaded=true;
+    const script=document.createElement("script");
+    script.src="https://client.crisp.chat/l.js";
+    script.async=true;
+    document.head.appendChild(script);
+  }
+  const video=document.getElementById("hero-video");
+  if(video) video.addEventListener("playing",loadCrisp,{once:true});
+  window.addEventListener("load",()=>setTimeout(loadCrisp,2000),{once:true});
+  setTimeout(loadCrisp,6000);
+})();
+</script>
 <script src="conversion-tracking.js"></script>
 </body>
 </html>
