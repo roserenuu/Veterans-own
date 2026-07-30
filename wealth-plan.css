@@ -1,0 +1,697 @@
+/* Veterans Own Mortgage wealth-plan campaign */
+
+.wealth-home-section {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(64px, 8vw, 104px) clamp(20px, 6vw, 88px);
+  background:
+    radial-gradient(circle at 88% 16%, rgba(201, 154, 46, 0.18), transparent 27%),
+    linear-gradient(135deg, #07152e 0%, #102b52 100%);
+  color: #fff;
+}
+
+.wealth-home-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 42px,
+    rgba(255, 255, 255, 0.16) 43px,
+    transparent 44px
+  );
+}
+
+.wealth-home-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(380px, 0.96fr);
+  gap: clamp(36px, 6vw, 76px);
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.wealth-home-kicker,
+.wealth-page-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  color: #f2c94c;
+  font-family: var(--f-display, var(--display, "Barlow Condensed", Arial, sans-serif));
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.wealth-home-kicker::before,
+.wealth-page-kicker::before {
+  content: "";
+  width: 28px;
+  height: 3px;
+  background: #d21f32;
+}
+
+.wealth-home-title {
+  max-width: 700px;
+  margin: 0;
+  color: #fff;
+  font-family: var(--f-display, "Barlow Condensed", Arial, sans-serif);
+  font-size: clamp(46px, 6vw, 74px);
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  line-height: 0.94;
+  text-transform: uppercase;
+}
+
+.wealth-home-title span {
+  color: #f2c94c;
+}
+
+.wealth-home-lead {
+  max-width: 680px;
+  margin: 22px 0 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.65;
+}
+
+.wealth-home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.wealth-home-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  overflow: hidden;
+  padding: 14px 24px;
+  background: #d21f32;
+  color: #fff;
+  border: 1px solid #d21f32;
+  font-family: var(--f-display, "Barlow Condensed", Arial, sans-serif);
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.wealth-home-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 25%, rgba(255, 255, 255, 0.25) 50%, transparent 75%);
+  transform: translateX(-120%);
+  animation: wealthShimmer 3.2s ease-in-out infinite;
+}
+
+.wealth-home-button:hover {
+  background: #b41929;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.wealth-home-button.secondary {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.wealth-home-button.secondary::after {
+  display: none;
+}
+
+.wealth-home-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.wealth-home-goal {
+  position: relative;
+  padding: clamp(26px, 4vw, 38px);
+  background: rgba(255, 255, 255, 0.96);
+  color: #182033;
+  border-top: 5px solid #d21f32;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.3);
+}
+
+.wealth-home-goal::before {
+  content: "A GOAL, NOT A GUARANTEE";
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  color: #6b7280;
+  font-family: var(--f-display, "Barlow Condensed", Arial, sans-serif);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.wealth-home-goal h3 {
+  max-width: 80%;
+  margin: 0;
+  color: #10233f;
+  font-family: var(--f-display, "Barlow Condensed", Arial, sans-serif);
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.wealth-home-goal > p {
+  margin: 16px 0 0;
+  color: #536074;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.wealth-home-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 24px;
+  background: #d9deea;
+  border: 1px solid #d9deea;
+}
+
+.wealth-home-metric {
+  min-width: 0;
+  padding: 20px 12px;
+  background: #fff;
+  text-align: center;
+}
+
+.wealth-home-metric strong {
+  display: block;
+  color: #b6202a;
+  font-family: var(--f-display, "Barlow Condensed", Arial, sans-serif);
+  font-size: clamp(35px, 4vw, 50px);
+  font-weight: 900;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.wealth-home-metric span {
+  display: block;
+  margin-top: 8px;
+  color: #465267;
+  font-family: var(--f-display, "Barlow Condensed", Arial, sans-serif);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.wealth-home-fineprint {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 26px auto 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.wealth-metric-qualifier {
+  margin: 14px 0 0 !important;
+  padding-top: 14px;
+  color: #4d596d !important;
+  border-top: 1px solid #d9deea;
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+}
+
+/* Pillar page */
+
+.wealth-page-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(201, 154, 46, 0.2), transparent 30%),
+    linear-gradient(135deg, #07152e 0%, #18365f 100%);
+}
+
+.wealth-page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 46px,
+    rgba(255, 255, 255, 0.18) 47px,
+    transparent 48px
+  );
+}
+
+.wealth-page-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.wealth-page-hero h1 {
+  max-width: 800px;
+  font-size: clamp(54px, 7.7vw, 96px);
+}
+
+.wealth-page-hero h1 span {
+  color: var(--gold);
+}
+
+.wealth-goal-card {
+  display: grid;
+  gap: 20px;
+  padding: clamp(26px, 4vw, 38px);
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--ink);
+  border-top: 5px solid var(--red);
+  border-radius: 8px;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+}
+
+.wealth-goal-label {
+  margin: 0;
+  color: var(--red);
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.wealth-goal-card h2 {
+  margin: 0;
+  color: var(--navy);
+  font-family: var(--display);
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 900;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.wealth-goal-card > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.wealth-goal-numbers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid var(--line);
+}
+
+.wealth-goal-number {
+  min-width: 0;
+  padding: 16px 10px;
+  border-right: 1px solid var(--line);
+  text-align: center;
+}
+
+.wealth-goal-number:last-child {
+  border-right: 0;
+}
+
+.wealth-goal-number strong {
+  display: block;
+  color: var(--red);
+  font-family: var(--display);
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 900;
+  line-height: 0.9;
+}
+
+.wealth-goal-number span {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-family: var(--display);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.wealth-intro {
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--ink);
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.7;
+  text-align: center;
+}
+
+.wealth-intro strong {
+  color: var(--navy);
+}
+
+.wealth-roadmap {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.wealth-roadmap-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  padding: clamp(24px, 3vw, 32px);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--red);
+  border-radius: 8px;
+}
+
+.wealth-roadmap-card::after {
+  content: attr(data-phase);
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  color: rgba(16, 35, 63, 0.06);
+  font-family: var(--display);
+  font-size: 92px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.wealth-roadmap-card .phase {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 10px;
+  color: var(--red);
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.wealth-roadmap-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--navy);
+  font-family: var(--display);
+  font-size: clamp(30px, 3vw, 40px);
+  font-weight: 900;
+  line-height: 0.96;
+  text-transform: uppercase;
+}
+
+.wealth-roadmap-card p {
+  position: relative;
+  z-index: 1;
+  margin: 14px 0 0;
+  color: var(--muted);
+}
+
+.wealth-roadmap-card ul {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 9px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wealth-roadmap-card li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.wealth-roadmap-card li::before {
+  content: "";
+  position: absolute;
+  top: 0.68em;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.wealth-rule-band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(24px, 5vw, 54px);
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 46px);
+  background: var(--navy);
+  color: var(--white);
+  border-left: 6px solid var(--gold);
+  border-radius: 8px;
+}
+
+.wealth-rule-band h2 {
+  margin: 0;
+  color: var(--white);
+  font-family: var(--display);
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.wealth-rule-band p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.wealth-rule-band strong {
+  color: var(--gold);
+}
+
+.wealth-service-card {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  min-height: 100%;
+}
+
+.wealth-service-card .card-icon {
+  background: var(--red);
+}
+
+.wealth-qualifier {
+  max-width: 1180px;
+  margin: 22px auto 0;
+  padding: 18px 20px;
+  background: #fff8e6;
+  border: 1px solid #e7d196;
+  border-left: 5px solid var(--gold);
+  border-radius: 6px;
+  color: #5a4a22;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.wealth-source-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.wealth-source-link {
+  display: grid;
+  gap: 8px;
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--navy);
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.wealth-source-link:hover {
+  border-color: var(--red);
+  color: var(--navy);
+  transform: translateY(-2px);
+}
+
+.wealth-source-link strong {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.wealth-source-link span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.wealth-disclosure {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 22px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.wealth-disclosure strong {
+  color: var(--navy);
+}
+
+.wealth-disclosure a {
+  color: var(--red);
+  font-weight: 900;
+}
+
+@keyframes wealthShimmer {
+  0%,
+  35% {
+    transform: translateX(-120%);
+  }
+  70%,
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@media (max-width: 1000px) {
+  .wealth-home-inner,
+  .wealth-roadmap,
+  .wealth-rule-band,
+  .wealth-source-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wealth-home-inner {
+    max-width: 760px;
+  }
+
+  .wealth-home-goal {
+    max-width: 680px;
+  }
+
+  .wealth-roadmap {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-header .site-nav {
+    display: none;
+  }
+
+  .site-header .site-menu-toggle {
+    display: flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .wealth-home-section {
+    padding: 54px 18px;
+  }
+
+  .wealth-home-title {
+    font-size: clamp(43px, 13vw, 58px);
+  }
+
+  .wealth-home-lead {
+    font-size: 16px;
+  }
+
+  .wealth-home-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .wealth-home-button {
+    width: 100%;
+  }
+
+  .wealth-home-goal {
+    padding: 26px 18px 20px;
+  }
+
+  .wealth-home-goal::before {
+    position: static;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .wealth-home-goal h3 {
+    max-width: none;
+  }
+
+  .wealth-home-metrics,
+  .wealth-goal-numbers {
+    grid-template-columns: 1fr;
+  }
+
+  .wealth-home-metric,
+  .wealth-goal-number {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    text-align: left;
+  }
+
+  .wealth-home-metric span,
+  .wealth-goal-number span {
+    margin-top: 0;
+  }
+
+  .wealth-goal-number {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .wealth-goal-number:last-child {
+    border-bottom: 0;
+  }
+
+  .wealth-page-hero h1 {
+    font-size: clamp(46px, 14vw, 62px);
+  }
+
+  .wealth-rule-band {
+    padding: 28px 22px;
+  }
+
+  .wealth-intro {
+    font-size: 17px;
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wealth-home-button::after {
+    animation: none;
+  }
+}

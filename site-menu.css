@@ -65,6 +65,8 @@
   width: 84%;
   max-width: 360px;
   height: 100vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   display: flex;
   flex-direction: column;
   padding: 72px 28px 28px;

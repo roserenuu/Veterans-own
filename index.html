@@ -64,6 +64,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="seo-tools.css">
+<link rel="stylesheet" href="wealth-plan.css?v=20260729">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -386,6 +387,14 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 .plus-list li:nth-child(2) .plus-sign { animation-delay: 0.54s; }
 .plus-list li:nth-child(3) .plus-sign { animation-delay: 0.68s; }
 .plus-list li:nth-child(4) .plus-sign { animation-delay: 0.82s; }
+.hero-benefit-note {
+  max-width: 580px;
+  margin: -10px 0 20px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+  animation: slideUp 0.7s 0.6s ease both;
+}
 
 .btn-hero {
   display: flex;
@@ -844,7 +853,7 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 .nav-drawer {
   position: fixed; top: 0; right: -100%;
   width: 84%; max-width: 360px;
-  height: 100vh; background: var(--bg);
+  height: 100vh; overflow-y: auto; overscroll-behavior: contain; background: var(--bg);
   z-index: 200; padding: 70px 28px 28px;
   display: flex; flex-direction: column;
   transition: right 0.32s ease;
@@ -910,6 +919,7 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   .plus-list { width: 100%; gap: 16px; margin: 0 auto 32px; max-width: 370px; text-align: center; align-self: center; align-items: center; }
   .plus-list li { width: 100%; justify-content: center; font-size: 18px; font-weight: 600; line-height: 1.35; white-space: normal; align-items: center; gap: 12px; text-align: left; opacity: 1 !important; animation: none !important; transform: none !important; }
   .plus-sign { flex: 0 0 30px; width: 30px !important; height: 30px; font-size: 29px !important; margin-top: 0; animation: none !important; }
+  .hero-benefit-note { max-width: 350px; margin: -12px auto 24px; text-align: center; }
   .hero-actions { width: 100%; max-width: 370px; justify-content: center; flex-wrap: nowrap; gap: 12px; }
   .btn-hero {
     flex: 1 1 0;
@@ -1019,9 +1029,10 @@ Your browser does not support the video tag.
 <p class="hero-dare">Been turned down by another lender? Veterans Own Mortgage may still be able to help.</p>
 <p class="hero-hook"><span class="hook-red">Call now:</span> <a href="tel:+18558387696" class="hero-phone-inline">1-855-VETS-OWN</a></p>
 <ul class="plus-list">
-<li><span class="plus-sign">✓</span> NO DOWN PAYMENT</li>
-<li><span class="plus-sign">✓</span> NO MORTGAGE INSURANCE</li>
+<li><span class="plus-sign" aria-hidden="true">&#10003;</span> NO DOWN PAYMENT MAY BE AVAILABLE*</li>
+<li><span class="plus-sign" aria-hidden="true">&#10003;</span> NO MONTHLY PMI</li>
 </ul>
+<p class="hero-benefit-note">*For eligible, qualified borrowers when sufficient entitlement and the appraisal support the loan. Closing costs, reserves, a funding fee, or a down payment may still apply.</p>
 <div class="hero-actions">
 <a href="/apply" class="btn-hero">Purchase</a>
 <a href="/apply" class="btn-hero btn-hero-secondary">Refinance</a>
@@ -1148,6 +1159,32 @@ Your browser does not support the video tag.
 </div>
 </div>
 </div>
+</section>
+
+<!-- VETERAN WEALTH PLAN -->
+<section class="wealth-home-section" aria-labelledby="wealth-home-title">
+<div class="wealth-home-inner">
+<div>
+<p class="wealth-home-kicker">New Veteran Wealth Plan</p>
+<h2 class="wealth-home-title" id="wealth-home-title">Your VA Benefit. <span>A Roadmap Toward Long-Term Wealth.</span></h2>
+<p class="wealth-home-lead">Veterans Own Mortgage helps eligible Veterans explore owner-occupied real-estate strategies that may create rental-income potential over time. We review financing, entitlement, occupancy, reserves, and next steps with you.</p>
+<div class="wealth-home-actions">
+<a class="wealth-home-button" href="/build-wealth-with-va-loan">See The Full Roadmap</a>
+<a class="wealth-home-button secondary" href="/apply">Explore My Roadmap</a>
+</div>
+</div>
+<aside class="wealth-home-goal" aria-label="The three-property roadmap goal">
+<h3>The 3-Property Roadmap</h3>
+<p>A personalized framework with the goal of acquiring up to three homes over approximately 24 months—with every proposed VA-financed purchase separately reviewed and requiring a bona fide intent to personally occupy the new home as your primary residence under VA rules.</p>
+<div class="wealth-home-metrics">
+<div class="wealth-home-metric"><strong>Up To 3</strong><span>Homeownership Goal</span></div>
+<div class="wealth-home-metric"><strong>~24</strong><span>Month Planning Horizon</span></div>
+<div class="wealth-home-metric"><strong>$0</strong><span>Down May Be Available</span></div>
+</div>
+<p class="wealth-metric-qualifier">For eligible, qualified borrowers only, when sufficient entitlement and the appraisal support the loan. Closing costs, reserves, an appraisal shortfall, and a VA funding fee may still apply; a down payment may be required in some transactions.</p>
+</aside>
+</div>
+<p class="wealth-home-fineprint">Planning goals and results are not guaranteed. VA-backed purchase loans require owner occupancy and are subject to eligibility, available entitlement, credit and income approval, appraisal, underwriting, lender and VA requirements. Closing costs, reserves, a funding fee, or a down payment may apply. Rental income and future financing are not guaranteed.</p>
 </section>
 
 <!-- TRUST STRIP -->
@@ -1660,6 +1697,7 @@ Veterans Own
 <h4>Navigate</h4>
 <a href="/">Home</a>
 <a href="/va-loans">VA Loans</a>
+<a href="/build-wealth-with-va-loan">Wealth Plan</a>
 <a href="/learning-center">Learning Center</a>
 <a href="/about">About</a>
 <a href="/contact">Contact</a>
@@ -1892,12 +1930,53 @@ if (trustSection) trustObserver.observe(trustSection);
   const closeBtn = document.getElementById('nav-drawer-close');
   const backdrop = document.getElementById('nav-drawer-backdrop');
   if (!burger || !drawer) return;
-  function openDrawer() { burger.classList.add('open'); drawer.classList.add('open'); backdrop.classList.add('open'); burger.setAttribute('aria-expanded', 'true'); drawer.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
-  function closeDrawer() { burger.classList.remove('open'); drawer.classList.remove('open'); backdrop.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); drawer.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+  let lastFocused = null;
+  drawer.setAttribute('inert', '');
+  const getFocusableItems = () => Array.from(drawer.querySelectorAll('a[href], button:not([disabled])')).filter(item => item.getClientRects().length > 0);
+  function openDrawer() {
+    lastFocused = document.activeElement;
+    drawer.removeAttribute('inert');
+    burger.classList.add('open');
+    drawer.classList.add('open');
+    backdrop.classList.add('open');
+    burger.setAttribute('aria-expanded', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    window.requestAnimationFrame(() => (closeBtn || getFocusableItems()[0])?.focus());
+  }
+  function closeDrawer(returnFocus = true) {
+    burger.classList.remove('open');
+    drawer.classList.remove('open');
+    backdrop.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+    drawer.setAttribute('inert', '');
+    document.body.style.overflow = '';
+    if (returnFocus && lastFocused instanceof HTMLElement) lastFocused.focus();
+  }
   burger.addEventListener('click', () => burger.classList.contains('open') ? closeDrawer() : openDrawer());
   closeBtn.addEventListener('click', closeDrawer);
   backdrop.addEventListener('click', closeDrawer);
-  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeDrawer(false)));
+  document.addEventListener('keydown', event => {
+    if (!drawer.classList.contains('open')) return;
+    if (event.key === 'Escape') {
+      closeDrawer();
+      return;
+    }
+    if (event.key !== 'Tab') return;
+    const focusableItems = getFocusableItems();
+    if (!focusableItems.length) return;
+    const firstItem = focusableItems[0];
+    const lastItem = focusableItems[focusableItems.length - 1];
+    if (event.shiftKey && document.activeElement === firstItem) {
+      event.preventDefault();
+      lastItem.focus();
+    } else if (!event.shiftKey && document.activeElement === lastItem) {
+      event.preventDefault();
+      firstItem.focus();
+    }
+  });
 })();
 </script>
 
