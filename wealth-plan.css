@@ -62,15 +62,6 @@
   text-transform: uppercase;
 }
 
-.wealth-home-kicker::before,
-.wealth-page-kicker::before {
-  content: "";
-  flex: 0 0 auto;
-  width: 30px;
-  height: 3px;
-  background: #d21f32;
-}
-
 .wealth-home-title {
   max-width: 690px;
   margin: 0;
