@@ -456,7 +456,9 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
   box-shadow: 0 12px 46px oklch(0 0 0 / 0.16);
   overflow: hidden;
   position: relative;
-  animation: formSlide 0.8s 0.3s ease both;
+  animation: none;
+  opacity: 1;
+  transform: none;
 }
 .hero-video-panel::before {
   content: none;
@@ -500,6 +502,35 @@ nav.scrolled { height: 60px; background: oklch(0.97 0.008 80 / 0.98); }
 .hero-volume-button:focus-visible {
   outline: 3px solid #fff;
   outline-offset: -6px;
+}
+.hero-video-panel.autoplay-blocked::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: oklch(0.12 0.035 255 / 0.16);
+  pointer-events: none;
+}
+.hero-video-panel.autoplay-blocked .hero-video {
+  pointer-events: none;
+}
+.hero-video-panel.autoplay-blocked .hero-volume-button {
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+.hero-video-panel.autoplay-blocked .hero-volume-button.btn-nav-pulse {
+  animation: autoplayPulse 2.5s ease-in-out infinite;
+}
+@keyframes autoplayPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 oklch(0.22 0.08 255 / 0.5);
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 8px oklch(0.22 0.08 255 / 0);
+    transform: translateY(-50%) scale(1.04);
+  }
 }
 .quote-section {
   background: var(--bg-mid);
@@ -1803,7 +1834,9 @@ const heroVideo = document.getElementById('hero-video');
 const heroVolumeToggle = document.getElementById('hero-volume-toggle');
 if (heroVideo && heroVolumeToggle) {
   const heroVolumeLabel = heroVolumeToggle.querySelector('.hero-volume-label');
+  const heroVideoPanel = heroVideo.closest('.hero-video-panel');
   let heroSoundEnabled = false;
+  let heroAutoplayBlocked = false;
 
   function prepareHeroVideoForAutoplay(forceMuted = false) {
     heroVideo.playsInline = true;
@@ -1815,17 +1848,34 @@ if (heroVideo && heroVolumeToggle) {
     }
   }
 
-  async function startHeroVideo(forceMuted = false) {
+  function setHeroAutoplayBlocked(isBlocked) {
+    heroAutoplayBlocked = isBlocked;
+    if (heroVideoPanel) {
+      heroVideoPanel.classList.toggle('autoplay-blocked', isBlocked);
+    }
+    updateHeroVolumeButton();
+  }
+
+  async function startHeroVideo(forceMuted = false, showFallback = false) {
     prepareHeroVideoForAutoplay(forceMuted);
     try {
       await heroVideo.play();
+      setHeroAutoplayBlocked(false);
       return true;
     } catch (err) {
+      if (showFallback && heroVideo.paused) setHeroAutoplayBlocked(true);
       return false;
     }
   }
 
   function updateHeroVolumeButton() {
+    if (heroAutoplayBlocked && heroVideo.paused) {
+      heroVolumeToggle.classList.add('is-muted');
+      heroVolumeToggle.setAttribute('aria-pressed', 'false');
+      heroVolumeToggle.setAttribute('aria-label', 'Play video with sound');
+      if (heroVolumeLabel) heroVolumeLabel.textContent = 'Tap To Play';
+      return;
+    }
     const isMuted = heroVideo.muted || heroVideo.volume === 0;
     heroVolumeToggle.classList.toggle('is-muted', isMuted);
     heroVolumeToggle.setAttribute('aria-pressed', String(!isMuted));
@@ -1841,46 +1891,43 @@ if (heroVideo && heroVolumeToggle) {
       heroVideo.volume = 1;
       try {
         await heroVideo.play();
+        setHeroAutoplayBlocked(false);
       } catch (err) {
         heroSoundEnabled = false;
         heroVideo.muted = true;
         heroVideo.defaultMuted = true;
-        await startHeroVideo(true);
+        await startHeroVideo(true, true);
       }
     } else {
       heroSoundEnabled = false;
       heroVideo.defaultMuted = true;
       heroVideo.muted = true;
       heroVideo.volume = 0;
-      await startHeroVideo(true);
+      await startHeroVideo(true, true);
     }
     updateHeroVolumeButton();
   });
 
   const retryAutoplay = () => {
     if (document.visibilityState === 'visible' && heroVideo.paused) {
-      startHeroVideo(!heroSoundEnabled);
-    }
-  };
-
-  const retryOnFirstInteraction = async () => {
-    if (!heroVideo.paused || await startHeroVideo(true)) {
-      document.removeEventListener('pointerdown', retryOnFirstInteraction, true);
-      document.removeEventListener('touchstart', retryOnFirstInteraction, true);
-      document.removeEventListener('keydown', retryOnFirstInteraction, true);
+      startHeroVideo(!heroSoundEnabled, true);
     }
   };
 
   prepareHeroVideoForAutoplay(true);
-  startHeroVideo(true);
+  startHeroVideo(true, true);
+  const heroAutoplayWatchdog = window.setTimeout(() => {
+    if (heroVideo.paused) setHeroAutoplayBlocked(true);
+  }, 700);
   heroVideo.addEventListener('loadedmetadata', retryAutoplay);
   heroVideo.addEventListener('canplay', retryAutoplay);
+  heroVideo.addEventListener('playing', () => {
+    window.clearTimeout(heroAutoplayWatchdog);
+    setHeroAutoplayBlocked(false);
+  });
   window.addEventListener('load', retryAutoplay, { once: true });
   window.addEventListener('pageshow', retryAutoplay);
   document.addEventListener('visibilitychange', retryAutoplay);
-  document.addEventListener('pointerdown', retryOnFirstInteraction, { capture: true, passive: true });
-  document.addEventListener('touchstart', retryOnFirstInteraction, { capture: true, passive: true });
-  document.addEventListener('keydown', retryOnFirstInteraction, true);
 
   updateHeroVolumeButton();
   setTimeout(() => heroVolumeToggle.classList.add('btn-nav-pulse'), 1500);
